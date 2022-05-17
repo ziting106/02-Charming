@@ -75,7 +75,7 @@ function LoginNav(props) {
                 <a href="">作品集</a>
                 <a href="">我的商品</a>
                 <a href="">購買清單</a>
-                <a href="">登出</a>
+                <a href="/unloginHome">登出</a>
               </div>
               {/* ——————————————————————————————————————— */}
             </li>
