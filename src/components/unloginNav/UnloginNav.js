@@ -1,15 +1,14 @@
 import React from "react";
 import style from "./UnloginNav.module.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AiOutlineGlobal } from 'react-icons/ai';
+import { FaAngleDown } from 'react-icons/fa';
+import { ImSearch } from 'react-icons/im'
 import logo from "../../assets/charming_logo.png";
-library.add(fas);
 
 function UnloginNav(props){
   return (
     <header className={style.sticky}>
-      <nav className={`${style["mainPage-header"]} ${style.pageMargin}`}>
+      <nav className={style["mainPage-header"]}>
         <div className={style.displayFlex}>
           <a href="UnloginHome" className={`${style.heading4} ${style.displayFlex}`}>
             <img className={style["mainPage-logo"]} src={logo} alt="logo" />
@@ -30,10 +29,7 @@ function UnloginNav(props){
             className={style.searchButton}
           >
             <p>
-              <FontAwesomeIcon
-                className={style.padding5px}
-                icon="fa-solid fa-magnifying-glass"
-              />
+            <ImSearch/>
               搜尋
             </p>
           </button>
@@ -41,18 +37,12 @@ function UnloginNav(props){
         <div>
           <ul className={style["mainPage-nav"]}>
             <li>
-                <FontAwesomeIcon
-                  className={style.padding5px}
-                  icon="fa-solid fa-earth-asia"
-                />
+                <AiOutlineGlobal/>
                 <select>
                   <option value="australia">繁體中文</option>
                   <option value="English">English</option>
                 </select>
-                <FontAwesomeIcon
-                  className={style.padding5px}
-                  icon="fa-solid fa-angle-down"
-                />
+                <FaAngleDown/>
               </li>
             <a href="Portfolio">
               <li>柴米人</li>

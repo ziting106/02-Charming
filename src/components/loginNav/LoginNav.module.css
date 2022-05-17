@@ -79,8 +79,8 @@
     font-weight:bold;
   }
   /* 全網頁的grid style */
-  .pageMargin{
-    margin:0px 100px;
+  header{
+    margin:20px 100px;
   }
 
   /* display樣式 */
@@ -138,7 +138,7 @@
       border-radius: 50px;
       overflow: hidden;
     }
-    .searchbar{
+    .searchBar{
       display: block;
     }
     .searchInput{
@@ -171,7 +171,7 @@
   .searchButton:hover{
     background-color: var(--brown1);
   }
-  .itemline{
+  .itemLine{
     display: none;
   }
   .itemList{

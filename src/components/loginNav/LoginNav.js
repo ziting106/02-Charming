@@ -1,10 +1,7 @@
 import React from "react";
 import style from "./LoginNav.module.css";
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { fas } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AiOutlineGlobal } from 'react-icons/ai';
-import { BsFillBellFill } from 'react-icons/bs';
+import { BsCloudy, BsFillBellFill } from 'react-icons/bs';
 import { FaShoppingCart, FaAngleDown } from 'react-icons/fa';
 import { ImSearch } from 'react-icons/im'
 import logo from "../../assets/charming_logo.png";
@@ -12,18 +9,16 @@ import logo from "../../assets/charming_logo.png";
 
 function LoginNav(props){
     return (
+      //固定住nav在下移的時候不動
       <header className={style.sticky}>
-        <nav className={`${style["mainPage-header"]} ${style.pageMargin}`}>
-          <div style={{ top: 10 }}>
-            <a
-              href="loginHome"
-              className={`${style.heading4} ${style.displayFlex}`}
-            >
+        <nav className={style["mainPage-header"]}>
+          {/* logo 與charming文字 */}
+            <a href="loginHome" className={`${style.heading4} ${style.displayFlex}`}>
               <img className={style["mainPage-logo"]} src={logo} alt="logo" />
               <p className={style.padding5px}>柴米Charming</p>
             </a>
-          </div>
-          <div className={style.searchbar}>
+
+          <form className={style.searchBar}>
             <input
               className={style.searchInput}
               type="search"
@@ -32,6 +27,7 @@ function LoginNav(props){
                 console.log(e);
               }}
             />
+            <input className={style.searchButton} type="submit" value="搜尋"/>
             <a href="Product">
               <button className={style.searchButton}>
                 <p>
@@ -40,7 +36,7 @@ function LoginNav(props){
                 </p>
               </button>
             </a>
-          </div>
+          </form>
           <div>
             <ul className={style["mainPage-nav"]}>
               <li>
@@ -90,7 +86,7 @@ function LoginNav(props){
             </div>
           </div>
         </nav>
-        <hr className={style.itemline} />
+        <hr className={style.itemLine} />
         <ul className={`${style.itemList} ${style.heading5}`}>
           <a href="">
             <li>項目類別</li>
@@ -111,7 +107,7 @@ function LoginNav(props){
             <li>項目類別</li>
           </a>
         </ul>
-        <hr className={style.itemline} />
+        <hr className={style.itemLine} />
       </header>
     );
   }

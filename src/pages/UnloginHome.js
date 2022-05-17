@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./UnloginHome.module.css";
-import { UnloginNav } from "../components";
+import UnloginNav from "../components/unloginNav/UnloginNav";
+import { ImSearch } from 'react-icons/im'
 
 //匯入圖片
 import product1 from "../assets/communication2.png";
@@ -34,10 +35,7 @@ function UnloginHome(){
             className={style.searchButton}
           >
             <p>
-              <FontAwesomeIcon
-                className={style.padding5px}
-                icon="fa-solid fa-magnifying-glass"
-              />
+              <ImSearch/>
               搜尋
             </p>
           </button>
