@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./UnloginHome.module.css";
 import UnloginNav from "../components/unloginNav/UnloginNav";
-import { ImSearch } from 'react-icons/im'
+import { ImSearch } from "react-icons/im";
 
 //匯入圖片
 import product1 from "../assets/communication2.png";
@@ -11,17 +11,17 @@ import introduce1 from "../assets/charmingMan.png";
 import introduce2 from "../assets/blog.png";
 import introduce3 from "../assets/communication.png";
 
-function UnloginHome(){
+function UnloginHome() {
   return (
     <header>
       <UnloginNav />
-      <div className={style.backgroundImg}>
+      <hgroup className={style.backgroundImg}>
         <div className={style.headerSlogan}>
           <h1 className={style.heading2}>有才有財，柴米網</h1>
           <p className={style.heading3}>集結台灣優質設計師</p>
           <p className={style.heading3}>全台最大數位設計產品販售平台</p>
         </div>
-        <div className={`${style.searchbar} ${style.pageMargin}`}>
+        <div className={style.searchbar}>
           <input
             className={style.searchInput}
             type="search"
@@ -35,14 +35,12 @@ function UnloginHome(){
             className={style.searchButton}
           >
             <p>
-              <ImSearch/>
+              <ImSearch />
               搜尋
             </p>
           </button>
         </div>
-        <div className={style.pageMargin}>
-          <p className={style.heading5}>
-            熱門搜尋:
+        <div className={style.tags}>
             <a href="product">
               <button className={style.serchTag}>中秋節</button>
             </a>
@@ -55,9 +53,8 @@ function UnloginHome(){
             <a href="product">
               <button className={style.serchTag}>中秋節</button>
             </a>
-          </p>
         </div>
-      </div>
+      </hgroup>
       <div className={style.product}>
         <a href="product">
           <button className={style.productType}>UI/UX</button>
@@ -93,13 +90,13 @@ function UnloginHome(){
         <button className={style.joinButton}> {"> "}查看所有商品</button>
       </a>
       <div className={style.portfolio}>
-        <div className={style.pageMargin}>
+        <hgroup className={style.pageMargin}>
           <p className={style.heading3}>柴米武林招開中</p>
           <p className={style.heading3}>快來加入成為柴米榜榜主吧！</p>
           <p className={style.heading4}>
             柴米榜，集結全臺數位領域專家，既是作品集，也是商品的展示中心
           </p>
-        </div>
+        </hgroup>
         <a href="portfolio">
           <img
             className={style.introducePicture}
@@ -116,22 +113,22 @@ function UnloginHome(){
             alt="introduce"
           />
         </a>
-        <div className={style.pageMargin}>
+        <hgroup>
           <p className={style.heading3}>最新設計新聞快報</p>
           <p className={style.heading3}>掌握時事，掌握先機！</p>
           <p className={style.heading4}>
             每日搜集國內外設計情報，隨時掌握設計藝術界快訊
           </p>
-        </div>
+        </hgroup>
       </div>
       <div className={style.portfolio}>
-        <div className={style.pageMargin}>
+        <hgroup className={style.pageMargin}>
           <p className={style.heading3}>聚集全國優質創作者</p>
           <p className={style.heading3}>一起來場頭腦風暴吧！</p>
           <p className={style.heading4}>
             全國活動資訊交流，快來和大家分享你覺得有趣的設計、藝文活動吧！
           </p>
-        </div>
+        </hgroup>
         <a href="Communication">
           <img
             className={style.introducePicture}
@@ -145,6 +142,6 @@ function UnloginHome(){
       </a>
     </header>
   );
-};
+}
 
 export default UnloginHome;

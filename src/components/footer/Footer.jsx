@@ -23,7 +23,7 @@ function Footer(props){
         </div>
         <div>
           <img className={Style.picture} src={developer3} alt="developer1" />
-          <p>吳邵雍</p>
+          <p>吳紹雍</p>
         </div>
         <div>
           <img className={Style.picture} src={developer4} alt="developer1" />
@@ -31,17 +31,17 @@ function Footer(props){
         </div>
         <div>
           <img className={Style.picture} src={developer5} alt="developer1" />
-          <p>蔡燦鴻</p>
+          <p>蔡璨鴻</p>
         </div>
         <div>
           <img className={Style.picture} src={developer6} alt="developer1" />
           <p>劉芷廷</p>
         </div>
       </div>
-
-      <p className={Style.footertext}>
+      <p className={Style.footerText}>
         此網頁僅供資展國際專題發表使用，如有侵權事宜煩請來信，我們將立即修正，謝謝。
       </p>
+
     </footer>
   );
 };

@@ -5,7 +5,7 @@ import { AiTwotoneSound } from 'react-icons/ai'
 
 function LoginHome(){
   return (
-    <div>
+    <header>
       <LoginNav />
       <div className={style.pageMargin}>
         <div className={style.carousel}>
@@ -16,7 +16,7 @@ function LoginHome(){
         </div>
         <div>{/* <Card /> */}</div>
       </div>
-    </div>
+    </header>
   );
 };
 
