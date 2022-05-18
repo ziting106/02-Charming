@@ -28,7 +28,7 @@
   .backgroundImg{
       height: 500px;
       margin-right: 0px;
-      background:url(../assets/mainPage.png) no-repeat right;
+      background:url(../../assets/mainPage.png) no-repeat right;
       background-size:60%;
 
   }

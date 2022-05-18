@@ -64,9 +64,9 @@ function LoginNav(props) {
               </li>
             </a>
             <li className={style.showList}>
-              <button className={style.userButton}>
+              <a href="Users" className={style.userButton}>
                 <img className={style["mainPage-logo"]} src={logo} alt="logo" />
-              </button>
+              </a>
 
               {/*--hover頭像時出現時才出現的會員表單 --*/}
               <div className={style.navList}>
@@ -75,7 +75,7 @@ function LoginNav(props) {
                 <a href="">作品集</a>
                 <a href="">我的商品</a>
                 <a href="">購買清單</a>
-                <a href="/unloginHome">登出</a>
+                <a href="UnloginHome">登出</a>
               </div>
               {/* ——————————————————————————————————————— */}
             </li>

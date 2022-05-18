@@ -69,7 +69,8 @@
     }
     .mainPage-nav li{
       display: flex;
-      padding:10px 15px;
+      padding:0px 15px;
+      padding-bottom: 10px;
       left: 10px;
       color: var(--brown2);
       font-size: var(--heading5);
@@ -92,6 +93,9 @@
     }
 /* ——————————————————————————————————————— */
 /* hover頭像時出現時才出現的會員表單 */
+.showList{
+  padding-bottom: 10px;
+}
 .showList:hover .navList{
   display: block;
 }
@@ -99,7 +103,7 @@
   width: 150px;
   position: absolute;
   right: -40px;
-  top: 70px;
+  top: 60px;
   z-index: 1;
   display: none;
   border: 1px solid var(--gray3);

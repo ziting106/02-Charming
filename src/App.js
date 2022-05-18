@@ -4,12 +4,13 @@ import Footer from './components/footer/Footer';
 import Blog from "./pages/Blog";
 import Communication from "./pages/Communication";
 import Login from "./pages/Login";
-import LoginHome from "./pages/LoginHome";
+import Users from "./pages/Users";
+import LoginHome from "./pages/loginHome/LoginHome";
 import Portfolio from "./pages/Portfolio";
 import Product from "./pages/Product"
 import ProductDetail from "./pages/ProductDetail"
 import ShoppingCar from "./pages/ShoppingCar"
-import UnloginHome from "./pages/UnloginHome"
+import UnloginHome from "./pages/unloginHome/UnloginHome"
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route path="/ShoppingCar">
             <ShoppingCar />
+          </Route>
+          <Route path="/Users">
+            <Users />
           </Route>
           <Route exact path="/">
             <UnloginHome />

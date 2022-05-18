@@ -66,8 +66,7 @@
   }
   .mainPage-nav li{
     display: flex;
-    padding:10px 15px;
-    /* left: 15px; */
+    padding:8px 15px;
     color: var(--brown2);
     font-size: var(--heading5);
     font-weight:bold;
