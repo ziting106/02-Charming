@@ -51,7 +51,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* -moz-osx-font-smoothing: grayscale; */
 }
-nav, hgroup{
+nav, hgroup, section{
   margin: 30px 100px;
 }
 img{
