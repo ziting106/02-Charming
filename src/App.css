@@ -19,7 +19,7 @@
   --green1: #355F1C;
   --green2: #72925F;
   --green3: #B8D1A9;
-  --red:rgb(183, 32, 32);
+  --red:#b72020;
   /* 字體大小 */
   --heading1: 7vmin;
   --heading2: 6vmin;
@@ -57,7 +57,7 @@ body {
   /* -moz-osx-font-smoothing: grayscale; */
 }
 nav, hgroup, section{
-  margin: 30px 100px;
+  margin: 30px 50px;
 }
 img{
   width: 100%;
