@@ -58,7 +58,7 @@ img{
   width: 100%;
 }
 @media screen and (max-width:950px) {
-  nav, hgroup{
+  nav, hgroup, section{
     margin: 20px 30px;
   }
 }
