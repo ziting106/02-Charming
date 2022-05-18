@@ -10,6 +10,12 @@
 	transform: translateZ(0);
 	transition: transform 0.25s ease-out;
 }
+.cardContainer h2{
+	color: var(--brown2);
+}
+.cardContainer p{
+	color: var(--brown3);
+}
 .cardContainer{
 	width: 100vmin;
 }

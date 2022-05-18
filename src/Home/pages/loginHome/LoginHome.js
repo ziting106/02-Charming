@@ -20,7 +20,7 @@ function LoginHome() {
       <section>
         <ul className={Style.cardFlex}>
           {users.map((r) => (
-            <Card id={r.id} email={r.email} name={r.name} />
+            <Card id={r.id} email={r.email} name={r.name} price={r.price} />
           ))}
         </ul>
       </section>

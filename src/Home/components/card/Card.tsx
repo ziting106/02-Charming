@@ -5,13 +5,15 @@ interface RobotProps {
   id: number;
   name: string;
   email: string;
+  price: number;
 }
-const Card: React.FC<RobotProps> = ({ id, name, email }) => {
+const Card: React.FC<RobotProps> = ({ id, name, email, price }) => {
   return (
     <div className={Styles.cardContainer}>
       <img alt="robot" src={`https://robohash.org/${id}`} />
       <h2>{name}</h2>
       <p>{email}</p>
+      <p>${price}</p>
     </div>
   );
 };
