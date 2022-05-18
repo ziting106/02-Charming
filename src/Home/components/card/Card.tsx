@@ -1,5 +1,6 @@
 import React from "react";
 import Styles from "./Card.module.css";
+import { FcLikePlaceholder, FcLike } from 'react-icons/fc';
 
 interface RobotProps {
   id: number;
@@ -10,10 +11,16 @@ interface RobotProps {
 const Card: React.FC<RobotProps> = ({ id, name, email, price }) => {
   return (
     <div className={Styles.cardContainer}>
-      <img alt="robot" src={`https://robohash.org/${id}`} />
-      <h2>{name}</h2>
-      <p>{email}</p>
-      <p>${price}</p>
+      <div className={Styles.cardSize}>
+        <img alt="robot" src={`https://robohash.org/${id}`} />
+        <FcLikePlaceholder className={Styles.like}/>
+        <h2>{name}</h2>
+        <p>{email}</p>
+        <div className={Styles.price}>
+          <h3>${price}</h3>
+          <p>已售出：</p>
+        </div>
+      </div>
     </div>
   );
 };
