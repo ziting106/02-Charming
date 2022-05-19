@@ -1,15 +1,15 @@
 import React from "react";
 import style from "./UnloginHome.module.css";
-import UnloginNav from "../../components/unloginNav/UnloginNav";
+import UnloginNav from "../../Components/UnloginNav/UnloginNav";
 import { ImSearch } from "react-icons/im";
 
 //匯入圖片
-import product1 from "../../assets/communication2.png";
-import product2 from "../../assets/Join.png";
-import product3 from "../../assets/mainPageBlog.png";
-import introduce1 from "../../assets/charmingMan.png";
-import introduce2 from "../../assets/blog.png";
-import introduce3 from "../../assets/communication.png";
+import product1 from "../../Assets/communication2.png";
+import product2 from "../../Assets/Join.png";
+import product3 from "../../Assets/mainPageBlog.png";
+import introduce1 from "../../Assets/charmingMan.png";
+import introduce2 from "../../Assets/blog.png";
+import introduce3 from "../../Assets/communication.png";
 
 function UnloginHome() {
   return (
@@ -42,16 +42,16 @@ function UnloginHome() {
         </div>
         <div className={style.tags}>
             <a href="product">
-              <button className={style.serchTag}>中秋節</button>
+              <button className={style.searchTag}>中秋節</button>
             </a>
             <a href="product">
-              <button className={style.serchTag}>中秋節</button>
+              <button className={style.searchTag}>中秋節</button>
             </a>
             <a href="product">
-              <button className={style.serchTag}>中秋節</button>
+              <button className={style.searchTag}>中秋節</button>
             </a>
             <a href="product">
-              <button className={style.serchTag}>中秋節</button>
+              <button className={style.searchTag}>中秋節</button>
             </a>
         </div>
       </hgroup>

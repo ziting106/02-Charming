@@ -1,11 +1,11 @@
 import React from "react";
 import Style from "./Footer.module.css";
-import developer1 from "../../assets/developers1.png";
-import developer2 from "../../assets/developers2.png";
-import developer3 from "../../assets/developers3.png";
-import developer4 from "../../assets/developers4.png";
-import developer5 from "../../assets/developers5.png";
-import developer6 from "../../assets/developers6.png";
+import developer1 from "../../Assets/developers1.png";
+import developer2 from "../../Assets/developers2.png";
+import developer3 from "../../Assets/developers3.png";
+import developer4 from "../../Assets/developers4.png";
+import developer5 from "../../Assets/developers5.png";
+import developer6 from "../../Assets/developers6.png";
 
 function Footer(props){
   return (

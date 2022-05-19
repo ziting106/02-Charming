@@ -4,7 +4,7 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { BsCloudy, BsFillBellFill } from "react-icons/bs";
 import { FaShoppingCart, FaAngleDown } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
-import logo from "../../assets/charming_logo.png";
+import logo from "../../Assets/charming_logo.png";
 
 function LoginNav(props) {
   return (

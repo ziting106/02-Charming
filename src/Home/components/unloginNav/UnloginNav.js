@@ -3,7 +3,7 @@ import style from "./UnloginNav.module.css";
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { FaAngleDown } from 'react-icons/fa';
 import { ImSearch } from 'react-icons/im'
-import logo from "../../assets/charming_logo.png";
+import logo from "../../Assets/charming_logo.png";
 
 function UnloginNav(props){
   return (

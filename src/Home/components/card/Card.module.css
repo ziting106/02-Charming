@@ -1,6 +1,6 @@
 .cardContainer {
-	margin: 10px;
 	padding: 10px;
+	margin:10px ;
 	border-radius: 15px;
 	background-color: var(--write);
 	box-shadow: 0 0 5px var(--gray3);
@@ -8,8 +8,8 @@
 }
 
 .cardSize {
-	width: 24.5vmin;
-	height: 34vmin;
+	width: 242px;
+	height: 400px;
 	position: relative;
 }
 
@@ -20,14 +20,6 @@
 	right: 10px;
 	font-size: 20px;
 }
-
-.cardContainer img {
-	width: 100%;
-	height: 22vmin;
-	object-fit: cover;
-	cursor: pointer;
-}
-
 /* 品項名稱 */
 .cardContainer h2 {
 	margin: 5px 0px;
@@ -36,45 +28,64 @@
 	cursor: pointer;
 }
 
+/* 創作者 */
+.cardContainer p {
+	font-size: var(--heading5);
+	color: var(--brown2);
+	overflow: hidden;
+	cursor: pointer;
+}
+.cardContainer > .cardSize {
+	width: 100%;
+	height: 100%;
+}
+
 /* 價格 */
 .cardContainer h3 {
 	font-size: var(--heading5);
 	color: var(--red);
 	cursor: pointer;
-
-
 }
 
 .price {
 	display: flex;
-	bottom: 0px;
-	position: absolute;
+	margin-top: 20px;
+	align-items: flex-end;
+	/* bottom: 0px;
+	position: absolute; */
 }
-
+/* 已售出 */
 .price p {
-	margin-left: 3.5vmin;
-
+	margin-left: 20%;
+	font-size: var(--heading7);
 }
-
-/* 創作者 */
-.cardContainer p {
-	font-size: var(--heading6);
-	color: var(--brown2);
-	overflow: hidden;
-	cursor: pointer;
-}
-
-@media screen and (max-width:700px) {
-	.cardSize {
-		height: 37vmin;
+@media screen and (min-width:1024px){
+	.price p {
+		margin-left: 30%;
 	}
-
-	.cardContainer {
+}
+@media screen and (max-width:780px) {
+    .cardContainer{
 		margin: 5px;
+		border-radius: 10px;
 	}
-
-	.like {
-		top: 5px;
-		right: 5px;
+	
+}
+@media screen and (max-width:441px){
+	
+	.cardContainer h3 {
+		font-size: var(--heading6);
+	}
+}
+@media screen and (max-width:320px){
+	.price p {
+		/* margin-left: 20px; */
+		font-size: var(--heading8);
+	}
+	.cardContainer h2{
+		font-size: var(--heading6);
+	}
+	.cardContainer p{
+		font-size: var(--heading7);
 	}
 }

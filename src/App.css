@@ -21,16 +21,19 @@
   --green3: #B8D1A9;
   --red:#b72020;
   /* 字體大小 */
-  --heading1: 58em;
-  --heading2: 6vmin;
-  --heading3: 4vmin;
-  --heading4: 2.5vmin;
-  --heading5: 2vmin;
-  --heading6: 1.5vmin;
+  --heading1: 56px;
+  --heading2: 48px;
+  --heading3: 32px;
+  --heading4: 20px;
+  --heading5: 16px;
+  --heading6: 12px;
+  --heading7: 10px;
+  --heading8: 8px;
   /* 圓角 */
   --desk-border-radius:15px;
   /* 網頁版border寬度 */
   --desk-border:2px;
+  --pageBorder:40px;
 }
 
 *{
@@ -62,9 +65,22 @@ nav, hgroup, section{
 img{
   width: 100%;
 }
+
 @media screen and (max-width:950px) {
+
+}
+@media screen and (max-width:1024px){
   nav, hgroup, section{
-    margin: 20px 30px;
+    margin: 20px;
   }
+}
+@media screen and (max-width:780px) {
+    
+}
+@media screen and (max-width:441px){
+  nav, hgroup, section{
+    margin: 10px;
+  }
+  
 }
 
