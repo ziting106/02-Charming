@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import Footer from './Home/components/footer/Footer';
-import Blog from "./Home/pages/Blog";
+import Blog from "./Blog/Pages/Blog";
 import Communication from "./Home/pages/Communication";
 import Users from "./Home/pages/Users";
 import LoginHome from "./Home/pages/loginHome/LoginHome";
