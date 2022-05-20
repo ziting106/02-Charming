@@ -11,11 +11,9 @@ function LoginNav(props) {
     //固定住nav在下移的時候不動
     <header className={style.sticky}>
       <nav className={style["mainPage-header"]}>
+
         {/* logo 與charming文字 */}
-        <a
-          href="loginHome"
-          className={`${style.heading4} ${style.displayFlex}`}
-        >
+        <a href="loginHome" className={`${style.heading4} ${style.displayFlex}`}>
           <img className={style["mainPage-logo"]} src={logo} alt="logo" />
           <p className={style.padding5px}>柴米Charming</p>
         </a>
@@ -29,14 +27,29 @@ function LoginNav(props) {
             onChange={(e) => {
               console.log(e);
             }}
+            onKeyDown={(e) => {
+              if(e.key==="Enter")
+              console.log(e);
+            }}
           />
+
           <input className={style.searchButton} type="submit" value="搜尋" />
         </form>
 
+        {/* 平版版搜尋 */}
+        <div className="padsearch">
+          <ImSearch className={style.icon}/>
+          <input
+            type="search"
+            className={style.padsearchBar}
+            placeholder="search..."
+          ></input>
+        </div>
+
         {/* -------選項------- */}
         <div>
-          <ul className={style["mainPage-nav"]}>
-            <li>
+          <ul className={style.mainPageNav}>
+            <li className={style.changeLanguage}>
               <AiOutlineGlobal />
               <select>
                 <option value="australia">繁體中文</option>
@@ -64,7 +77,7 @@ function LoginNav(props) {
               </li>
             </a>
             <li className={style.showList}>
-              <a href="Users" className={style.userButton}>
+              <a className={style.userButton}>
                 <img className={style["mainPage-logo"]} src={logo} alt="logo" />
               </a>
 
@@ -82,27 +95,29 @@ function LoginNav(props) {
           </ul>
 
           {/* ----往下滾動時滑時出現的種類選項----- */}
-          <hr className={style.itemLine} />
-          <ul className={`${style.itemList} ${style.heading5}`}>
-            <a href="">
-              <li>UI/UX</li>
-            </a>
-            <a href="">
-              <li>品牌宣傳</li>
-            </a>
-            <a href="">
-              <li>插圖</li>
-            </a>
-            <a href="">
-              <li>網頁設計</li>
-            </a>
-            <a href="">
-              <li>攝影</li>
-            </a>
-          </ul>
-          <hr className={style.itemLine} />
         </div>
       </nav>
+      <div className={style.Typebar}>
+        <hr className={style.itemLine} />
+        <ul className={`${style.itemList} ${style.heading5}`}>
+          <a href="">
+            <li>UI/UX</li>
+          </a>
+          <a href="">
+            <li>品牌宣傳</li>
+          </a>
+          <a href="">
+            <li>插圖</li>
+          </a>
+          <a href="">
+            <li>網頁設計</li>
+          </a>
+          <a href="">
+            <li>攝影</li>
+          </a>
+        </ul>
+        <hr className={style.itemLine} />
+      </div>
       {/* -----------nav結束------------- */}
     </header>
   );
