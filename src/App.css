@@ -32,7 +32,7 @@
   /* 圓角 */
   --desk-border-radius:15px;
   /* 網頁版border寬度 */
-  --desk-border:2px;
+  --border:2px solid var(--brown2);
   --pageBorder:40px;
 }
 
@@ -60,7 +60,7 @@ body {
   /* -moz-osx-font-smoothing: grayscale; */
 }
 nav, hgroup, section{
-  margin: 30px 50px;
+  margin: 0px 50px;
 }
 nav{
   z-index: 1;
@@ -75,7 +75,7 @@ img{
 }
 @media screen and (max-width:1024px){
   nav, hgroup, section{
-    margin: 20px;
+    margin:0px 20px;
   }
 }
 @media screen and (max-width:780px) {

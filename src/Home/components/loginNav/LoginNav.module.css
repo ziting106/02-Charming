@@ -1,122 +1,114 @@
-/* ————————————————通用————————————————— */
-  .heading1{
-    font-size:var(--heading1);
-    color: var(--brown2);
-    font-weight:bold;
-  }
-  .heading2{
-    font-size:var(--heading2);
-    color: var(--brown2);
-    font-weight:bold;
-  }
-  .heading3{
-    font-size:var(--heading3);
-    color: var(--brown2);
-    font-weight:bold;
-  }
-  .heading4{
-    font-size:var(--heading4);
-    color: var(--brown2);
-    font-weight:bold;
-  }
-  .heading5{
-    font-size:var(--heading5);
-    color: var(--brown2);
-    font-weight:bold;
-  }
-  .heading6{
-    font-size:var(--heading6);
-    color: var(--brown2);
-    font-weight:bold;
-  }
-  /* display樣式 */
-  .displayFlex{
-    display: flex;
-    align-items: center;
-  }
-  .displayNone{
-    display: none;
-  }
-  /* 給icon套用的邊距 */
-  .padding5px{
-    padding:0px 5px;
-  }
-/* ——————————————————————————————————————— */
-
 /* ———————————————登入後nav—————————————— */
-  .mainPage-header{
-      display: flex;
-      justify-content:space-between;
-      position: sticky;
-      top: 0;
-    }
     /* 固定在最上層 */
-    .sticky{
+    .mainPage{
       position: sticky;
       top: 0;
       z-index:1;
-      background-color: white;
-      opacity: 0.8;
+      background-color: rgba(255,255,255,.8);
+      --allNavText:var(--heading4);
+      --allSearchText:var(--heading5);
+      --allTextColor:var(--brown2);
+      --allHoverColor:var(--brown3);
+      --searchBarWidth:100%;
+      --searchBarHeight:60%;
     }
-    
-    .mainPage-logo{
-      width: 50px;
-    }
-    .mainPageNav{
+    /* nav最外圍 */
+    .mainPage nav{
       display: flex;
-      /* padding: 10px 0px; */
+      justify-content:space-between;
+    }
+    /* 選項最外圍 */
+    .itemStyle{
+      display: flex;
+    }
+    .itemStyle > div{
+      display: flex;
       align-items: center;
     }
-   
-    .mainPageNav li{
-      display: flex;
-      padding:0px 15px;
-      padding-bottom: 10px;
-      left: 10px;
-      color: var(--brown2);
-      font-size: var(--heading5);
+    /* 全體li樣式 */
+    .itemStyle li{
+      padding:0px .5em;
+      padding-bottom: 1em;
+      left: .5em;
+      color: var(--allTextColor);
+      font-size: var(--allNavText);
       font-weight:bold;
       align-items: center;
+      white-space:nowrap;
     }
-    .mainPageNav a li:hover{
-      color: var(--brown3);
+    .itemStyle a li:hover{
+      color: var(--allHoverColor);
     }
-
-    /* hover頭像顯示清單的參照物 */
-    .userButton{
-      position: relative;
+/* logoIcon */
+    .logoIcon{
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+    .logoIcon img{
+      object-fit: contain;
       width: 50px;
-      height: 50px;
-      border: 2px solid var(--brown2);
-      border-radius: 50px;
-      overflow: hidden;
-      background-color: var(--brown4);
     }
-/* ——————————————————————————————————————— */
-
-/* 會員頭像 */
-.showList{
-  padding-bottom: 10px;
-}
-/* hover頭像時出現時才出現的會員表單 */
-.showList:hover .navList{
-  display: block;
-}
- .navList{
-  width: 150px;
-  position: absolute;
-  right: -30%;
-  top: 60px;
-  z-index: 1;
-  display: none;
-  border: 1px solid var(--gray3);
-  border-radius:15px;
- }
+    .logoIcon p{
+      padding-left:.3em ;
+      white-space:nowrap;
+      color: var(--allTextColor);
+      font-size: var(--allNavText);
+      font-weight: bold;
+    }
+ 
+    /* 語言切換 */
+    .itemStyle select {
+      width: auto;
+      font-size: var(--allNavText);
+      font-weight: bold;
+      border: none;
+      outline: none;
+      appearance: none;
+      color: var(--allTextColor);
+      padding: 0px 5px;
+      background-color: transparent;
+   } 
+   .changeLanguage{
+    vertical-align: middle;
+   }
+    /* 會員頭像 */
+    .showList{
+      padding-bottom: 10px;
+      --circleSize:40px;
+    }
+    /* hover頭像顯示清單的參照物 */
+    .showList img{
+     object-fit: contain;
+    }
+    .showList > :first-child{
+      display: inline-block;
+      width: var(--circleSize);
+      height: var(--circleSize);
+      border: var(--border);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+   
+  /* hover頭像時出現時才出現的會員表單 */
+  .showList:hover .navList{
+    display: block;
+  }
+  .navList{
+    width: 150px;
+    position: absolute;
+    right: 10%;
+    top: 60px;
+    z-index: 1;
+    display: none;
+    border: 1px solid var(--gray3);
+    border-radius:15px;
+  }
   /* 小箭頭 */
- .navList::before{
+  .navList::before{
    position: absolute;
    top: -10px;
-   left: 75px;
+   left: 110px;
    content: '';
    height: 0;
    width: 0;
@@ -133,75 +125,73 @@
    border-bottom:1px solid var(--gray3);
    border-radius: 15px;
    color: var(--brown1);
-   font-size: var(--heading4);
+   font-size: var(--allNavText);
    white-space:nowrap;
    text-align: center;
  }
+ /* 登出紅字 */
  .navList a:last-child{
     color: var(--red);
   }
   .navList a:hover{
-    background-color: var(--brown3);
-    color: var(--brown2);
+    background-color: var(--allHoverColor);
+    color: var(--allTextColor);
   }
 /* ——————————————————————————————————————— */
 
 /* ——————————————搜尋條————————————————— */
     .searchBar{
       display: flex;
-      align-items: center;
+      margin-top: 5px;
+      margin-left: 15px;
     }
-    .searchInput{
-      max-width: 60%;
-      min-width: 30%;
-      height: 35px;
-      border: 2px solid var(--brown2);
+    .searchBar > :first-child{
+      width: var(--searchBarWidth);
+      height: var(--searchBarHeight);
+      border: var(--border);
       border-radius: 15px 0px 0px 15px;
       padding:0px 15px;
-      font-size: var(--heading5);
+      font-size: var(--allSearchText);
       outline: none;
     }
-    .searchButton{
+    .searchBar > :last-child{
       color: var(--white);
-      font-size: var(--heading5);
+      font-size: var(--allSearchText);
       align-items: center;
-      width: 30%;
-      height: 35px;
-      border: 2px solid var(--brown2);
+      width: 60px;
+      height: var(--searchBarHeight);
+      border: var(--border);
       border-left: none;
       border-radius: 0px 15px 15px 0px;
-      background-color: var(--brown2);
+      background-color: var(--allTextColor);
     }
-  .searchButton:hover{
+    .searchBar > :last-child:hover{
     background-color: var(--brown1);
   }
-/* ——————————————————————————————————————— */
 /* ———————————————pad search bar—————————————— */
-  .padsearch{
-    position: relative;
-    margin-left: 5px;
+  .padSearch{
+    margin-top: 5px;
+    margin-left: 15px;
   }
-  .padsearchBar{
+  .padSearchBar{
     display: none;
-    padding:0 .5em 0 2.5em;
-    top: .5em;
-    left: 2em;
-      width: 10em;
-      height: 2em;
+    width: var(--searchBarWidth);
+    height: var(--searchBarHeight);
+    padding:0 1px 0 20px;
       border-radius: 30px;
       background-color: var(--white);
-      border:1px solid var(--brown2);
+      border:var(--border);
       outline: none;
   }
-  .padsearchBar:focus{
-    border: 2px solid var(--brown2);
+  .padSearchBar:focus{
+    border: var(--border);
   }
-  .icon{
+  .padSearchIcon{
     display: none;
-    color: var(--brown2);
+    color: var(--allTextColor);
       position: absolute;
-      top: .8em;
-      left: 2.3rem;
+      top: 8px;
+      left:9px;
       bottom: .7em;
       z-index: 1;
   }
@@ -217,58 +207,42 @@
     justify-content: space-evenly;
   }
   .itemList li{
-    color: var(--brown2);
+    color: var(--allTextColor);
     padding: 5px 30px;
     margin:5px;
     border-radius: 50px;
   }
   .itemList li:hover{
-    background-color: var(--brown3);
+    background-color: var(--allHoverColor);
   }
-  .mainPageNav select {
-    /* background: transparent; */
-    width: 75px;
-    font-size: var(--heading5);
-    border: none;
-    height: 35px; 
-    /* overflow: hidden; */
-    outline: none;
-    appearance: none;
-    color: var(--brown2);
-    object-fit: contain;
-  padding: 0px 5px;
-  font-weight:bold;
- } 
+
 /* ——————————————————————————————————————— */
 
  /* —————————————————RWD——————————————————— */
-@media screen and (max-width:1200px){
-  .mainPageNav .changeLanguage select{
-    display: none;
+@media screen and (max-width:1024px){
+  .mainPage{
+    --allNavText:var(--heading5);
+    --allSearchText:var(--heading6);
   }
+ 
 }
-@media screen and (max-width:780px) {
-  .mainPageNav{
+@media screen and (max-width:700px) {
+  .mainPage{
+    --allNavText:var(--heading6);
+    --allSearchText:var(--heading7);
+  }
+  .searchBar{
     display: none;
   }
-    .searchBar{
-      display: none;
-    }
-    .padsearch{
-      display: flex;
-    }
-    .icon{
-      display: block;
-    }
-    .padsearchBar{
-      display: flex;
-    }
-    /* 縮小後search bar邊界縮小 */
-    .mainPage-header{
-      justify-content: flex-start;
-    }
-    
+  .padSearchBar{
+    display: flex;
+  }
+  .padSearchIcon{
+    display: flex;
+  }
 }
 @media screen and (max-width:441px){
+
+  
   
 }

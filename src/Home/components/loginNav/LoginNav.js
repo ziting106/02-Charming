@@ -9,94 +9,93 @@ import logo from "../../Assets/charming_logo.png";
 function LoginNav(props) {
   return (
     //固定住nav在下移的時候不動
-    <header className={style.sticky}>
-      <nav className={style["mainPage-header"]}>
-
+    <header className={style.mainPage}>
+      <nav>
         {/* logo 與charming文字 */}
-        <a href="loginHome" className={`${style.heading4} ${style.displayFlex}`}>
-          <img className={style["mainPage-logo"]} src={logo} alt="logo" />
-          <p className={style.padding5px}>柴米Charming</p>
-        </a>
+        <div>
+          <a href="loginHome" className={style.logoIcon}>
+            <img src={logo} alt="logo" />
+            <p>柴米Charming</p>
+          </a>
+        </div>
 
-        {/*--------- 搜尋欄位 ------*/}
-        <form className={style.searchBar}>
+        <div className={style.searchBar}>
           <input
-            className={style.searchInput}
             type="search"
             placeholder="Search.."
             onChange={(e) => {
               console.log(e);
             }}
             onKeyDown={(e) => {
-              if(e.key==="Enter")
-              console.log(e);
+              if (e.key === "Enter") console.log(e);
             }}
           />
 
-          <input className={style.searchButton} type="submit" value="搜尋" />
-        </form>
+          <input type="submit" value="搜尋" />
+        </div>
 
         {/* 平版版搜尋 */}
-        <div className="padsearch">
-          <ImSearch className={style.icon}/>
-          <input
-            type="search"
-            className={style.padsearchBar}
-            placeholder="search..."
-          ></input>
+        <div className={style.padSearch}>
+          <ImSearch className={style.padSearchIcon} />
+          <input type="search" className={style.padSearchBar}></input>
         </div>
-
         {/* -------選項------- */}
         <div>
-          <ul className={style.mainPageNav}>
-            <li className={style.changeLanguage}>
-              <AiOutlineGlobal />
-              <select>
-                <option value="australia">繁體中文</option>
-                <option value="English">English</option>
-              </select>
-              <FaAngleDown />
-            </li>
-            <a href="Portfolio">
-              <li>柴米人</li>
-            </a>
-            <a href="Blog">
-              <li>柴訊</li>
-            </a>
-            <a href="Communication">
-              <li>柴社</li>
-            </a>
-            <a href="ShoppingCar">
-              <li>
-                <FaShoppingCart />
+          <ul className={style.itemStyle}>
+            <div>
+              <li className={style.changeLanguage}>
+                <AiOutlineGlobal />
+                <select>
+                  <option value="australia">繁體中文</option>
+                  <option value="English">English</option>
+                </select>
+                <FaAngleDown />
               </li>
-            </a>
-            <a href="">
-              <li>
-                <BsFillBellFill />
-              </li>
-            </a>
-            <li className={style.showList}>
-              <a className={style.userButton}>
-                <img className={style["mainPage-logo"]} src={logo} alt="logo" />
+              <a href="Portfolio">
+                <li>柴米人</li>
               </a>
-
-              {/*--hover頭像時出現時才出現的會員表單 --*/}
-              <div className={style.navList}>
-                <a href="">會員資料修改</a>
-                <a href="">我的設計</a>
-                <a href="">作品集</a>
-                <a href="">我的商品</a>
-                <a href="">購買清單</a>
-                <a href="UnloginHome">登出</a>
-              </div>
-              {/* ——————————————————————————————————————— */}
-            </li>
+              <a href="Blog">
+                <li>柴訊</li>
+              </a>
+              <a href="Communication">
+                <li>柴社</li>
+              </a>
+            </div>
+            {/* icon & 頭像 */}
+            <div>
+              <a href="ShoppingCar">
+                <li>
+                  <FaShoppingCart />
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  <BsFillBellFill />
+                </li>
+              </a>
+              <li className={style.showList}>
+                <a>
+                  <img src={logo} alt="logo" />
+                </a>
+                {/*--hover頭像時出現時才出現的會員表單 --*/}
+                <div className={style.navList}>
+                  <a href="">會員資料修改</a>
+                  <a href="">我的設計</a>
+                  <a href="">作品集</a>
+                  <a href="">我的商品</a>
+                  <a href="">購買清單</a>
+                  <a href="UnloginHome">登出</a>
+                </div>
+                {/* ——————————————————————————————————————— */}
+              </li>
+            </div>
           </ul>
-
-          {/* ----往下滾動時滑時出現的種類選項----- */}
         </div>
       </nav>
+
+      {/*--------- 搜尋欄位 ------*/}
+
+      {/* ----往下滾動時滑時出現的種類選項----- */}
       <div className={style.Typebar}>
         <hr className={style.itemLine} />
         <ul className={`${style.itemList} ${style.heading5}`}>
