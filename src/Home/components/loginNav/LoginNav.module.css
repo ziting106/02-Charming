@@ -260,11 +260,22 @@
   .mainPage{
     --itemListPadding:1%;
     --searchBarWidth:100%;
-    --searchBarHeight:100%;
+    --searchBarHeight:70%;
   }
-  .charmingLogo{
+  .charmingLogo p{
     display: none;
   }
+  .charmingLogo{
+    margin-bottom: 10px;
+  }
+  /* 手機版searchbar得margin */
+  .padSearchBar{
+    margin-top: 5px;
+  }
+  .padSearchIcon{
+      top: 13px;
+  }
+  /* -------------- */
   .showList{
     display: none;
   }
@@ -277,6 +288,7 @@
   }
   .phoneIcon{
     font-size: var(--heading4);
+    margin-top: 15px;
   }
 
   

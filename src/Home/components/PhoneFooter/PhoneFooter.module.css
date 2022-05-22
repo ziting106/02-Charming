@@ -1,24 +1,30 @@
-/* phoneFooter */
-a{
-    display: block;
-}
+
 .phoneFooter{
     display: none;
+    background-color:#fff;
     position: fixed;
+    width: 100%;
     bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     white-space: nowrap;
+    border-top: 2px solid var(--brown4);
+}
+.phoneFooter a{
+    text-align: center;
+}
+.phoneFooter p{
+    color: var(--brown2);
+    padding: 5px;
+}
+.icon{
+    font-size: var(--heading4);
+    color: var(--brown2);
 }
 
-.charmingFooter p{
-    color: var(--brown2);
-    font-weight: bold;
-}
-.phoneFooter img{
-    width: 15%;
-}
 @media screen and (max-width:441px){
     .phoneFooter{
         display: flex;
-       justify-content: center;
+       justify-content: space-around;
       }
 }
