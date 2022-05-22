@@ -34,6 +34,7 @@
   /* 網頁版border寬度 */
   --border:2px solid var(--brown2);
   --pageBorder:40px;
+  --holdpadding:50px;
 }
 
 *{
@@ -60,30 +61,23 @@ body {
   /* -moz-osx-font-smoothing: grayscale; */
 }
 nav, hgroup, section{
-  margin: 0px 50px;
+  margin: 0px var(--holdpadding);
 }
 nav{
   z-index: 1;
   padding-top: 10px;
 }
-img{
-  width: 100%;
-}
 
-@media screen and (max-width:950px) {
 
-}
 @media screen and (max-width:1024px){
-  nav, hgroup, section{
-    margin:0px 20px;
+  :root{
+    --holdpadding:20px;
   }
 }
-@media screen and (max-width:780px) {
-    
-}
+
 @media screen and (max-width:441px){
-  nav, hgroup, section{
-    margin: 10px;
+  :root{
+    --holdpadding:10px;
   }
   
 }

@@ -10,7 +10,8 @@
       --allTextColor:var(--brown2);
       --allHoverColor:var(--brown3);
       --searchBarWidth:100%;
-      --searchBarHeight:60%;
+      --searchBarHeight:80%;
+      --itemListPadding:7%;
     }
     /* nav最外圍 */
     .navBar{
@@ -209,35 +210,26 @@
 }
   .itemList{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    margin: 0px 15px;
   }
-  .itemList.active{
-    display: none;
-    justify-content: space-evenly;
+  .itemList a{
+    padding:.5em ;
+    border-radius: 99px;
+    padding-right:var(--itemListPadding) ;
+    padding-left:var(--itemListPadding) ;
+    /* white-space:nowrap; */
   }
   .itemList li{
     color: var(--allTextColor);
-    padding: 5px 30px;
-    margin:5px;
-    border-radius: 50px;
   }
-  .itemList li:hover{
+  .itemList a:hover{
     background-color: var(--allHoverColor);
   }
 /* ——————————————————————————————————————— */
 
  /* —————————————————RWD——————————————————— */
 @media screen and (max-width:1024px){
-  .changeLanguage{
-    display: none;
-  }
- 
-}
-@media screen and (max-width:800px) {
-  .mainPage{
-    --allNavText:var(--heading5);
-    --allSearchText:var(--heading6);
-  }
   .searchBar{
     display: none;
   }
@@ -247,8 +239,45 @@
   .padSearchIcon{
     display: flex;
   }
+  .mainPage{
+    --itemListPadding:6%;
+  }
+ 
+}
+@media screen and (max-width:800px) {
+  .mainPage{
+    --allNavText:var(--heading5);
+    --allSearchText:var(--heading6);
+    --itemListPadding:4%;
+
+  }
+  .changeLanguage{
+    display: none;
+  }
+  
 }
 @media screen and (max-width:441px){
+  .mainPage{
+    --itemListPadding:1%;
+    --searchBarWidth:100%;
+    --searchBarHeight:100%;
+  }
+  .charmingLogo{
+    display: none;
+  }
+  .showList{
+    display: none;
+  }
+  .phoneDisplayNone{
+    display: none;
+  }
+  .padSearch{
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  .phoneIcon{
+    font-size: var(--heading4);
+  }
 
   
   

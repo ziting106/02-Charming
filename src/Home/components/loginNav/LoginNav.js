@@ -9,7 +9,7 @@ import logo from "../../Assets/charming_logo.png";
 function LoginNav(props) {
   const [typebar,setNavbar] = useState(false);
   const displayItemType = () =>{
-    if(window.scrollY >= 20){
+    if(window.scrollY >= 80){
       setNavbar(true);
     }else{
       setNavbar(false);
@@ -22,7 +22,7 @@ function LoginNav(props) {
     <header className={style.mainPage}>
       <nav className={style.navBar}>
         {/* logo 與charming文字 */}
-        <div>
+        <div className={style.charmingLogo}>
           <a href="loginHome" className={style.logoIcon}>
             <img src={logo} alt="logo" />
             <p>柴米Charming</p>
@@ -50,7 +50,7 @@ function LoginNav(props) {
           <input type="search" className={style.padSearchBar}></input>
         </div>
         {/* -------選項------- */}
-        <div>
+        <div className={style.charmingItem}>
           <ul className={style.itemStyle}>
             <div>
               <li className={style.changeLanguage}>
@@ -61,13 +61,13 @@ function LoginNav(props) {
                 </select>
                 <FaAngleDown />
               </li>
-              <a href="Portfolio">
+              <a href="Portfolio" className={style.phoneDisplayNone}>
                 <li>柴米人</li>
               </a>
-              <a href="Blog">
+              <a href="Blog" className={style.phoneDisplayNone}>
                 <li>柴訊</li>
               </a>
-              <a href="Communication">
+              <a href="Communication" className={style.phoneDisplayNone}>
                 <li>柴社</li>
               </a>
             </div>
@@ -75,12 +75,12 @@ function LoginNav(props) {
             <div>
               <a href="ShoppingCar">
                 <li>
-                  <FaShoppingCart />
+                  <FaShoppingCart className={style.phoneIcon}/>
                 </li>
               </a>
               <a href="">
                 <li>
-                  <BsFillBellFill />
+                  <BsFillBellFill className={style.phoneIcon}/>
                 </li>
               </a>
               <li className={style.showList}>
@@ -128,7 +128,6 @@ function LoginNav(props) {
         </ul>
         <hr/>
       </div>
-      {/* -----------nav結束------------- */}
     </header>
   );
 }
