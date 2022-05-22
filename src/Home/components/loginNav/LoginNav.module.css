@@ -13,10 +13,11 @@
       --searchBarHeight:60%;
     }
     /* nav最外圍 */
-    .mainPage nav{
+    .navBar{
       display: flex;
       justify-content:space-between;
     }
+    
     /* 選項最外圍 */
     .itemStyle{
       display: flex;
@@ -28,8 +29,8 @@
     /* 全體li樣式 */
     .itemStyle li{
       padding:0px .5em;
-      padding-bottom: 1em;
       left: .5em;
+      padding-bottom: 5px;
       color: var(--allTextColor);
       font-size: var(--allNavText);
       font-weight:bold;
@@ -98,7 +99,7 @@
     width: 150px;
     position: absolute;
     right: 10%;
-    top: 60px;
+    top: 45px;
     z-index: 1;
     display: none;
     border: 1px solid var(--gray3);
@@ -108,7 +109,7 @@
   .navList::before{
    position: absolute;
    top: -10px;
-   left: 110px;
+   left: 115px;
    content: '';
    height: 0;
    width: 0;
@@ -153,6 +154,7 @@
       padding:0px 15px;
       font-size: var(--allSearchText);
       outline: none;
+      background-color: transparent;
     }
     .searchBar > :last-child{
       color: var(--white);
@@ -182,6 +184,7 @@
       background-color: var(--white);
       border:var(--border);
       outline: none;
+      background-color: transparent;
   }
   .padSearchBar:focus{
     border: var(--border);
@@ -198,11 +201,17 @@
 /* ——————————————————————————————————————— */
 
 /* —————————往下滾動時滑時出現的種類選項———————— */
-
-.itemLine{
-    display: none;
-  }
+.displayblock{
+  display: block;
+}
+.displayNone{
+  display: none;
+}
   .itemList{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .itemList.active{
     display: none;
     justify-content: space-evenly;
   }
@@ -215,21 +224,19 @@
   .itemList li:hover{
     background-color: var(--allHoverColor);
   }
-
 /* ——————————————————————————————————————— */
 
  /* —————————————————RWD——————————————————— */
 @media screen and (max-width:1024px){
-  .mainPage{
-    --allNavText:var(--heading5);
-    --allSearchText:var(--heading6);
+  .changeLanguage{
+    display: none;
   }
  
 }
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
   .mainPage{
-    --allNavText:var(--heading6);
-    --allSearchText:var(--heading7);
+    --allNavText:var(--heading5);
+    --allSearchText:var(--heading6);
   }
   .searchBar{
     display: none;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./LoginNav.module.css";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { BsCloudy, BsFillBellFill } from "react-icons/bs";
@@ -7,10 +7,20 @@ import { ImSearch } from "react-icons/im";
 import logo from "../../Assets/charming_logo.png";
 
 function LoginNav(props) {
+  const [typebar,setNavbar] = useState(false);
+  const displayItemType = () =>{
+    if(window.scrollY >= 20){
+      setNavbar(true);
+    }else{
+      setNavbar(false);
+    }
+  }
+  window.addEventListener('scroll',displayItemType);
+
   return (
     //固定住nav在下移的時候不動
     <header className={style.mainPage}>
-      <nav>
+      <nav className={style.navBar}>
         {/* logo 與charming文字 */}
         <div>
           <a href="loginHome" className={style.logoIcon}>
@@ -96,9 +106,10 @@ function LoginNav(props) {
       {/*--------- 搜尋欄位 ------*/}
 
       {/* ----往下滾動時滑時出現的種類選項----- */}
-      <div className={style.Typebar}>
-        <hr className={style.itemLine} />
-        <ul className={`${style.itemList} ${style.heading5}`}>
+      
+      <div className={typebar ? `${style.displayblock}` :`${style.displayNone}`}>
+        <hr/>
+        <ul className={style.itemList}>
           <a href="">
             <li>UI/UX</li>
           </a>
@@ -115,7 +126,7 @@ function LoginNav(props) {
             <li>攝影</li>
           </a>
         </ul>
-        <hr className={style.itemLine} />
+        <hr/>
       </div>
       {/* -----------nav結束------------- */}
     </header>
