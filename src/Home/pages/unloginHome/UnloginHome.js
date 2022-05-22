@@ -1,6 +1,9 @@
 import React from "react";
 import style from "./UnloginHome.module.css";
+// 匯入component
 import UnloginNav from "../../Components/UnloginNav/UnloginNav";
+import PhoneFooter from "../../Components/PhoneFooter/PhoneFooter";
+// 匯入icon
 import { ImSearch } from "react-icons/im";
 
 //匯入圖片
@@ -140,6 +143,7 @@ function UnloginHome() {
       <a href="login">
         <button className={style.joinButton}>加入Charming</button>
       </a>
+      <PhoneFooter/>
     </header>
   );
 }

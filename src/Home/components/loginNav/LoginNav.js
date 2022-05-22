@@ -49,6 +49,7 @@ function LoginNav(props) {
           <ImSearch className={style.padSearchIcon} />
           <input type="search" className={style.padSearchBar}></input>
         </div>
+
         {/* -------選項------- */}
         <div className={style.charmingItem}>
           <ul className={style.itemStyle}>
@@ -103,10 +104,7 @@ function LoginNav(props) {
         </div>
       </nav>
 
-      {/*--------- 搜尋欄位 ------*/}
-
       {/* ----往下滾動時滑時出現的種類選項----- */}
-      
       <div className={typebar ? `${style.displayblock}` :`${style.displayNone}`}>
         <hr/>
         <ul className={style.itemList}>
