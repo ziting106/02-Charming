@@ -3,7 +3,6 @@ import Style from "./LoginHome.module.css";
 import LoginNav from "../../Components/LoginNav/LoginNav";
 import { AiTwotoneSound } from "react-icons/ai";
 import Card from "../../Components/Card/Card";
-import PhoneFooter from "../../Components/PhoneFooter/PhoneFooter";
 import users from "../../Mockdata/users.json";
 
 function LoginHome() {
@@ -28,7 +27,6 @@ function LoginHome() {
             ))}
         </ul>
       </section>
-      <PhoneFooter/>
     </header>
   );
 }
