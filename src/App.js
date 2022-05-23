@@ -10,6 +10,8 @@ import PhoneFooter from "./Home/Components/PhoneFooter/PhoneFooter";
 import LoginHome from "./Home/Pages/LoginHome/LoginHome";
 import UnloginHome from "./Home/Pages/UnloginHome/UnloginHome";
 import MyProduct from "./Home/Pages/MyProduct/MyProduct";
+import EditProduct from "./Home/Pages/EditProduct/EditProduct";
+import AddProduct from "./Home/Pages/AddProduct/AddProduct";
 
 //會員
 //Pages
@@ -27,13 +29,13 @@ import MyAccount from "./Account/Pages/User/MyAccount";
 import MyNotice from "./Account/Pages/User/MyNotice";
 
 //購物車頁
-import Cart1 from "./Sales/Pages/Cart/Cart1";
-import Cart2 from "./Sales/Pages/Cart/Cart2";
-import Cart3 from "./Sales/Pages/Cart/Cart3";
-import Cart4 from "./Sales/Pages/Cart/Cart4";
-import MySale from "./Sales/Pages/Order/MySale";
-import Order from "./Sales/Pages/Order/Order";
-import OrderList from "./Sales/Pages/Order/OrderList";
+// import Cart1 from "./Sales/Pages/Cart/Cart1";
+// import Cart2 from "./Sales/Pages/Cart/Cart2";
+// import Cart3 from "./Sales/Pages/Cart/Cart3";
+// import Cart4 from "./Sales/Pages/Cart/Cart4";
+// import MySale from "./Sales/Pages/Order/MySale";
+// import Order from "./Sales/Pages/Order/Order";
+// import OrderList from "./Sales/Pages/Order/OrderList";
 
 //討論區
 
@@ -47,6 +49,7 @@ function App() {
         <Route path="/Login" element={<LoginHome />} />
         <Route path="/LoginHome" element={<LoginHome />} />
         <Route path="/MyProduct" element={<MyProduct />} />
+        <Route path="/EditProduct" element={<EditProduct />} />
         <Route path="/" element={<UnloginHome />} />
 
         {/* --------註冊及登入----- */}
@@ -69,14 +72,14 @@ function App() {
         <Route path="/notice" element={<MyNotice />} />
 
         {/* --------商品頁面-------- */}
-        <Route path="/Cart1" element={<Cart1 />} />
+        {/* <Route path="/Cart1" element={<Cart1 />} />
         <Route path="/Cart2" element={<Cart2 />} />
         <Route path="/Cart3" element={<Cart3 />} />
         <Route path="/Cart4" element={<Cart4 />} />
 
         <Route path="/MySale" element={<MySale />} />
         <Route path="/Order" element={<Order />} />
-        <Route path="/OrderList" element={<OrderList />} />
+        <Route path="/OrderList" element={<OrderList />} /> */}
       </Routes>
       <Footer />
       <PhoneFooter />

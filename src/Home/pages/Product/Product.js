@@ -3,13 +3,14 @@
 // 按圖片會放大 且可以切換上(下)一張
 // 顯示超過4張，右邊最後一張要加半黑濾鏡(+N)
 
-
 import React from "react";
 
-function Product(){
-
-    return(
-    <h3>商品總攬 Page</h3> 
-    )
+function Product() {
+  return (
+    <>
+      <h3>商品總攬 Page</h3>
+      
+    </>
+  );
 }
 export default Product;

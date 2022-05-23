@@ -6,7 +6,7 @@ import LoginNav from "../../Components/LoginNav/LoginNav";
 import Footer from "../../Components/Footer/Footer";
 import PhoneFooter from "../../Components/PhoneFooter/PhoneFooter";
 import ProductBtobButton from "../../Components/ProductBtobButton/ProductBtobButton";
-import style from "./EditProduct.module.css";
+import style from "./AddProduct.module.css";
 
 function EditProduct() {
   return (
@@ -14,7 +14,9 @@ function EditProduct() {
       <LoginNav />
       <section>
         <ProductBtobButton />
-        <div></div>
+        <div>
+          
+        </div>
       </section>
     </>
   );
