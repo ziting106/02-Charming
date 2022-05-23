@@ -14,7 +14,9 @@ function EditProduct() {
       <LoginNav />
       <section>
         <ProductBtobButton />
-        <div></div>
+        <div>
+          
+        </div>
       </section>
     </>
   );

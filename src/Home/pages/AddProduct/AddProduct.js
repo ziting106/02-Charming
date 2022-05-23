@@ -15,7 +15,14 @@ function EditProduct() {
       <section>
         <ProductBtobButton />
         <div>
-          
+          <input type="file" id="theFile" />
+          <p>
+            <textarea id="fileInfo" cols="70" rows="5"></textarea>
+          </p>
+          <h2>Content here...</h2>
+          <p>
+            <img id="image" />
+          </p>
         </div>
       </section>
     </>

@@ -50,6 +50,7 @@ function App() {
         <Route path="/LoginHome" element={<LoginHome />} />
         <Route path="/MyProduct" element={<MyProduct />} />
         <Route path="/EditProduct" element={<EditProduct />} />
+        <Route path="/AddProduct" element={<AddProduct />} />
         <Route path="/" element={<UnloginHome />} />
 
         {/* --------註冊及登入----- */}
