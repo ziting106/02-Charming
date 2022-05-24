@@ -12,7 +12,7 @@ const Card: React.FC<RobotProps> = ({ id, name, email, price }) => {
   return (
     <div className={Styles.cardContainer}>
       <div className={Styles.cardSize}>
-        <a href="">
+        <a href="/product">
           <img alt="robot" src={`https://robohash.org/${id}`} />
         </a>
         <FcLikePlaceholder className={Styles.like} />

@@ -5,6 +5,8 @@ import LoginNav from "../../Components/LoginNav/LoginNav";
 import Card from "../../Components/Card/Card";
 import AsideProductLIst from "../../Components/AsideProductLIst/AsideProductLIst";
 import MyProduct from "../../Components/Product/Product";
+import Slider from "../../Components/Slider/Slider";
+import SliderSection from "../../Components/SliderSection/SliderSection";
 // react icon
 import { AiTwotoneSound } from "react-icons/ai";
 
@@ -25,6 +27,7 @@ function LoginHome() {
         </p>
       </hgroup>
 
+      <SliderSection/>
       <section className={Style.productType}>
         <AsideProductLIst />
         <MyProduct />

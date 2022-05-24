@@ -12,6 +12,7 @@ import UnloginHome from "./Home/Pages/UnloginHome/UnloginHome";
 import MyProduct from "./Home/Pages/MyProduct/MyProduct";
 import EditProduct from "./Home/Pages/EditProduct/EditProduct";
 import AddProduct from "./Home/Pages/AddProduct/AddProduct";
+import Product from "./Home/Pages/Product/Product";
 
 //會員
 //Pages
@@ -51,6 +52,7 @@ function App() {
         <Route path="/MyProduct" element={<MyProduct />} />
         <Route path="/EditProduct" element={<EditProduct />} />
         <Route path="/AddProduct" element={<AddProduct />} />
+        <Route path="/Product" element={<Product />} />
         <Route path="/" element={<UnloginHome />} />
 
         {/* --------註冊及登入----- */}

@@ -1,0 +1,10 @@
+.slider--image {
+    border-radius: 15px;
+    transition: 0.8s;
+    background-color: aqua;
+    object-fit: fill;
+}
+
+.slider--image:hover {
+    transform: translateY(-20px);
+}

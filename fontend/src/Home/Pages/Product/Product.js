@@ -4,12 +4,13 @@
 // 顯示超過4張，右邊最後一張要加半黑濾鏡(+N)
 
 import React from "react";
+import LoginNav from "../../Components/LoginNav/LoginNav";
 
 function Product() {
   return (
     <>
+      <LoginNav />
       <h3>商品總攬 Page</h3>
-      
     </>
   );
 }
