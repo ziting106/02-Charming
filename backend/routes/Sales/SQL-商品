@@ -23,14 +23,11 @@ WHERE ID = ?
 
 3. 功能：新增商品。Method: POST。URL: /api/product
 
-INSERT INTO `product_items`(`ID`, `author_name`, `product_copy`, `price`, `state`, `pic_path`, `create_time`, `type_id`) 
-VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]')
+INSERT INTO `product_items`(`ID`, `author_name`, `product_name`, `product_copy`, `price`, `pic_path`, `sell_count`, `file_type`, `work_time`, `type_id`, `create_time`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]')
 
 4. 功能：修改商品。Method: PUT。URL: /api/product/:id
 
-UPDATE `product_items` SET `ID`='[value-1]',`author_name`='[value-2]',
-`product_copy`='[value-3]',`price`='[value-4]',`state`='[value-5]',
-`pic_path`='[value-6]',`create_time`='[value-7]',`type_id`='[value-8]' WHERE ID=?
+UPDATE `product_items` SET `ID`='[value-1]',`author_name`='[value-2]',`product_name`='[value-3]',`product_copy`='[value-4]',`price`='[value-5]',`pic_path`='[value-6]',`sell_count`='[value-7]',`file_type`='[value-8]',`work_time`='[value-9]',`type_id`='[value-10]',`create_time`='[value-11]'  WHERE ID=?
 
 5. 功能：刪除商品。Method: DELETE。URL: /api/product/:id 
 
