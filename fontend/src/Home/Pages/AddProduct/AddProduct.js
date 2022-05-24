@@ -11,6 +11,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { BsCaretDownFill } from "react-icons/bs";
 
 function EditProduct() {
+  
   const doFirst = () => {
     // 先跟 HTML 畫面產生關聯，再建事件聆聽功能
     document.getElementById("theFile").onchange = fileChange;
