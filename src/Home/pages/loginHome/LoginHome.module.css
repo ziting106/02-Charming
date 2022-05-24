@@ -9,7 +9,8 @@
     color: var(--brown2);
 }
 .icon{
-   right: 20%;
+    position: absolute;
+   left: 10%;
 }
 .padding5px {
     color: var(--yellow1);
@@ -23,6 +24,7 @@
 .middleText {
     font-size: var(--heading5);
     text-align: center;
+    padding:0PX 10%;
 }
 /* 卡片排列方式 */
 .cardFlex {
@@ -41,6 +43,10 @@
 @media screen and (max-width:1024px){
     .cardFlex > div{
         width:25%;
+    }
+    .icon{
+        position: absolute;
+       left: 5%;
     }
     
 }
