@@ -12,53 +12,23 @@
     position: absolute;
    left: 10%;
 }
-.padding5px {
-    color: var(--yellow1);
-    margin-right: 20px;
-}
-
-.padding5px {
-    padding: 0px 5px;
-}
 
 .middleText {
     font-size: var(--heading5);
     text-align: center;
     padding:0PX 10%;
 }
-/* 卡片排列方式 */
-.cardFlex {
+.productType{
     display: flex;
-    /* overflow: scroll; */
-    flex-wrap: wrap;
 }
-.cardFlex > div{
-    width:20%;
-}
-
-.cardFlex::-webkit-scrollbar {
-    display: none; /* Chrome Safari */
-  }
-
 @media screen and (max-width:1024px){
-    .cardFlex > div{
-        width:25%;
-    }
     .icon{
         position: absolute;
        left: 5%;
     }
     
 }
-@media screen and (max-width:780px) {
-    .cardFlex > div{
-        width:33%;
-    }
-}
 @media screen and (max-width:441px){
-    .cardFlex > div{
-        width:50%;
-    }
     .middleText {
         font-size: var(--heading6);
     }
