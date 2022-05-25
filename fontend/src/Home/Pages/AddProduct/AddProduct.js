@@ -1,17 +1,29 @@
 // 功能：取得單筆商品資料。Method: GET。URL: /api/product/:id
 // 功能：修改商品。Method: PUT。URL: /api/product/:id
 
-import React from "react";
+import React, {useEffect,useState} from "react";
 import LoginNav from "../../Components/LoginNav/LoginNav";
-import Footer from "../../Components/Footer/Footer";
-import PhoneFooter from "../../Components/PhoneFooter/PhoneFooter";
-import ProductBtobButton from "../../Components/ProductBtobButton/ProductBtobButton";
 import style from "./AddProduct.module.css";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { BsCaretDownFill } from "react-icons/bs";
 
 function EditProduct() {
-  
+  const [products, setProducts] = useState([])
+  const fetchProducts = async () => {
+    //向遠端伺服器get資料 http://localhost:3000/Sales/api/product?id=1
+    const response = await fetch('http://localhost:3000/Sales/api/product?id=1')
+    const data = await response.json();
+    // 載入資料後設定到狀態中
+    // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
+    setProducts(data);
+  }
+
+  // didMount
+  useEffect(() => {
+    fetchProducts()
+    console.log(products);
+  }, [])
+
   const doFirst = () => {
     // 先跟 HTML 畫面產生關聯，再建事件聆聽功能
     document.getElementById("theFile").onchange = fileChange;
@@ -33,6 +45,8 @@ function EditProduct() {
     <>
       <LoginNav />
       <section className={style.addProduct}>
+
+      <form name="form1" action="/action_page.php" enctype="multipart/form-data" method="post" onSubmit="checkForm(); return false;">
         <div className={style.pictureField}>
           <p className={style.title}>新增圖片</p>
 
@@ -158,9 +172,10 @@ function EditProduct() {
           </div>
         </div>
         <div className={style.submitButtonField}>
-          <input type="submit" value="上架" className={style.submitButton} />
+          <input type="submit" value="上架" className={style.submitButton}/>
           <a href="" className={style.submitButton}>取消</a>
         </div>
+        </form>
       </section>
     </>
   );

@@ -1,10 +1,18 @@
-import React from "react";
+import React,{ useState } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, } from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Switch,
+// } from 'react-router-dom'
+// import React, { useState } from 'react'
 
 //component
 import Footer from "./Home/Components/Footer/Footer";
 import PhoneFooter from "./Home/Components/PhoneFooter/PhoneFooter";
+
+
 
 //首頁
 import LoginHome from "./Home/Pages/LoginHome/LoginHome";
@@ -41,6 +49,7 @@ import MyNotice from "./Account/Pages/User/MyNotice";
 //討論區
 
 function App() {
+  document.title = `Charming`;
   return (
     <div>
       <Routes>

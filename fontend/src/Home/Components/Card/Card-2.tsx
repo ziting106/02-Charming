@@ -3,23 +3,13 @@ import Styles from "./Card.module.css";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 
 interface RobotProps {
-  ID: number;
-  author_name: string;
-  product_name: string;
-  product_copy: string;
+  id: number;
+  name: string;
+  email: string;
   price: number;
-  pic_path: string;
-  sell_count: number;
-  file_type: string;
 }
-const pig = "book1-1.webp";
-const Card: React.FC<RobotProps> = ({
-  ID,
-  author_name,
-  product_name,
-  price,
-  pic_path,
-}) => {
+const pig = "book1-2.webp";
+const Card: React.FC<RobotProps> = ({ id, name, email, price }) => {
   return (
     <div className={Styles.cardContainer}>
       <div className={Styles.cardSize}>
@@ -28,10 +18,10 @@ const Card: React.FC<RobotProps> = ({
         </a>
         <FcLikePlaceholder className={Styles.like} />
         <a href="">
-          <h2>{product_name}</h2>
+          <h2>{name}</h2>
         </a>
         <a href="">
-          <p>{author_name}</p>
+          <p>{email}</p>
         </a>
 
         <div className={Styles.price}>

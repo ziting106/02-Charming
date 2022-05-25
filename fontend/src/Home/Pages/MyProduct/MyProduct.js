@@ -10,7 +10,6 @@ import LoginNav from "../../Components/LoginNav/LoginNav";
 import ProductBtobButton from "../../Components/ProductBtobButton/ProductBtobButton";
 import EditProduct from "../../Components/EditProduct/EditProduct";
 //json資料
-import users from "../../Mockdata/users.json";
 
 function MyProduct() {
   return (
