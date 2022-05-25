@@ -5,15 +5,17 @@
 import React from "react";
 import Style from "./EditProduct.module.css";
 import EditCard from "../EditCard/EditCard";
-import users from "../../Mockdata/users.json";
+import productItem from "../../Mockdata/product_items.json"
+
 function MyProduct() {
   return (
     <>
       <div className={Style.arrangement}>
         <ul className={Style.cardFlex}>
-            {users.map((r) => (
+            {productItem.map((r) => (
               <div>
-              <EditCard key={r.id} id={r.id} email={r.email} name={r.name} price={r.price}/>
+              <EditCard key={r.id} ID={r.id} author_name={r
+              .author_name} product_name={r['product_name']} product_copy={r.product_copy} price={r.price} pic_path={r.pic_path} sell_count={r.sell_count}/>
               </div>
             ))}
         </ul>

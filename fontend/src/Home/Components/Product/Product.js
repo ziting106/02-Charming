@@ -5,17 +5,17 @@
 import React from "react";
 import Style from "./Product.module.css";
 import Card from "../Card/Card";
-import productitem from "../../Mockdata/product_items.json"
+import productItem from "../../Mockdata/product_items.json"
 
 function MyProduct() {
   return (
     <>
       <div className={Style.arrangement}>
         <ul className={Style.cardFlex}>
-            {productitem.map((r) => (
+            {productItem.map((r) => (
               <div>
-              <Card ID={r.ID} author_name={r
-              .author_name} product_name={r.product_name} product_copy={r.product_copy} price={r.price}/>
+              <Card key={r.id} ID={r.id} author_name={r
+              .author_name} product_name={r['product_name']} product_copy={r.product_copy} price={r.price} pic_path={r.pic_path} sell_count={r.sell_count}/>
               </div>
             ))}
         </ul>

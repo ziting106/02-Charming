@@ -4,9 +4,11 @@ import Style from "./LoginHome.module.css";
 import LoginNav from "../../Components/LoginNav/LoginNav";
 import Card from "../../Components/Card/Card";
 import AsideProductLIst from "../../Components/AsideProductLIst/AsideProductLIst";
-import MyProduct from "../../Components/Product/Product";
+import Product from "../../Components/Product/Product";
 import Slider from "../../Components/Slider/Slider";
 import SliderSection from "../../Components/SliderSection/SliderSection";
+
+
 // react icon
 import { AiTwotoneSound } from "react-icons/ai";
 
@@ -30,7 +32,7 @@ function LoginHome() {
       <SliderSection/>
       <section className={Style.productType}>
         <AsideProductLIst />
-        <MyProduct />
+        <Product />
       </section>
     </header>
   );

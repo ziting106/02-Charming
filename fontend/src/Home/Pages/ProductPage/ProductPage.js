@@ -5,12 +5,16 @@
 
 import React from "react";
 import LoginNav from "../../Components/LoginNav/LoginNav";
+import style from "./ProductPage.module.css";
 
 function Product() {
   return (
     <>
       <LoginNav />
+      <section className={style.ProductPage}>
       <h3>商品總攬 Page</h3>
+      
+      </section>
     </>
   );
 }
