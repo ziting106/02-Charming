@@ -22,5 +22,21 @@
         "workspaceRoot": "/Users/zitingliu/Documents/00-GitHub/charmingLocal",
         "workspacePath": "fontend/src/Home/Assets",
         "id": "3iEfz9GcPSC8lJbL"
+    },
+    {
+        "type": "File",
+        "name": "/Users/zitingliu/Documents/00-GitHub/charmingLocal/fontend/src/Home/Pages/AddProduct/AddProduct.js",
+        "parent_id": null,
+        "workspaceRoot": "/Users/zitingliu/Documents/00-GitHub/charmingLocal",
+        "workspacePath": "fontend/src/Home/Pages/AddProduct/AddProduct.js",
+        "id": "PgQ94cxMo6hmtinW"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/zitingliu/Documents/00-GitHub/charmingLocal/fontend/src/Home",
+        "parent_id": null,
+        "workspaceRoot": "/Users/zitingliu/Documents/00-GitHub/charmingLocal",
+        "workspacePath": "fontend/src/Home",
+        "id": "bJMzqnWTvhLtE1NA"
     }
 ]

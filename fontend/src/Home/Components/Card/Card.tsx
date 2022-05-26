@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./Card.module.css";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 

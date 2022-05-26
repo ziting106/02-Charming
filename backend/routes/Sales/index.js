@@ -1,5 +1,6 @@
 var express = require("express");
 var sales = express.Router();
+
 const connection = require("../../modules/mysql_config");
 
 // 範例
