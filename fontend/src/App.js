@@ -11,6 +11,7 @@ import { Route, Routes, } from "react-router-dom";
 //component
 import Footer from "./Home/Components/Footer/Footer";
 import PhoneFooter from "./Home/Components/PhoneFooter/PhoneFooter";
+import Product from "./Home/Components/Product/Product"
 
 
 
@@ -62,6 +63,7 @@ function App() {
         <Route path="/EditProductPage" element={<EditProductPage />} />
         <Route path="/AddProduct" element={<AddProduct />} />
         <Route path="/ProductPage" element={<ProductPage />} />
+        <Route path="/Product" element={<Product />} />
         <Route path="/" element={<UnloginHome />} />
 
         {/* --------註冊及登入----- */}

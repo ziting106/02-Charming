@@ -26,6 +26,7 @@ const Card: React.FC<CardProps> = ({
   // let a = products[0]["pic_path"].split(" ");
   const a = pic_path.split(" ");
   // console.log(a[0]);
+  const pig = "book2-2.webp";
 
   return (
     <li className={Styles.cardContainer}>

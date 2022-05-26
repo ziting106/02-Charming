@@ -19,6 +19,56 @@
     border: 2px solid var(--brown2);
     border-radius: var(--borderRadius);
 }
+/* 刊登時間，檔案格式 */
+.updateTime{
+    display: flex;
+    margin-top: 10px;
+
+}
+.updateTime p{
+    margin-right: 30px;
+    color: var(--brown2);
+}
+/* price */
+.priceDiv{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+.price{
+    font-size: var(--heading3);
+    color: var(--red);
+}
+/* 購買數量 */
+.numberCount{
+    color: var(--brown2);
+}
+.shoppingCar{
+    width: 200px;
+    display: block;
+    appearance: none;
+    padding:15px 30px;
+    border: none;
+    font-size: var(--heading4);
+    border-radius: 15px;
+    color: var(--white);
+    margin: 5px;
+    margin-top: 10px;
+    background-color: var(--red);
+}
+.productAdd {
+    width: 200px;
+    display: block;
+    appearance: none;
+    padding:15px 30px;
+    border: none;
+    font-size: var(--heading4);
+    border-radius: 15px;
+    color: var(--white);
+    margin: 5px;
+    margin-top: 10px;
+    background-color: var(--white);
+}
 .smallImg a{
     display: block;
     /* flex-direction: column; */

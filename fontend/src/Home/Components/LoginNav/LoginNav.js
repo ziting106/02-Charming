@@ -109,19 +109,19 @@ function LoginNav(props) {
         <hr/>
         <ul className={style.itemList}>
           <a href="">
+            <li>NFT</li>
+          </a>
+          <a href="">
             <li>UI/UX</li>
           </a>
           <a href="">
-            <li>品牌宣傳</li>
+            <li>書籍/翻譯</li>
+          </a>
+          <a href="">
+            <li>Logo</li>
           </a>
           <a href="">
             <li>插圖</li>
-          </a>
-          <a href="">
-            <li>網頁設計</li>
-          </a>
-          <a href="">
-            <li>攝影</li>
           </a>
         </ul>
         <hr/>
