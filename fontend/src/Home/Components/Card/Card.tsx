@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <li className={Styles.cardContainer}>
       <div className={Styles.cardSize}>
-        <a href="/ProductPage">
+        <a href="/LoginHome/Product/1/2">
           <img alt="robot" src={require(`../../Assets/ProductImg/${a[0]}`)} />
         </a>
         <FcLikePlaceholder className={Styles.like} />

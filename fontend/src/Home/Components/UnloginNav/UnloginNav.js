@@ -21,7 +21,7 @@ function UnloginNav(props){
       <nav className={style.navBar}>
         {/* logo 與charming文字 */}
         <div className={style.charmingLogo}>
-          <a href="/UnloginHome" className={style.logoIcon}>
+          <a href="/" className={style.logoIcon}>
             <img src={logo} alt="logo" />
             <p>柴米Charming</p>
           </a>

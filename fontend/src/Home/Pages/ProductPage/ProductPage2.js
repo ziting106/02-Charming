@@ -4,36 +4,33 @@
 // 顯示超過4張，右邊最後一張要加半黑濾鏡(+N)
 
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import LoginNav from "../../Components/LoginNav/LoginNav";
 import style from "./ProductPage.module.css";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 import Designer from "../../Components/Designer/Designer";
 
+
 function Product() {
   // 連線檔
   const [products, setProducts] = useState([]);
-  const catchUserId = useParams();
-  console.log(catchUserId);
+
   const fetchProducts = async () => {
     //向遠端伺服器get資料 http://localhost:3000/Sales/api/product?id=1
     const response = await fetch(
-      //取單一商品資料
-      `http://localhost:3000/Sales/api/product/${catchUserId.UserId}/${catchUserId.ProductID}`
+      "http://localhost:3000/Sales/api/product?id=1"
     );
     const data = await response.json();
     //測試
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setProducts(data[0]);
-    console.log(products);
+    console.log(products[0]);
   };
 
   // didMount
   useEffect(() => {
     fetchProducts();
   }, []);
-
   return (
     <>
       <LoginNav />
@@ -46,36 +43,10 @@ function Product() {
             <a href=""></a>
           </div>
           <div className={style.smallImg}>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[0]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[1]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[2]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[3]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[5]}`)}
-              /> */}
-            </a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
           </div>
         </div>
         {/*  刊登時間，檔案格式 */}
@@ -84,12 +55,15 @@ function Product() {
           <p>刊登時間{}</p>
           <p>檔案格式{}</p>
         </div>
-
         {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}
         <div className={style.priceDiv}>
           <p className={style.price}>NT$300{}</p>
-          <div className={style.numberCount}>
-            <p>購買數量</p>
+
+          <div>
+            <div className={style.numberCount}>
+              <p>購買數量</p>
+              <input type="number"></input>
+            </div>
             <button className={style.shoppingCar}>加入購物車</button>
             <button className={style.productAdd}>收藏商品</button>
           </div>

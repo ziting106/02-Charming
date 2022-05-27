@@ -1,6 +1,6 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Route, Routes, } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import {
 //   BrowserRouter as Router,
 //   Route,
@@ -11,9 +11,7 @@ import { Route, Routes, } from "react-router-dom";
 //component
 import Footer from "./Home/Components/Footer/Footer";
 import PhoneFooter from "./Home/Components/PhoneFooter/PhoneFooter";
-import Product from "./Home/Components/Product/Product"
-
-
+import Product from "./Home/Components/Product/Product";
 
 //首頁
 import LoginHome from "./Home/Pages/LoginHome/LoginHome";
@@ -22,6 +20,7 @@ import MyProduct from "./Home/Pages/MyProduct/MyProduct";
 import EditProductPage from "./Home/Pages/EditProductPage/EditProductPage";
 import AddProduct from "./Home/Pages/AddProduct/AddProduct";
 import ProductPage from "./Home/Pages/ProductPage/ProductPage";
+// import ProductPage2 from "./Home/Pages/ProductPage/ProductPage4"
 
 //會員
 //Pages
@@ -55,16 +54,18 @@ function App() {
     <div>
       <Routes>
         {/* --------首頁------- */}
-        <Route path="/LoginHome" element={<LoginHome />} />
-        <Route path="/UnloginHome" element={<UnloginHome />} />
-        <Route path="/Login" element={<LoginHome />} />
-        <Route path="/LoginHome" element={<LoginHome />} />
-        <Route path="/MyProduct" element={<MyProduct />} />
-        <Route path="/EditProductPage" element={<EditProductPage />} />
-        <Route path="/AddProduct" element={<AddProduct />} />
-        <Route path="/ProductPage" element={<ProductPage />} />
-        <Route path="/Product" element={<Product />} />
         <Route path="/" element={<UnloginHome />} />
+        {/* 商品總覽頁 */}
+        <Route path="/Product/:UserId" element={<LoginHome />} />
+        <Route path="/MyProduct" element={<MyProduct />} />
+        <Route
+          path="/MyProduct/EditProductPage"
+          element={<EditProductPage />}
+        />
+        <Route path="/MyProduct/AddProduct" element={<AddProduct />} />
+        <Route path="/Product/:UserId/:ProductID" element={<ProductPage />} />
+        {/* <Route path="/LoginHome/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
+        {/* <Route path="/LoginHome/Product/:UserId" element={<Product />} /> */}
 
         {/* --------註冊及登入----- */}
         {/* 忘記密碼 */}

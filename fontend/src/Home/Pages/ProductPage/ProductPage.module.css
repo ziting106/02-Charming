@@ -41,7 +41,17 @@
 }
 /* 購買數量 */
 .numberCount{
+    align-items: center;
+}
+.numberCount input{
+    width: 50px;
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-size: var(--heading4);
     color: var(--brown2);
+    /* appearance: none; */
+
 }
 .shoppingCar{
     width: 200px;
@@ -55,6 +65,10 @@
     margin: 5px;
     margin-top: 10px;
     background-color: var(--red);
+    Cursor:pointer;
+}
+.shoppingCar:active{
+    background-color: rgb(93, 8, 8);
 }
 .productAdd {
     width: 200px;

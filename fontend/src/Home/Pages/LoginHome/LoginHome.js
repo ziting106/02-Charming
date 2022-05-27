@@ -30,7 +30,7 @@ function LoginHome() {
         </p>
       </hgroup>
 
-      <SliderSection/>
+      {/* <SliderSection/> */}
       <section className={Style.productType}>
         <AsideProductLIst />
         <Product />
