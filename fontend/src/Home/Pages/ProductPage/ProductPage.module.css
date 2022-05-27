@@ -2,10 +2,10 @@
     margin: 50px 150px;
     --borderRadius:15px;
     --bigPictureSize:550px;
-    --smallPictureSize:122px;
+    --smallPictureSize:94px;
 }
 .ProductPage h3{
-    font-size: var(heading3);
+    font-size: var(--heading3);
     color: var(--brown2);
 }
 .displayFlex{
@@ -33,7 +33,7 @@
 .priceDiv{
     display: flex;
     justify-content: space-between;
-    margin: 20px 0px;
+    margin: 20px 0px 0px 0px;
 }
 .price{
     font-size: var(--heading3);
@@ -83,7 +83,7 @@
     margin-top: 10px;
     background-color: var(--white);
 }
-.smallImg a{
+.smallImg{
     display: block;
     /* flex-direction: column; */
     /* justify-content: space-between; */
@@ -92,11 +92,21 @@
     margin-top: 20px;
     border: 2px solid var(--brown2);
     border-radius: var(--borderRadius);
+    overflow: hidden;
+    transform: translateY(0px);
+    translate: .4s;
 }
+.smallImg:hover{
+    transform: translateY(-50px);
+}
+.ProductText pre{
+    font-size: var(--heading5);
+    white-space: pre-wrap;
+}
+
 .displayFlex > p {
     font-size: var(--heading5);
 }
-
 @media screen and (max-width:1024px){
    
 }

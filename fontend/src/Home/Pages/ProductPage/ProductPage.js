@@ -5,16 +5,17 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import DetailPhoto from "../../Components/DetailPhoto/DetailPhoto";
 import LoginNav from "../../Components/LoginNav/LoginNav";
 import style from "./ProductPage.module.css";
-import { FcLikePlaceholder, FcLike } from "react-icons/fc";
-import Designer from "../../Components/Designer/Designer";
 
-function Product() {
+function ProductPage() {
   // 連線檔
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({
+    pic_path:'',
+  });
+
   const catchUserId = useParams();
-  console.log(catchUserId);
   const fetchProducts = async () => {
     //向遠端伺服器get資料 http://localhost:3000/Sales/api/product?id=1
     const response = await fetch(
@@ -22,72 +23,53 @@ function Product() {
       `http://localhost:3000/Sales/api/product/${catchUserId.UserId}/${catchUserId.ProductID}`
     );
     const data = await response.json();
-    //測試
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setProducts(data[0]);
-    console.log(products);
   };
-
+  // console.log(products);
   // didMount
   useEffect(() => {
     fetchProducts();
   }, []);
+  
+  const a = (products.pic_path.split(" "));
+  console.log(a);
 
   return (
     <>
       <LoginNav />
       {/* 商品名稱 */}
       <section className={style.ProductPage}>
-        <h3>商品總攬 Page</h3>
+        <h3>{ProductPage.product_name}</h3>
         {/* 圖片放置區 */}
+
         <div className={style.displayFlex}>
-          <div className={style.bigImg}>
-            <a href=""></a>
+          <div>
+            <a href="">
+            <img className={style.bigImg} src={require(`../../Assets/ProductImg/${a[0]}`)}/>
+            </a>
           </div>
-          <div className={style.smallImg}>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[0]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[1]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[2]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[3]}`)}
-              /> */}
-            </a>
-            <a href="">
-              {/* <img
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${[5]}`)}
-              /> */}
-            </a>
+          {/* <DetailPhoto/> */}
+          <div className={style.littlePhoto}>
+            {/* {a.map((r) => (
+                <img key={r.a} className={style.smallImg}
+                  alt="robot"
+                  src={require(`../../Assets/ProductImg/${r}`)}
+                />
+            ))} */}
           </div>
         </div>
         {/*  刊登時間，檔案格式 */}
 
         <div className={style.updateTime}>
-          <p>刊登時間{}</p>
-          <p>檔案格式{}</p>
+          <p>刊登時間：{products.create_time}</p>
+          <p>檔案格式：{products.file_type}</p>
         </div>
 
         {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}
         <div className={style.priceDiv}>
-          <p className={style.price}>NT$300{}</p>
+          <p className={style.price}>${products.price}</p>
           <div className={style.numberCount}>
             <p>購買數量</p>
             <button className={style.shoppingCar}>加入購物車</button>
@@ -95,16 +77,24 @@ function Product() {
           </div>
         </div>
         {/* 商品簡介 */}
-        <article className={style.displayFlex}>
+        <article className={style.ProductText}>
           <div>商品介紹</div>
+          <pre>{products.product_copy}</pre>
           <div>
             {/* 關於設計師 */}
             <div>關於設計師</div>
-            <Designer />
+            <div className={style.displayFlex}>
+              <div>img</div>
+              <div className={style.displayFlex}>
+                <div></div>
+                <div>icon</div>
+              </div>
+              <button>聯絡設計師</button>
+            </div>
           </div>
         </article>
       </section>
     </>
   );
 }
-export default Product;
+export default ProductPage;

@@ -8,10 +8,9 @@ import { useParams } from "react-router-dom";
 import LoginNav from "../../Components/LoginNav/LoginNav";
 import style from "./ProductPage.module.css";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
-import Designer from "../../Components/Designer/Designer";
 
 interface ProductPageProps {
-  id: number;
+  ID: number;
   product_name: string;
   author_name: string;
   product_copy: string;
@@ -22,7 +21,7 @@ interface ProductPageProps {
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({
-  id,
+  ID,
   product_name,
   author_name,
   product_copy,
@@ -31,27 +30,27 @@ const ProductPage: React.FC<ProductPageProps> = ({
   sell_count,
   file_type,
 }) => {
-  // let a = products[0]["pic_path"].split(" ");
-  const a = pic_path.split(" ");
-  // console.log(a[0]);
-
-  const [products, setProducts] = useState([]);
+  // 連線檔
+  const [productsDetail, setProducts] = useState([]);
   const catchUserId = useParams();
-  const catchProductId = useParams();
-  // console.log(catchProductId.ProductID);
+  console.log(catchUserId);
   const fetchProducts = async () => {
     //向遠端伺服器get資料 http://localhost:3000/Sales/api/product?id=1
     const response = await fetch(
       //取單一商品資料
-      `http://localhost:3000/Sales/api/product/${catchUserId.UserId}/${catchProductId.ProductID}`
+      `http://localhost:3000/Sales/api/product/${catchUserId.UserId}/${catchUserId.ProductID}`
     );
     const data = await response.json();
     //測試
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setProducts(data[0]);
-    console.log(products);
   };
+  // let a = products[0]["pic_path"].split(" ");
+  console.log(productsDetail);
+
+  const a = pic_path.split(" ");
+  console.log(a[0]);
 
   // didMount
   useEffect(() => {
@@ -70,7 +69,7 @@ const ProductPage: React.FC<ProductPageProps> = ({
             <a href=""></a>
           </div>
           <div className={style.smallImg}>
-            <a href="">
+            {/* <a href="">
               <img
                 alt="robot"
                 src={require(`../../Assets/ProductImg/${a[0]}`)}
@@ -99,7 +98,7 @@ const ProductPage: React.FC<ProductPageProps> = ({
                 alt="robot"
                 src={require(`../../Assets/ProductImg/${a[5]}`)}
               />
-            </a>
+            </a> */}
           </div>
         </div>
         {/*  刊登時間，檔案格式 */}
@@ -124,7 +123,6 @@ const ProductPage: React.FC<ProductPageProps> = ({
           <div>
             {/* 關於設計師 */}
             <div>關於設計師</div>
-            <Designer />
           </div>
         </article>
       </section>

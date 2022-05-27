@@ -35,7 +35,7 @@ function SignIn(props) {
           <input type="password" />
           <Link to="/signin/identify">忘記密碼</Link>
         </form>
-        <a href="Product/:UserId">
+        <a href="Product/1">
           <button
             className={style.button}
             onClick={() => {

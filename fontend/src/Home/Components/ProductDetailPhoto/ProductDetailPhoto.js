@@ -1,5 +1,5 @@
 import React from 'react'
-import style from "./Designer.module.css"
+import style from "./ProductDetailPhoto.module.css"
 import userImg from "../../Assets/product4.png"
 function ComponentsName(){
   return(

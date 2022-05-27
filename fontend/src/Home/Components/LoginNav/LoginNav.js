@@ -23,7 +23,7 @@ function LoginNav(props) {
       <nav className={style.navBar}>
         {/* logo 與charming文字 */}
         <div className={style.charmingLogo}>
-          <a href="loginHome" className={style.logoIcon}>
+          <a href="/Product/1" className={style.logoIcon}>
             <img src={logo} alt="logo" />
             <p>柴米Charming</p>
           </a>
@@ -95,7 +95,7 @@ function LoginNav(props) {
                   <a href="/MyProduct">我的商品</a>
                   <a href="/collection">我的收藏</a>
                   <a href="/shoppinglist">購買清單</a>
-                  <a href="/UnloginHome">登出</a>
+                  <a href="/">登出</a>
                 </div>
                 {/* ——————————————————————————————————————— */}
               </li>

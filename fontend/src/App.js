@@ -58,6 +58,7 @@ function App() {
         {/* 商品總覽頁 */}
         <Route path="/Product/:UserId" element={<LoginHome />} />
         <Route path="/Product/:UserId/:ProductID" element={<ProductPage />} />
+        {/* <Route path="/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
 
         <Route path="/MyProduct" element={<MyProduct />} />
         <Route
@@ -65,7 +66,6 @@ function App() {
           element={<EditProductPage />}
         />
         <Route path="/MyProduct/AddProduct" element={<AddProduct />} />
-        {/* <Route path="/LoginHome/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
         {/* <Route path="/LoginHome/Product/:UserId" element={<Product />} /> */}
 
 
