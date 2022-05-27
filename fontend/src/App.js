@@ -57,15 +57,17 @@ function App() {
         <Route path="/" element={<UnloginHome />} />
         {/* 商品總覽頁 */}
         <Route path="/Product/:UserId" element={<LoginHome />} />
+        <Route path="/Product/:UserId/:ProductID" element={<ProductPage />} />
+
         <Route path="/MyProduct" element={<MyProduct />} />
         <Route
           path="/MyProduct/EditProductPage"
           element={<EditProductPage />}
         />
         <Route path="/MyProduct/AddProduct" element={<AddProduct />} />
-        <Route path="/Product/:UserId/:ProductID" element={<ProductPage />} />
         {/* <Route path="/LoginHome/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
         {/* <Route path="/LoginHome/Product/:UserId" element={<Product />} /> */}
+
 
         {/* --------註冊及登入----- */}
         {/* 忘記密碼 */}

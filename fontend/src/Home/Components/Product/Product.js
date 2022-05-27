@@ -3,9 +3,9 @@
 // 計算筆數 => Json轉陣列
 // 功能：刪除商品。Method: DELETE。URL: /api/product/:id
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Style from "./Product.module.css";
 import Card from "../Card/Card";
-import { useParams } from "react-router-dom";
 // import productItem from "../../Mockdata/product_items.json"
 
 
@@ -16,7 +16,7 @@ function MyProduct() {
   // console.log(catchUserId.UserId)
   const fetchProducts = async () => {
     //向遠端伺服器get資料 http://localhost:3000/Sales/api/product?id=1
-    const response = await fetch(`http://localhost:3000/Sales/api/product?id=${catchUserId.Id}`)
+    const response = await fetch(`http://localhost:3000/Sales/api/product?id=${catchUserId.UserId}`)
     const data = await response.json();
     //測試
     // 載入資料後設定到狀態中

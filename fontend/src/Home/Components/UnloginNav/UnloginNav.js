@@ -1,20 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import style from "./UnloginNav.module.css";
-import { AiOutlineGlobal } from 'react-icons/ai';
-import { FaAngleDown } from 'react-icons/fa';
-import { ImSearch } from 'react-icons/im'
+import { AiOutlineGlobal } from "react-icons/ai";
+import { FaAngleDown } from "react-icons/fa";
+import { ImSearch } from "react-icons/im";
 import logo from "../../Assets/charming_logo.png";
 
-function UnloginNav(props){
-  const [typebar,setNavbar] = useState(false);
-  const displayItemType = () =>{
-    if(window.scrollY >= 400){
+function UnloginNav(props) {
+  const [typebar, setNavbar] = useState(false);
+  const displayItemType = () => {
+    if (window.scrollY >= 400) {
       setNavbar(true);
-    }else{
+    } else {
       setNavbar(false);
     }
-  }
-  window.addEventListener('scroll',displayItemType);
+  };
+  window.addEventListener("scroll", displayItemType);
 
   return (
     <header className={style.mainPage}>
@@ -27,7 +27,9 @@ function UnloginNav(props){
           </a>
         </div>
 
-       <div className={typebar ? `${style.searchBar}` :`${style.displayNone}`}>
+        <div
+          className={typebar ? `${style.searchBar}` : `${style.displayNone}`}
+        >
           <input
             type="search"
             placeholder="Search.."
@@ -44,12 +46,14 @@ function UnloginNav(props){
 
         {/* 平版版搜尋 */}
         {/* <div className={style.padSearch}> */}
-        <div className={typebar ? `${style.padSearch}` :`${style.displayNone}`}>
+        <div
+          className={typebar ? `${style.padSearch}` : `${style.displayNone}`}
+        >
           <ImSearch className={style.padSearchIcon} />
           <input type="search" className={style.padSearchBar}></input>
         </div>
         {/* -------選項------- */}
-       <div className={style.charmingItem}>
+        <div className={style.charmingItem}>
           <ul className={style.itemStyle}>
             <div>
               <li className={style.changeLanguage}>
@@ -80,8 +84,10 @@ function UnloginNav(props){
         </div>
       </nav>
 
-     <div className={typebar ? `${style.displayblock}` :`${style.displayNone}`}>
-        <hr/>
+      <div
+        className={typebar ? `${style.displayblock}` : `${style.displayNone}`}
+      >
+        <hr />
         <ul className={style.itemList}>
           <a href="">
             <li>UI/UX</li>
@@ -99,9 +105,9 @@ function UnloginNav(props){
             <li>攝影</li>
           </a>
         </ul>
-        <hr/>
+        <hr />
       </div>
     </header>
   );
-};
+}
 export default UnloginNav;

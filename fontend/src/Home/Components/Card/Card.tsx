@@ -3,7 +3,7 @@ import Styles from "./Card.module.css";
 import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 
 interface CardProps {
-  id: number;
+  ID: number;
   product_name: string;
   author_name: string;
   product_copy: string;
@@ -14,7 +14,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
-  id,
+  ID,
   product_name,
   author_name,
   product_copy,
@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <li className={Styles.cardContainer}>
       <div className={Styles.cardSize}>
-        <a href="/LoginHome/Product/1/2">
+        <a href={`/Product/1/${ID}`}>
           <img alt="robot" src={require(`../../Assets/ProductImg/${a[0]}`)} />
         </a>
         <FcLikePlaceholder className={Styles.like} />
