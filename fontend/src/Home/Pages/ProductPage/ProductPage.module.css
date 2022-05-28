@@ -1,5 +1,5 @@
 .ProductPage{
-    margin: 50px 150px;
+    margin: 50px 200px;
     --borderRadius:15px;
     --bigPictureSize:550px;
     --smallPictureSize:94px;
@@ -10,12 +10,13 @@
 }
 .displayFlex{
     display: flex;
+    justify-content: space-between;
 }
 .bigImg{
     width: var(--bigPictureSize);
     height: var(--bigPictureSize);
-    margin-top: 20px;
-    margin-right: 20px;
+    /* margin-top: 20px; */
+    margin-right: 10px;
     border: 2px solid var(--brown2);
     border-radius: var(--borderRadius);
 }
@@ -31,9 +32,9 @@
 }
 /* price */
 .priceDiv{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0px 0px 0px;
+    margin-left: 50px;
+    /* display: flex;
+    justify-content: space-between; */
 }
 .price{
     font-size: var(--heading3);
@@ -85,19 +86,19 @@
 }
 .smallImg{
     display: block;
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
     width: var(--smallPictureSize);
     height: var(--smallPictureSize);
-    margin-top: 20px;
-    border: 2px solid var(--brown2);
+    margin-bottom: 20px;
+    /* border: 2px solid var(--brown2); */
     border-radius: var(--borderRadius);
+    opacity: .4;
     overflow: hidden;
     transform: translateY(0px);
     translate: .4s;
 }
 .smallImg:hover{
-    transform: translateY(-50px);
+    transform: translateY(-10px);
+    opacity: 1;
 }
 .ProductText pre{
     font-size: var(--heading5);
@@ -106,6 +107,24 @@
 
 .displayFlex > p {
     font-size: var(--heading5);
+}
+.buyNumber{
+ display: flex;
+ align-items: center;
+}
+/* 文字輸入框樣式 */
+.inputTextStyle{
+    border: 2px solid var(--brown3);
+    border-radius: 15px;
+    width: var(--textAreaWidth);
+    padding: 10px;
+    font-size: var(--heading4);
+}
+.title{
+    font-size: var(--heading4);
+    color: var(--brown2);
+    padding-right:50px ;
+    white-space: nowrap;
 }
 @media screen and (max-width:1024px){
    
