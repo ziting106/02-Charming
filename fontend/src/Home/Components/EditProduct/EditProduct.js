@@ -13,9 +13,9 @@ function MyProduct() {
       <div className={Style.arrangement}>
         <ul className={Style.cardFlex}>
             {productItem.map((r) => (
-              <div>
-              <EditCard key={r.id} ID={r.id} author_name={r
-              .author_name} product_name={r['product_name']} product_copy={r.product_copy} price={r.price} pic_path={r.pic_path} sell_count={r.sell_count}/>
+              <div key={r.ID}>
+              <EditCard ID={r.ID} author_name={r
+              .author_name} produc  t_name={r['product_name']} product_copy={r.product_copy} price={r.price} pic_path={r.pic_path} sell_count={r.sell_count}/>
               </div>
             ))}
         </ul>

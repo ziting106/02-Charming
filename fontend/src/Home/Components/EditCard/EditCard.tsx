@@ -23,13 +23,14 @@ const Card: React.FC<CardProps> = ({
   sell_count,
   file_type,
 }) => {
-  const pig = "book2-2.webp";
+  const a = pic_path.split(" ");
   return (
     <div className={Style.cardContainer}>
       <div className={Style.cardSize}>
-        <a href="/ProductPage">
-          <img alt="robot" src={require(`../../Assets/ProductImg/${pig}`)} />
-        </a>
+        <img
+          alt="robot"
+          src={require(`../../../../public/ProductImg/${a[0]}`)}
+        />
         <FcLikePlaceholder className={Style.like} />
         <a href="">
           <h2>{product_name}</h2>

@@ -51,8 +51,8 @@ const ProductPage: React.FC<ProductPageProps> = ({
   }, []);
 
   console.log(productsDetail.pic_path[0]);
-  // const a = pic_path.split(" ");
-  // console.log(a);
+  const a = pic_path.split(" ");
+  console.log(a);
 
   // didMount;
 
@@ -67,7 +67,10 @@ const ProductPage: React.FC<ProductPageProps> = ({
         <div className={style.displayFlex}>
           <div>
             <a href="">
-              {/* <img className={style.bigImg} src={require(`../../Assets/ProductImg/${a[0]}`)}/> */}
+              <img
+                className={style.bigImg}
+                src={require(`../../../../public/ProductImg/${a[0]}`)}
+              />
             </a>
           </div>
           {/* <DetailPhoto/> */}

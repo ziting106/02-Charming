@@ -5,9 +5,13 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import style from "./ProductPage.module.css";
+//component
 import DetailPhoto from "../../Components/DetailPhoto/DetailPhoto";
 import LoginNav from "../../Components/LoginNav/LoginNav";
-import style from "./ProductPage.module.css";
+import ProductDetailPhoto from "../../Components/ProductDetailPhoto/ProductDetailPhoto";
+// icon
+import { MdLocationOn, MdCalendarToday } from "react-icons/md";
 
 function ProductPage() {
   const [products, setProducts] = useState({
@@ -34,7 +38,6 @@ function ProductPage() {
   }, []);
 
   const a = products.pic_path.split(" ");
-  console.log(a);
 
   return (
     <>
@@ -44,65 +47,88 @@ function ProductPage() {
         {/* 圖片放置區 */}
 
         <div className={style.displayFlex}>
-          <div className={style.displayFlex}>
-            <a className="" href="d">
+          <ProductDetailPhoto />
+          {/* <img
+            className={style.bigImg}
+            alt=""
+            src={require(`../../../../public/ProductImg/${a[0]}`)}
+          /> */}
+          <div>
+              {/* {a.map((r) => (
               <img
-                className={style.bigImg}
+                key={r.a}
+                className={style.smallImg}
                 alt="robot"
-                src={require(`../../Assets/ProductImg/${a[0]}`)}
+                src={require(`../../Assets/ProductImg/${r}`)}
               />
-            </a>
-            <div className={style.littlePhoto}>
-              {a.map((r) => (
-                <img
-                  key={r.ID}
-                  className={style.smallImg}
-                  alt="robot"
-                  src={require(`../../Assets/ProductImg/${r}`)}
-                />
-              ))}
-            </div>
+            ))} */}
           </div>
           {/* <DetailPhoto/> */}
           {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}
           <div className={style.priceDiv}>
-            <h3>{products.product_name}</h3>
-            <p className={style.price}>${products.price}</p>
-            <div className={style.buyNumber}>
-              <p className={style.title}>購買數量</p>
-              <input
-                id="thePrice"
-                className={style.inputTextStyle}
-                type="text"
-                placeholder="請輸入商品數量"
-                required
-              ></input>
-            </div>
-            <div className={style.numberCount}>
-              <button className={style.shoppingCar}>加入購物車</button>
-              {/* 關於設計師 */}
-              <div>關於設計師</div>
+            <h3>
+              {products.product_name}
               <div className={style.displayFlex}>
-                <div>img</div>
-                <div className={style.displayFlex}>
-                  <div></div>
-                  <div>icon</div>
+                <p className={style.littleInformation}>
+                  刊登時間：{products.create_time}
+                </p>
+                <p className={style.littleInformation}>
+                  已售出：{products.sell_count}
+                </p>
+              </div>
+            </h3>
+            <p className={style.price}>${products.price}</p>
+            <div className={style.displayFlex}>
+              <div>
+                <p className={style.littleInformation}>繳交檔案格式：</p>
+                <pre className={style.littleInformation}>
+                  {products.file_type}
+                </pre>
+              </div>
+              <div className={style.buyNumber}>
+                <div className={style.sellNumber}>
+                  <p className={style.title}>購買數量</p>
+                  <input
+                    id="thePrice"
+                    className={style.inputTextStyle}
+                    type="number"
+                    placeholder="1"
+                    min="1"
+                    required
+                  ></input>
                 </div>
-                <button>關於設計師</button>
+                <button className={style.shoppingCar}>加入購物車</button>
+              </div>
+            </div>
+
+            {/* 關於設計師 */}
+            <div className={style.ProductTitle}>關於設計師</div>
+            <div className={style.displaySpaceAround}>
+              <img
+                className={style.designerPicture}
+                alt=""
+                src={require("../../Assets/charming_logo.png")}
+              />
+              <div>
+                <p className={style.aboutDesigner}>{products.author_name}</p>
+                <div className={style.icon}>
+                  <div>
+                    <MdLocationOn />
+                    所在地
+                  </div>
+                  <div>
+                    <MdCalendarToday />
+                    加入時間
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        {/*  刊登時間，檔案格式 */}
-
-        <div className={style.updateTime}>
-          <p>刊登時間：{products.create_time}</p>
-          <p>檔案格式：{products.file_type}</p>
-        </div>
 
         {/* 商品簡介 */}
         <article className={style.ProductText}>
-          <div>商品介紹</div>
+          <div className={style.ProductTitle}>商品介紹</div>
           <pre>{products.product_copy}</pre>
         </article>
       </section>
