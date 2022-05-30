@@ -184,17 +184,26 @@
     width: var(--smallPictureSize);
     height: var(--smallPictureSize);
     margin-bottom: 20px;
-    /* border: 2px solid var(--brown2); */
+    border: none;
     border-radius: var(--borderRadius);
     opacity: .4;
+    background-color: #fff;
+}
+.smallImg2{
+    display: block;
+    width: var(--smallPictureSize);
+    height: var(--smallPictureSize);
+    margin-bottom: 20px;
+    border-radius: var(--borderRadius);
     overflow: hidden;
     transform: translateY(0px);
     translate: .4s;
     object-fit: contain;
 }
-.smallImg:hover{
-    transform: translateY(-10px);
-    opacity: 1;
+.smallImg:focus{
+        transform: translateY(-10px);
+
+    opacity:1;
 }
 @media screen and (max-width:1024px){
    

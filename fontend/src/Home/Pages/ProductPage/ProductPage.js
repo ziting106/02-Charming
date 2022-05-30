@@ -7,9 +7,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import style from "./ProductPage.module.css";
 //component
-import DetailPhoto from "../../Components/DetailPhoto/DetailPhoto";
 import LoginNav from "../../Components/LoginNav/LoginNav";
-import ProductDetailPhoto from "../../Components/ProductDetailPhoto/ProductDetailPhoto";
 // icon
 import { MdLocationOn, MdCalendarToday } from "react-icons/md";
 
@@ -39,6 +37,19 @@ function ProductPage() {
 
   const a = products.pic_path.split(" ");
 
+  // 小圖
+  let p = [];
+  for (let i = 0; i < a.length; i++) {
+    p.push(
+      <button className={style.smallImg}>
+        <img
+          className={style.smallImg2}
+          alt="圖片顯示失敗"
+          src={`http://localhost:3001/ProductImg/${a[i]}`}
+        />
+      </button>
+    );
+  }
   return (
     <>
       <LoginNav />
@@ -47,23 +58,14 @@ function ProductPage() {
         {/* 圖片放置區 */}
 
         <div className={style.displayFlex}>
-          <ProductDetailPhoto />
-          {/* <img
+          <img
             className={style.bigImg}
             alt=""
-            src={require(`../../../../public/ProductImg/${a[0]}`)}
-          /> */}
+            src={`http://localhost:3001/ProductImg/${a[0]}`}
+          />
           <div>
-              {/* {a.map((r) => (
-              <img
-                key={r.a}
-                className={style.smallImg}
-                alt="robot"
-                src={require(`../../Assets/ProductImg/${r}`)}
-              />
-            ))} */}
+            {p}
           </div>
-          {/* <DetailPhoto/> */}
           {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}
           <div className={style.priceDiv}>
             <h3>
