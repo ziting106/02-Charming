@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Style from "./EditProduct.module.css";
 import EditCard from "../EditCard/EditCard";
-import productItem from "../../Mockdata/product_items.json"
 
 function EditProduct() {
 
