@@ -45,7 +45,7 @@ function ProductPage() {
         <img
           className={style.smallImg2}
           alt="圖片顯示失敗"
-          src={`http://localhost:3001/ProductImg/${a[i]}`}
+          src={`http://localhost:3001/Home/ProductImg/${a[i]}`}
         />
       </button>
     );
@@ -61,7 +61,7 @@ function ProductPage() {
           <img
             className={style.bigImg}
             alt=""
-            src={`http://localhost:3001/ProductImg/${a[0]}`}
+            src={`http://localhost:3001/Home/ProductImg/${a[0]}`}
           />
           <div>
             {p}

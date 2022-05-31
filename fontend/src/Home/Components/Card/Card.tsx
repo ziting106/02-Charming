@@ -34,7 +34,7 @@ const Card: React.FC<CardProps> = ({
           {/* <img alt="robot" src={require(`../../Assets/ProductImg/${a[0]}`)} /> */}
           <img
             alt="圖片無法顯示"
-            src={`http://localhost:3001/ProductImg/${a[0]}`}
+            src={`http://localhost:3001/Home/ProductImg/${a[0]}`}
           />
         </a>
         <FcLikePlaceholder className={Styles.like} />
