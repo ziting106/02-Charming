@@ -92,7 +92,7 @@ function LoginNav(props) {
                 <div className={style.navList}>
                   <a href="">會員資料修改</a>
                   <a href="">我的設計</a>
-                  <a href="/MyProduct">我的商品</a>
+                  <a href="/MyProduct/1">我的商品</a>
                   <a href="/collection">我的收藏</a>
                   <a href="/shoppinglist">購買清單</a>
                   <a href="/">登出</a>

@@ -20,6 +20,7 @@ import MyProduct from "./Home/Pages/MyProduct/MyProduct";
 import EditProductPage from "./Home/Pages/EditProductPage/EditProductPage";
 import AddProduct from "./Home/Pages/AddProduct/AddProduct";
 import ProductPage from "./Home/Pages/ProductPage/ProductPage";
+import ProductPageEditButton from "./Home/Pages/ProductPageEditButton/ProductPageEditButton";
 // import ProductPage2 from "./Home/Pages/ProductPage/ProductPage4"
 
 //會員
@@ -60,7 +61,8 @@ function App() {
         <Route path="/Product/:UserId/:ProductID" element={<ProductPage />} />
         {/* <Route path="/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
 
-        <Route path="/MyProduct" element={<MyProduct />} />
+        <Route path="/MyProduct/:UserId" element={<MyProduct />} />
+        <Route path="/MyProduct/:UserId/:ProductID" element={<ProductPageEditButton />} />
         <Route
           path="/MyProduct/EditProductPage"
           element={<EditProductPage />}

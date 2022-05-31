@@ -23,7 +23,7 @@ function MyProduct() {
         </div>
         <div className={Style.arrangement}>
           <ProductBtobButton />
-          {/* <EditProduct /> */}
+          <EditProduct />
         </div>
       </section>
     </>

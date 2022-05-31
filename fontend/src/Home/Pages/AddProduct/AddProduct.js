@@ -41,6 +41,18 @@ function EditProduct() {
   };
   window.addEventListener("load", doFirst);
 
+  // 上傳照片-老師的：
+  // router.get('/api/upload',(req,res)=>{
+  //   res.render('register',{ title: 'Ajax POST Demo' })
+  // })
+  // 上傳照片-我們的：
+  // sales.post(
+  //   "/api/upload",
+  //   upload.array("uploadedFiles", 5),
+  //   async (req, res, next) => {
+  //     res.send(JSON.stringify(req.files));
+  //   }
+  // );
   return (
     <>
       <LoginNav />

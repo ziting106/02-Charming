@@ -32,7 +32,7 @@ function LoginHome() {
 
       {/* <SliderSection/> */}
       <section className={Style.productType}>
-        <AsideProductLIst />
+        <AsideProductLIst className={Style.displayNone}/>
         <Product />
       </section>
     </header>
