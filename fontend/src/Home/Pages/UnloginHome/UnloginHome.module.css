@@ -26,10 +26,10 @@
     padding: 60px 0px 0px 0px;
   }
   .backgroundImg{
-    margin-bottom: 100px;
-      margin-right: 0px;
-      background:url(../../Assets/mainPage.png) no-repeat right;
-      background-size:60%;
+    height: 500px;
+    margin-right: 0px;
+    background:url(../../Assets/mainPage.png) no-repeat right;
+    background-size:60%;
 
   }
 
