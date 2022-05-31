@@ -8,7 +8,7 @@ import logo from "../../Assets/charming_logo.png";
 function UnloginNav(props) {
   const [typebar, setNavbar] = useState(false);
   const displayItemType = () => {
-    if (window.scrollY >= 400) {
+    if (window.scrollY >= 350) {
       setNavbar(true);
     } else {
       setNavbar(false);
