@@ -17,9 +17,9 @@ import introduce3 from "../../Assets/communication.png";
 function UnloginHome() {
   return (
     <header>
-      <UnloginNav />
       {/* search header */}
-      <hgroup className={style.backgroundImg}>
+      <div className={style.backgroundImg}>
+      <UnloginNav/>
 
         <div className={style.headerSlogan}>
           <h1 className={style.heading2}>有才有財，柴米網</h1>
@@ -37,13 +37,10 @@ function UnloginHome() {
             }}
           />
           <button
-            onClick={alert["visualViewpo1"]}
+
             className={style.searchButton}
           >
-            <p>
-              <ImSearch />
-              搜尋
-            </p>
+              <ImSearch className={style.iconStyle}/>
           </button>
         </div>
         <div className={style.tags}>
@@ -60,7 +57,7 @@ function UnloginHome() {
             <button className={style.searchTag}>中秋節</button>
           </a>
         </div>
-      </hgroup>
+      </div>
 
 
       {/* 產品頁介紹 */}
