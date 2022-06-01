@@ -64,7 +64,7 @@ function App() {
         <Route path="/MyProduct/:UserId" element={<MyProduct />} />
         <Route path="/MyProduct/:UserId/:ProductID" element={<ProductPageEditButton />} />
         <Route
-          path="/MyProduct/EditProductPage"
+          path="/MyProduct/Edit/:UserId/:ProductID"
           element={<EditProductPage />}
         />
         <Route path="/MyProduct/AddProduct" element={<AddProduct />} />

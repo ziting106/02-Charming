@@ -86,7 +86,7 @@ function ProductPage() {
                 </pre>
               </div>
               <div className={style.buyNumber}>
-                <a href="/MyProduct/EditProductPage">
+                <a href={`/MyProduct/Edit/1/${products.ID}`}>
                   <button className={style.EditProduct}>編輯商品</button>
                 </a>
               </div>

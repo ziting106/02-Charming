@@ -50,6 +50,28 @@ function ProductPage() {
       </button>
     );
   }
+  // new
+  let storage = localStorage
+
+  function additem() {
+    if (storage[products.ID]) {
+      alert('已成功加入購物車')
+    } else {
+      if (storage['addItemList'] == null) {
+        storage['addItemList'] = `${products.ID}`
+      } else {
+        storage['addItemList'] += `| ${products.ID}`
+      }
+      const productCart = {
+        ID: products.ID,
+        pic_path: a[0],
+        author_name: products.author_name,
+        product_name: products.product_name,
+        price: products.price,
+      }
+      storage.setItem(products.ID, JSON.stringify(productCart))
+    }
+  }
   return (
     <>
       <LoginNav />
@@ -82,13 +104,13 @@ function ProductPage() {
             <p className={style.price}>${products.price}</p>
             <div className={style.displayFlex}>
               <div>
-                <p className={style.littleInformation}>繳交檔案格式：</p>
+                <p className={style.littleInformation}>檔案格式：</p>
                 <pre className={style.littleInformation}>
                   {products.file_type}
                 </pre>
               </div>
               <div className={style.buyNumber}>
-                <div className={style.sellNumber}>
+                {/* <div className={style.sellNumber}>
                   <p className={style.title}>購買數量</p>
                   <input
                     id="thePrice"
@@ -98,8 +120,8 @@ function ProductPage() {
                     min="1"
                     required
                   ></input>
-                </div>
-                <button className={style.shoppingCar}>加入購物車</button>
+                </div> */}
+                <button onClick={additem} className={style.shoppingCar}>加入購物車</button>
               </div>
             </div>
 

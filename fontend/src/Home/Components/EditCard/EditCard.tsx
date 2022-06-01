@@ -48,7 +48,7 @@ const EditCard: React.FC<CardProps> = ({
             <a href="">
               <FaTrashAlt className={Style.icons} />
             </a>
-            <a href="/EditProductPage">
+            <a href={`/MyProduct/Edit/1/${ID}`}>
               <FaEdit className={Style.icons} />
             </a>
           </div>
