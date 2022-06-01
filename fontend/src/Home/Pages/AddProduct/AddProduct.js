@@ -59,6 +59,7 @@ function EditProduct() {
       <section className={style.addProduct}>
 
       <form name="form1" action="/action_page.php" enctype="multipart/form-data" method="post" onSubmit="checkForm(); return false;">
+        
         <div className={style.pictureField}>
           <p className={style.title}>新增圖片</p>
 

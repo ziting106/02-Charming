@@ -35,7 +35,7 @@ function LoginHome() {
         <AsideProductLIst className={Style.displayNone} />
         <Product />
       </section>
-        <Pagination />
+        <Pagination totalPages={5}/>
     </header>
   );
 }

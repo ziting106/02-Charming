@@ -1,4 +1,4 @@
-* {
+:root {
   --main-brown: #795252;
   --sub-brown: #472929;
   --main-yellow: #ffd247;
@@ -8,19 +8,19 @@
   --table-block-size_ll: 350px;
 }
 
-ul.pagination {
+.pagination {
   display: flex;
   justify-content: center;
   padding: 0;
-  margin: 0;
+  margin: 50px;
 }
 
-ul.pagination li {
+.pagination li {
   display: inline;
   padding-top: 2px;
 }
 
-ul.pagination li a {
+.pagination li a {
   color: white;
   display: block;
   text-align: center;
@@ -31,20 +31,19 @@ ul.pagination li a {
   margin: 0 5px;
 }
 
-ul.pagination li a.active {
+.pagination li a.active {
   background-color: #4caf50;
   color: white;
 }
 
-ul.pagination li:hover {
-  border-radius: 5px;
-  background-color: var(--brown3);
+.pagination li:hover {
+  /* font-size: 30px; */
 }
 
 .arrow {
   margin: 6px auto;
-  border: solid var(--main-brown);
-  border-width: 0px 6px 6px 0;
+  border: solid var(--brown2);
+  border-width: 0px 3px 3px 0;
   display: inline-block;
   padding: 3px;
 }
@@ -70,11 +69,11 @@ ul.pagination li:hover {
   line-height: 26px;
   width: 26px;
   height: 26px;
-  background-color: var(--main-brown);
+  background-color: var(--brown2);
 }
 
 .page .active{
-  background-color: var(--sub-brown);
+  background-color: var(--brown3);
 }
 
 .disabled {
