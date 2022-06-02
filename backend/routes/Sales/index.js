@@ -10,10 +10,12 @@ const { body, validationResult, check } = require("express-validator");
 
 const connection = require("../../modules/mysql_config");
 
+// 新增訂單還沒做完
+// 全部商品資料需要加入where
+
 // 全部都要加回傳訊息，成功或失敗 參考 https://reurl.cc/WrAgDL
 // 圖片上傳 & 刪除 參考 https://reurl.cc/Gx5veA
 // 處理multipart/form-data https://reurl.cc/n1q27X
-// 前端表單驗證 https://reurl.cc/yrD0k8
 // 後端表單驗證 https://reurl.cc/vdp2kN
 
 /* 商品 
@@ -139,7 +141,7 @@ sales
 
 sales
   .route("/api/product/:id")
-  // 更新商品項目，multipart/form-data
+  // 修改商品項目，multipart/form-data
   // http://localhost:3001/Sales/api/product/1
   // 需要六個參數，5個透過body傳的參數，1個Params傳的參數
   // 透過Body -> productName | productCopy | price | picPath | typeId
@@ -174,7 +176,6 @@ sales
       res.send("put : /api/product/:id");
     }
   )
-  
   // 刪除商品項目
   // http://localhost:3001/Sales/api/product/1
   // 需要一個參數，透過Params->商品ID  : id
@@ -459,7 +460,16 @@ sales.get("/api/orderShop", async (req, res, next) => {
   FROM product_case_items  
   JOIN product_items
   ON product_case_items.product_ID = product_items.ID 
-  WHERE product_items.author_name='${req.query.name}' ;`;
+  WHERE product_items.author_name='${req.query.name}'`;
+  // 查詢特定訂單 (可省)
+  if (orderID.length != 0) {
+    sql += ` and product_case_items.case_ID ='${req.query.orderID}'`;
+  }
+  // 查詢特定名稱 (可省)
+  if (itemsName.length != 0) {
+    sql += ` and product_items.product_name like '%%${req.query.itemsName}%%'`;
+  }
+  
 
   const [datas] = await connection.query(sql).catch((error) => {
     console.log(`執行 Query : ${sql}時出錯 `);
@@ -515,7 +525,7 @@ sales
 var storage = multer.diskStorage({
   // 檔案上傳到這裡
   destination: function (req, file, cb) {
-    cb(null, "../../../fontend/public/ProductImg");
+    cb(null, "../../../fontend/public/Home/ProductImg");
   },
   // 定義檔案名稱規範
   filename: function (req, file, cb) {

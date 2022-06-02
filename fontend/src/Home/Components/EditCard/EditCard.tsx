@@ -31,7 +31,7 @@ const EditCard: React.FC<CardProps> = ({
           {/* <img alt="robot" src={require(`../../Assets/ProductImg/${a[0]}`)} /> */}
           <img
             alt="圖片無法顯示"
-            src={`http://localhost:3001/Home/ProductImg/${a[0]}`}
+            src={`http://localhost:3000/Home/ProductImg/${a[0]}`}
           />
         </a>
         <FcLikePlaceholder className={Style.like} />
