@@ -39,13 +39,13 @@ import MyAccount from "./Account/Pages/User/MyAccount";
 import MyNotice from "./Account/Pages/User/MyNotice";
 
 //購物車頁
-import Cart1 from './Sales/Pages/Cart/Cart1'
-import Cart2 from './Sales/Pages/Cart/Cart2'
-import Cart3 from './Sales/Pages/Cart/Cart3'
-import Cart4 from './Sales/Pages/Cart/Cart4'
-import MySale from './Sales/Pages/Order/MySale'
-import Order from './Sales/Pages/Order/Order'
-import OrderList from './Sales/Pages/Order/OrderList'
+import Cart1 from "./Sales/Pages/Cart/Cart1";
+import Cart2 from "./Sales/Pages/Cart/Cart2";
+import Cart3 from "./Sales/Pages/Cart/Cart3";
+import Cart4 from "./Sales/Pages/Cart/Cart4";
+import MySale from "./Sales/Pages/Order/MySale";
+import Order from "./Sales/Pages/Order/Order";
+import OrderList from "./Sales/Pages/Order/OrderList";
 
 //討論區
 
@@ -62,14 +62,16 @@ function App() {
         {/* <Route path="/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
 
         <Route path="/MyProduct/:UserId" element={<MyProduct />} />
-        <Route path="/MyProduct/:UserId/:ProductID" element={<ProductPageEditButton />} />
+        <Route
+          path="/MyProduct/:UserId/:ProductID"
+          element={<ProductPageEditButton />}
+        />
         <Route
           path="/MyProduct/Edit/:UserId/:ProductID"
           element={<EditProductPage />}
         />
         <Route path="/MyProduct/AddProduct" element={<AddProduct />} />
         {/* <Route path="/LoginHome/Product/:UserId" element={<Product />} /> */}
-
 
         {/* --------註冊及登入----- */}
         {/* 忘記密碼 */}
@@ -99,6 +101,12 @@ function App() {
         <Route path="BtocPage/MySale" element={<MySale />} />
         <Route path="BtobPage/Order/:id" element={<Order />} />
         <Route path="BtobPage/Order" element={<OrderList />} />
+
+        {/* 部落格 */}
+        {/* <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/article/:id" element={<Article />} />
+        <Route path="/blog/search/:category" element={<Search />} /> */}
+
       </Routes>
       <Footer />
       <PhoneFooter />

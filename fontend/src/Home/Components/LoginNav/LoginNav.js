@@ -62,13 +62,13 @@ function LoginNav(props) {
                 </select>
                 <FaAngleDown />
               </li>
-              <a href="Portfolio" className={style.phoneDisplayNone}>
+              <a href="/Portfolio" className={style.phoneDisplayNone}>
                 <li>柴米人</li>
               </a>
-              <a href="Blog" className={style.phoneDisplayNone}>
+              <a href="/blog" className={style.phoneDisplayNone}>
                 <li>柴訊</li>
               </a>
-              <a href="Communication" className={style.phoneDisplayNone}>
+              <a href="/AskPage" className={style.phoneDisplayNone}>
                 <li>柴社</li>
               </a>
             </div>
