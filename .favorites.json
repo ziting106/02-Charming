@@ -1,0 +1,18 @@
+[
+    {
+        "type": "Directory",
+        "name": "/Users/zitingliu/Documents/00-GitHub/charmingLocal/fontend/src/Sales",
+        "parent_id": null,
+        "workspaceRoot": "/Users/zitingliu/Documents/00-GitHub/charmingLocal",
+        "workspacePath": "fontend/src/Sales",
+        "id": "iNzn3KYcBM25CmAE"
+    },
+    {
+        "type": "File",
+        "name": "/Users/zitingliu/Documents/00-GitHub/charmingLocal/fontend/src/App.js",
+        "parent_id": null,
+        "workspaceRoot": "/Users/zitingliu/Documents/00-GitHub/charmingLocal",
+        "workspacePath": "fontend/src/App.js",
+        "id": "Hhr4JQlmCpD1cyAV"
+    }
+]

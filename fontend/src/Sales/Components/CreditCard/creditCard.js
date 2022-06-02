@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import './credit-card.css'
-import './form-style.css'
+import CreditCard from './CreditCard.module.css'
 import Cards from 'react-credit-cards'
 class Creditcard extends Component {
   timeoutID
