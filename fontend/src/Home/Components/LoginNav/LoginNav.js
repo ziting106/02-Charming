@@ -74,7 +74,7 @@ function LoginNav(props) {
             </div>
             {/* icon & 頭像 */}
             <div>
-              <a href="ShoppingCar">
+              <a href="/Sales/Cart1">
                 <li>
                   <FaShoppingCart className={style.phoneIcon}/>
                 </li>
