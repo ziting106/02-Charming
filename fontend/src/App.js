@@ -39,13 +39,13 @@ import MyAccount from "./Account/Pages/User/MyAccount";
 import MyNotice from "./Account/Pages/User/MyNotice";
 
 //購物車頁
-// import Cart1 from "./Sales/Pages/Cart/Cart1";
-// import Cart2 from "./Sales/Pages/Cart/Cart2";
-// import Cart3 from "./Sales/Pages/Cart/Cart3";
-// import Cart4 from "./Sales/Pages/Cart/Cart4";
-// import MySale from "./Sales/Pages/Order/MySale";
-// import Order from "./Sales/Pages/Order/Order";
-// import OrderList from "./Sales/Pages/Order/OrderList";
+import Cart1 from './Sales/Pages/Cart/Cart1'
+import Cart2 from './Sales/Pages/Cart/Cart2'
+import Cart3 from './Sales/Pages/Cart/Cart3'
+import Cart4 from './Sales/Pages/Cart/Cart4'
+import MySale from './Sales/Pages/Order/MySale'
+import Order from './Sales/Pages/Order/Order'
+import OrderList from './Sales/Pages/Order/OrderList'
 
 //討論區
 
@@ -91,14 +91,14 @@ function App() {
         <Route path="/notice" element={<MyNotice />} />
 
         {/* --------商品頁面-------- */}
-        {/* <Route path="/Cart1" element={<Cart1 />} />
-        <Route path="/Cart2" element={<Cart2 />} />
-        <Route path="/Cart3" element={<Cart3 />} />
-        <Route path="/Cart4" element={<Cart4 />} />
+        <Route path="Sales/Cart1" element={<Cart1 />} />
+        <Route path="Sales/Cart2" element={<Cart2 />} />
+        <Route path="Sales/Cart3" element={<Cart3 />} />
+        <Route path="Sales/Cart4" element={<Cart4 />} />
 
-        <Route path="/MySale" element={<MySale />} />
-        <Route path="/Order" element={<Order />} />
-        <Route path="/OrderList" element={<OrderList />} /> */}
+        <Route path="BtocPage/MySale" element={<MySale />} />
+        <Route path="BtobPage/Order/:id" element={<Order />} />
+        <Route path="BtobPage/Order" element={<OrderList />} />
       </Routes>
       <Footer />
       <PhoneFooter />
