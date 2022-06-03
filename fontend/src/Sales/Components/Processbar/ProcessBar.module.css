@@ -16,6 +16,7 @@
   margin-top: 10px;
   font-size: var(--heading5);
   color: var(--brown2);
+  white-space:nowrap;
 }
 .progressRound {
   width: var(--circleSize);
@@ -24,7 +25,7 @@
   background-color: var(--yellow1);
 }
 .progressLine {
-  width: 550px;
+  width: 50%;
   height: 5px;
   /* right: 20px; */
   top:calc(var(--circleSize) *2 + 2.5px);
@@ -37,8 +38,11 @@
   z-index: 0;
 }
 
-@media screen and (max-width:1024px){
-.progressLine {
-  width: 300px;
-}
+@media screen and (max-width:600px){
+  .progressBar{
+    margin: 30px 0px;
+  }
+  .center p{
+    font-size: var(--heading6);
+  }
 }

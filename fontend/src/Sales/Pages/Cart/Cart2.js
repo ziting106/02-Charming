@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Processbar from '../../Components/ProcessBar/ProcessBar'
-import './Cart.css'
+import style from './Cart.module.css'
 import { useNavigate } from 'react-router-dom'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
 import number from '../../Json/number.json'

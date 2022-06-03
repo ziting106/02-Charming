@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import Cards from 'react-credit-cards'
 import 'react-credit-cards/es/styles-compiled.css'
 import './CreditCard.css'
-import './Cart.css'
+import style from './Cart.module.css'
 
 import Processbar from '../../Components/ProcessBar/ProcessBar'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'

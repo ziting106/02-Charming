@@ -1,9 +1,10 @@
 // http://localhost:3000/Sales/Cart1
 import React from 'react'
-import Processbar from '../../Components/ProcessBar/ProcessBar'
-import './Cart.css'
+// import Processbar from '../../Components/ProcessBar/ProcessBar'
+import style from './Cart.module.css'
 import { useNavigate } from 'react-router-dom'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
+import Cart from './Cart'
 
 function Cart1() {
   // 使用 useNavigate 套件
@@ -62,11 +63,11 @@ function Cart1() {
   return (
     <>
       <LoginNav />
-      <h3>購物車-總攬 Page</h3>
       {/* 進度條 */}
-      <Processbar step="1" />
+      {/* <Processbar step="1" /> */}
       {/* 表格 */}
-      <table>
+      <Cart />
+      <table className={style.shoppingList}>
         <thead>
           <tr>
             <th scope="col" className="blockSizeS">

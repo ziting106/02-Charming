@@ -8,7 +8,7 @@ import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
 import Processbar from '../../Components/ProcessBar/ProcessBar'
 import data from '../../Json/Order.json'
 
-import './Cart.css'
+import style from './Cart.module.css'
 
 function Cart4() {
   let Navigate = useNavigate()

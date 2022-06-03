@@ -4,13 +4,41 @@
   --table-block-size_l: 200px;
   --table-block-size_ll: 350px;
 }
+/* ————cart.js（購物車為空時出現的畫面）———— */
+.emptyCart{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background:url(./shopingCar.png) no-repeat center ;
+  background-size: 50%;
+}
+.emptyCart div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 150px 0;
+  font-size: var(--heading3);
+  color: var(--brown2);
+}
+.emptyCart a{
+  margin: 20px;
+  padding: 10px 30px;
+  border-radius: 99px;
+  color: #fff;
+  background-color: var(--brown2);
+}
+.emptyCart a:hover{
+  background-color: var(--brown3);
+}
+/* ——————————————————————————————————————— */
+
 /* 表格-本體 */
-table {
+.shoppingList {
   vertical-align: top;
   border-collapse: collapse;
   text-align: center;
 }
-thead {
+.shoppingList thead{
   height: 64px;
   background-color: var(--brown2);
   color: var(--white);
@@ -23,7 +51,7 @@ thead {
   word-break: break-all;
   height: 64px;
 }
-tr img {
+.shoppingListtr tr img {
   width: 160px;
   height: 160px;
 }
