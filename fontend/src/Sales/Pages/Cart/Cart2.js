@@ -1,11 +1,11 @@
-// 功能：取得會員個人資料 Method: ? URL: ? ，要看會員怎麼寫
+// 功能：取得會員個人資料 Method: ? URL: ? ，等會員寫完
 // 功能：加入購物車，order(key) 基本資料(姓名/聯絡方式/總價) ，要看會員怎麼寫
 // 先用JSON假資料取代
 // http://localhost:3000/Sales/Cart2
 
 import React, { useState, useEffect } from 'react'
 import Processbar from '../../Components/ProcessBar/ProcessBar'
-import style from './Cart.module.css'
+import Style from "./Cart.module.css";
 import { useNavigate } from 'react-router-dom'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
 import number from '../../Json/number.json'

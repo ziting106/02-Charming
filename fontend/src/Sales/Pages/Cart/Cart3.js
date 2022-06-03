@@ -1,13 +1,12 @@
 // 功能：新增訂單。Method: POST。URL: /api/order
 // http://localhost:3000/Sales/Cart3
-// 還沒做完，將資料傳給後端API
 
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Cards from 'react-credit-cards'
 import 'react-credit-cards/es/styles-compiled.css'
 import './CreditCard.css'
-import style from './Cart.module.css'
+import Style from "./Cart.module.css";
 
 import Processbar from '../../Components/ProcessBar/ProcessBar'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
@@ -33,20 +32,21 @@ function Cart3() {
   const handleExpiry = (e) => {
     SetExpiry(month.concat(e.target.value))
   }
-  // 取得各欄位的DOM元素
-  const cardNumber = document.getElementById('cardNumber')
-  const cardNumberMsg = document.getElementById('cardNumberMsg')
-  const cardName = document.getElementById('cardName')
-  const cardNameMsg = document.getElementById('cardNameMsg')
-
-  const cardYear = document.getElementById('cardYear')
-  const cardMon = document.getElementById('cardMon')
-  const cardDateMsg = document.getElementById('cardDateMsg')
-
-  const cardCvc = document.getElementById('cardCvc')
-  const cardCvcMsg = document.getElementById('cardCvcMsg')
 
   function checkForm() {
+    // 取得各欄位的DOM元素
+    const cardNumber = document.getElementById('cardNumber')
+    const cardNumberMsg = document.getElementById('cardNumberMsg')
+    const cardName = document.getElementById('cardName')
+    const cardNameMsg = document.getElementById('cardNameMsg')
+
+    const cardYear = document.getElementById('cardYear')
+    const cardMon = document.getElementById('cardMon')
+    const cardDateMsg = document.getElementById('cardDateMsg')
+
+    const cardCvc = document.getElementById('cardCvc')
+    const cardCvcMsg = document.getElementById('cardCvcMsg')
+
     let isPass = true
     // 先清空訊息
     cardNumberMsg.innerHTML = ''
@@ -55,19 +55,19 @@ function Cart3() {
     cardCvcMsg.innerHTML = ''
 
     // 判斷不得為空值
-    if (cardNumber.value == '') {
+    if (cardNumber.value === '') {
       isPass = false
       cardNumberMsg.innerHTML = '卡號不得為空'
-    } else if (cardName.value == '') {
+    } else if (cardName.value === '') {
       isPass = false
       cardNameMsg.innerHTML = '姓名不得為空'
-    } else if (cardMon.value == ' ') {
+    } else if (cardMon.value === ' ') {
       isPass = false
       cardDateMsg.innerHTML = '請選擇月份'
-    } else if (cardYear.value == ' ') {
+    } else if (cardYear.value === ' ') {
       isPass = false
       cardDateMsg.innerHTML = '請選擇年份'
-    } else if (cardCvc.value == '') {
+    } else if (cardCvc.value === '') {
       isPass = false
       cardCvcMsg.innerHTML = 'CVC不得為空'
     }
@@ -85,23 +85,25 @@ function Cart3() {
       cardNameMsg.innerHTML = '姓名必須為英文'
     }
     // 長度判斷
-    if (cardNumber.value.length != 16) {
+    if (cardNumber.value.length !== 16) {
       isPass = false
       cardNumberMsg.innerHTML = '卡號須為16碼'
     } else if ((cardName.value.length > 12) | (cardName.value.length < 3)) {
       isPass = false
       cardNameMsg.innerHTML = '姓名長度需在3~12碼'
-    } else if (cardCvc.value.length != 3) {
+    } else if (cardCvc.value.length !== 3) {
       isPass = false
       cardCvcMsg.innerHTML = 'CVC長度為3碼'
     }
 
+    // 資料驗證判斷OK
+    // => 將所有訂單需要的資料傳後端，新增進SQL
+    // => 清除localStorage，避免重複使用
     if (isPass) {
       // 存放 FormData的資料
       let orderData = new FormData()
       // 存放用戶資料
       orderData.append('addUser', storage.getItem('addUser'))
-
 
       // 取得localStorage的項目清單
       let itemString = storage.getItem('addItemList')
@@ -115,10 +117,26 @@ function Cart3() {
       for (let i = 0; i < items.length; i++) {
         itemsDetail.push(JSON.parse(storage.getItem(items[i])))
       }
+
+      // 將itemsDetail資料存入orderData
       orderData.append('addItemList', JSON.stringify(itemsDetail))
 
-      console.log(orderData.getAll('addItemList'));
+      // 清除localStorage的資料=>addItemList | addUser | 各產品
+      for (let i = 0; i < items.length; i++) {
+        storage.removeItem(items[i])
+      }
+      storage.removeItem('addItemList')
+      storage.removeItem('addUser')
 
+      fetch(`http://localhost:3001/Sales/api/orderUser`, {
+        method: 'post',
+        body: orderData,
+      })
+        .then((r) => r.json())
+        .then((obj) => {
+          // 新增storage:addID 提供給Cart4使用
+          storage.setItem('addID', obj)
+        })
     }
   }
 
@@ -242,6 +260,7 @@ function Cart3() {
           onClick={() => {
             // 做驗證，成功就跳頁 & 新增資料庫
             checkForm()
+            Navigate('../Sales/Cart4')
           }}
         >
           下一步
