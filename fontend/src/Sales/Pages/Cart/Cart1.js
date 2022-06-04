@@ -42,7 +42,7 @@ function Cart1() {
           </td>
           <td className={Style.blockSizeM}>{author_name}</td>
           <td className={Style.blockSizeXL}>{product_name}</td>
-          <td className={Style.blockSizeM}>{price}</td>
+          <td className={`${Style.blockSizeM} ${Style.price}`}>{"$" + price}</td>
           <td className={Style.blockSizeM}>
             <button id={ID} onClick={deleteItem} className={Style.blockButton}>
               刪除
@@ -76,7 +76,7 @@ function Cart1() {
         <thead className={Style.listTitle}>
           <tr>
             <th scope="col" className={Style.blockSizeS}>
-              No
+              No.
             </th>
             <th scope="col" className={Style.blockSizeL}>
               產品圖
@@ -88,7 +88,7 @@ function Cart1() {
               品項
             </th>
             <th scope="col" className={Style.blockSizeM}>
-              價格
+              售價
             </th>
             <th scope="col" className={Style.blockSizeM}>
               刪除
@@ -102,7 +102,7 @@ function Cart1() {
         <button
           className={Style.button2}
           onClick={() => {
-            Navigate("/");
+            Navigate("/Product/1");
           }}>
           繼續選購
         </button>

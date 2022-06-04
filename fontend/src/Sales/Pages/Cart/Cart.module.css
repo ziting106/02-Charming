@@ -17,6 +17,9 @@
 .blockSizeXL {
   width: var(--sizeXL);
 }
+.price{
+  color: var(--red);
+}
 /* —————————————表格———————————————— */
 .shoppingList{
   width: 80%;
@@ -25,8 +28,25 @@
   margin: 0 auto;
   border-collapse: collapse;
   text-align: center;
+  color: var(--brown1);
 }
-
+.shoppingList tr:nth-child(2n) {
+  background-color: var(--brown4);
+  /* border-radius:0 0 15px 15px; */
+}
+.shoppingListS{
+  width: 60%;
+  display: flex;  
+  flex-direction: column;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+  color: var(--brown1);
+}
+.shoppingListS tr:nth-child(2n) {
+  background-color: var(--brown4);
+  /* border-radius:0 0 15px 15px; */
+}
 /* 表單項目名稱 */
 .listTitle{
   border-radius: 15px 15px 0 0 ;
@@ -47,7 +67,9 @@
 .listItem tr:last-child{
   border-radius: 0 0 15px 15px;
 }
-
+.listItem th{
+  font-size: var(--heading5);
+}
 .listItem td{
   border-radius: 15px;
   font-size: var(--heading4);
@@ -55,9 +77,16 @@
 .listItem img{
   height: 100px;
 }
-.shoppingList tr:nth-child(2n) {
-  background-color: var(--brown4);
-  /* border-radius:0 0 15px 15px; */
+/* Cart2.js使用 */
+.listItem{
+  border:2px solid var(--brown3);
+  border-radius:0 0 15px 15px;
+}
+.listItem2{
+  padding: 10px 0px;
+}
+.listItem2:last-child{
+  border-radius: 0 0 15px 15px;
 }
 /* ——————————————————————————————————————— */
 /* ————————————————按鈕——————————————————— */
@@ -80,6 +109,7 @@
   justify-content: center;
   margin: 30px 0px;
 }
+/* 開始結帳 */
 .button1{
     color: var(--white);
     background-color: var(--brown2);
@@ -89,6 +119,10 @@
     font-size: var(--heading4);
     margin: 0px 30px;
 }
+.button1:hover{
+  background-color: var(--brown1);
+}
+/* 繼續選購 */
 .button2{
     color: var(--white);
     background-color: var(--brown3);
@@ -97,6 +131,9 @@
     border-radius: 99px;
     font-size: var(--heading4);
     margin: 0px 30px;
+}
+.button2:hover{
+  background-color: var(--brown4);
 }
 /* ——————————————————————————————————————— */
 
@@ -129,18 +166,53 @@
 /* ——————————————————————————————————————— */
 /* ————cart2.js（填資料頁面）———— */
 /* 輸入框 */
-.block{
+.infoInput{
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
 }
-.blockText{
-  color: var(--brown2);
-  margin: 20px;
+.infoInput label{
+  width: 150px;
+  padding: 20px 0px;
+}
+.infoInput input{
+  width: 200px;
+  margin: 10px 0px;
+  border: 1px solid var(--brown3);
+  background-color: var(--brown4);
+  padding: 0px 20px;
+  font-size: var(--heading4);
+  border-radius: 15px;
+  color: var(--brown1);
+}
+.totalPrice {
+  margin: 20px 0;
+}
+
+.totalPrice label{
+  font-size: var(--heading4);
+}
+.totalPrice input{
+  width: 100px;
+  border: none;
+  background-color: #fff;
+  font-size: var(--heading3);
+  color: var(--red);
   font-weight: bold;
 }
+.blockText{
+  display: flex;
+  justify-content: flex-start;
+  color: var(--brown2);
+  font-size: var(--heading4);
+}
+
 .blockTextInput{
   margin: 20px;
   font-weight: bold;
 }
+
 .successText{
   color: var(--green3);
 }
@@ -151,4 +223,7 @@
   width: 1090px;
   height: 500px;
   overflow-y:scroll;
+}
+.block{
+  display: flex;
 }
