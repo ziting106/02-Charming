@@ -6,6 +6,8 @@ function Processbar(props) {
   return (
     <section>
       <div className={style.progressBar}>
+
+        {/* 確認購物車 */}
         <div className={style.center}>
           <div
             className={`${style.progressRound} ${style.progressActive}`}
@@ -19,6 +21,8 @@ function Processbar(props) {
         ) : (
           <div className={style.progressLine}></div>
         )}
+
+        {/* 填資料 */}
         <div className={style.center}>
           {start >= 2 ? (
             <div
@@ -36,6 +40,8 @@ function Processbar(props) {
         ) : (
           <div className={style.progressLine}></div>
         )}
+
+        {/* 付款 */}
         <div className={style.center}>
           {start > 2 ? (
             <div

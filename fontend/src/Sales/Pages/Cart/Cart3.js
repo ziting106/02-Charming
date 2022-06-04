@@ -143,14 +143,10 @@ function Cart3() {
   return (
     <>
       <LoginNav />
-      <h3>購物車-結帳 Page</h3>
       <Processbar step="3" />
-
       {/* 信用卡 */}
-
-      <div className="card">
         {/* 卡面 */}
-        <div className="rccs__card rccs__card--unknown">
+        <div className="rccs__card  rccs__card--unknown">
           <Cards
             number={number}
             name={name}
@@ -159,11 +155,13 @@ function Cart3() {
             focused={focus}
           />
         </div>
+
+        
         {/* 輸入欄 */}
-        <form name="card">
+        <form className={Style.card} name="card">
           {/* 卡號 */}
           <div>
-            <label htmlFor="name" className="blockText">
+            <label for="cardNumber" htmlFor="name">
               信用卡卡號 :{' '}
             </label>
             <input
@@ -181,7 +179,7 @@ function Cart3() {
           </div>
           {/* 持卡者姓名 */}
           <div>
-            <label htmlFor="name" className="blockText">
+            <label for="cardName" htmlFor="name">
               持卡者姓名 :{' '}
             </label>
             <input
@@ -199,8 +197,8 @@ function Cart3() {
             <div id="cardNameMsg"></div>
           </div>
           {/* 到期日期 */}
-          <div>
-            <label htmlFor="month" className="blockText">
+          <div className={Style.date}>
+            <label htmlFor="month">
               有效截止月 / 年 :{' '}
             </label>
             <div id="cardDateMsg"></div>
@@ -235,8 +233,8 @@ function Cart3() {
           </div>
           {/* 驗證碼 */}
           <div>
-            <label htmlFor="cvv" className="blockText">
-              CVV :{' '}
+            <label for="cardCvc" htmlFor="cvv">
+              後三碼 :{' '}
             </label>
             <input
               id="cardCvc"
@@ -251,28 +249,27 @@ function Cart3() {
             <div id="cardCvcMsg"></div>
           </div>
         </form>
-      </div>
 
       {/* 按鈕 */}
-      <div>
+      <div className={Style.checkButton}>
         <button
-          className="button"
-          onClick={() => {
-            // 做驗證，成功就跳頁 & 新增資料庫
-            checkForm()
-            Navigate('../Sales/Cart4')
-          }}
-        >
-          下一步
-        </button>
-        <button
-          className="button"
+          className={Style.button2}
           onClick={() => {
             // 回首頁
             Navigate('../Sales/Cart2')
           }}
         >
           回上頁
+        </button>
+        <button
+          className={Style.button1}
+          onClick={() => {
+            // 做驗證，成功就跳頁 & 新增資料庫
+            checkForm()
+            Navigate('../Sales/Cart4')
+          }}
+        >
+          確認付款
         </button>
       </div>
     </>

@@ -76,7 +76,7 @@ function Cart2() {
 
       {/* 輸入框 */}
       <form className={Style.infoInput}>
-        <section className={Style.blockText}>
+        <div className={Style.blockText}>
           <label for="inputName">姓名</label>
           <input
             id="inputName"
@@ -87,8 +87,8 @@ function Cart2() {
               setInputText(e.target.value);
             }}
           />
-        </section>
-        <section className={Style.blockText}>
+        </div>
+        <div className={Style.blockText}>
           <label for="inputTel">聯絡方式</label>
           <input
             id="inputTel"
@@ -99,7 +99,7 @@ function Cart2() {
               setInputText(e.target.value);
             }}
           />
-        </section>
+        </div>
       </form>
 
       {/* 表格 */}
