@@ -10,7 +10,6 @@ const { body, validationResult, check } = require("express-validator");
 
 const connection = require("../../modules/mysql_config");
 
-// 新增訂單還沒做完
 // 全部商品資料需要加入where
 
 // 全部都要加回傳訊息，成功或失敗 參考 https://reurl.cc/WrAgDL
@@ -126,16 +125,17 @@ sales
       const error = validationResult(req);
 
       // 有錯誤就回傳，沒錯誤就跑SQL
-      if (!error.isEmpty()) {
-        res.send({ error: error.array() });
-      } else {
-        const sql = `INSERT INTO product_items( author_name, product_name, product_copy, price, pic_path, type_id)
-      VALUES ('${req.body.authorName}','${req.body.productName}','${req.body.productCopy}','${req.body.price}','${req.body.picPath}','${req.body.typeId}')`;
-        // 執行SQL語法，新增商品資料
-        const [datas] = await connection.query(sql).catch((error) => {
-          console.log(`執行 Query : ${sql}時出錯 `);
-        });
-      }
+      // if (!error.isEmpty()) {
+      //   res.send({ error: error.array() });
+      // } else {
+      //   const sql = `INSERT INTO product_items( author_name, product_name, product_copy, price, pic_path, type_id)
+      // VALUES ('${req.body.authorName}','${req.body.productName}','${req.body.productCopy}','${req.body.price}','${req.body.picPath}','${req.body.typeId}')`;
+      //   // 執行SQL語法，新增商品資料
+      //   const [datas] = await connection.query(sql).catch((error) => {
+      //     console.log(`執行 Query : ${sql}時出錯 `);
+      //   });
+      // }
+      console.log(req.body);
     }
   );
 
@@ -343,8 +343,9 @@ sales
 /*訂單
 1. 功能：取得使用者的全部訂單。Method: GET。URL: /api/order/orderUser 
 2. 功能：取得使用者的訂單詳細內容。Method: GET。URL: /appi/orderUser/:id 
-3. 功能：取得商家所有產品的銷售紀錄。Method: GET。URL: /api/order/orderShop 
-4. 功能：新增訂單。Method: POST。URL: /api/order  
+3. 功能：取得使用者 指定 訂單的詳細內容 。Method: GET。URL: /api/orderUser/:userID/:caseID
+4. 功能：取得商家所有產品的銷售紀錄。Method: GET。URL: /api/order/orderShop 
+5. 功能：新增訂單。Method: POST。URL: /api/order  
 */
 sales
   .route("/api/orderUser")
@@ -384,30 +385,64 @@ sales
 
     res.send(datas);
   })
-  // 新增訂單，處理multipart/form-data的狀態
-  // 尚未完成
+  // 新增訂單 & 訂單詳細，處理multipart/form-data的狀態
+  // http://localhost:3001/Sales/api/orderUser
   .post(upload.array(), async (req, res, next) => {
-    // 新增訂單，兩個參數
+    // 前端傳值 addUser & addItemList
 
-    // 抓現在時間
+    // addUser : 1 | 150  (用戶ID | 總價)
 
-    // 紀錄
-    let case_count = 1;
-    let cs;
-    let sql = `INSERT INTO product_case ( ID, user_ID, total_price) 
-    VALUES ('${case_ID}','${req.body.userID}','${req.body.totalPrice}');
-    INSERT INTO product_case_items ()`;
+    // addItemList :
+    // [{"ID":26,
+    // "pic_path":"illustration1-1.jpeg",
+    // "author_name":"mohammadkasim",
+    // "product_name":"建立原創的兒童書籍插圖和封面",
+    // "price":150}]
 
-    case_count = case_count + 1;
+    // 接值
+    let { addUser, addItemList } = req.body;
+    // [1],[150]
+    addUser = addUser.split(" | ");
+    // 轉換型別
+    addItemList = JSON.parse(addItemList);
 
-    res.send("post : /api/order");
+    // 新增訂單資料
+    let sql = `INSERT INTO product_case( user_ID, total_price) 
+    VALUES ('${addUser[0]}','${addUser[1]}');`;
+
+    const [order] = await connection.query(sql).catch((error) => {
+      console.log(`執行 Query : ${sql}時出錯 `);
+    });
+    // 取得訂單總數，總數 = 最後一筆的ID
+    sql = `SELECT count(*) total FROM product_case`;
+
+    const [orderCount] = await connection.query(sql).catch((error) => {
+      console.log(`執行 Query : ${sql}時出錯 `);
+    });
+
+    // 新增訂單細項(多筆資料)
+    let sql2 = "INSERT INTO product_case_items(case_ID, product_ID) VALUES";
+    for (let i = 0; i < addItemList.length; i++) {
+      if (i < addItemList.length - 1) {
+        sql2 += `('${orderCount[0]["total"]}','${addItemList[i]["ID"]}'),`;
+      } else {
+        sql2 += `('${orderCount[0]["total"]}','${addItemList[i]["ID"]}')`;
+      }
+    }
+    const [orderDetail] = await connection.query(sql2).catch((error) => {
+      console.log(`執行 Query : ${sql}時出錯 `);
+    });
+
+    let orderID = []
+    orderID.push(parseInt(addUser[0]),orderCount[0]["total"])
+    res.send(orderID)
   });
 
 // 取得使用者訂單的詳細內容 TO C
 // http://localhost:3001/Sales/api/orderUser/1
 // 需要一個參數，透過params-> 使用者ID : id
 sales.get("/api/orderUser/:id", async (req, res, next) => {
-  let sql = `SELECT product_case.ID , product_case.create_time, product_case.total_price , product_items.pic_path ,
+  let sql = `SELECT product_case.ID as CaseID,product_case.user_ID, product_case.create_time, product_case.total_price , product_items.pic_path ,
   product_items.author_name ,product_items.product_name , product_items.price
   FROM product_case_items
   JOIN product_case
@@ -415,6 +450,24 @@ sales.get("/api/orderUser/:id", async (req, res, next) => {
   JOIN product_items
   ON product_case_items.product_ID = product_items.ID
   WHERE product_case.user_ID='${req.params.id}'`;
+  const [datas] = await connection.query(sql).catch((error) => {
+    console.log(`執行 Query : ${sql}時出錯 `);
+  });
+  res.send(datas);
+});
+
+// 取得使用者指定訂單的詳細內容 TO C
+// http://localhost:3001/Sales/api/orderUser/1/17
+// 需要一個參數，透過params-> 使用者ID : id
+sales.get("/api/orderUser/:userID/:caseID", async (req, res, next) => {
+  let sql = `SELECT product_case.ID as CaseID, product_case.create_time, product_case.total_price , product_items.pic_path ,
+  product_items.author_name ,product_items.product_name , product_items.price
+  FROM product_case_items
+  JOIN product_case
+  ON product_case_items.case_ID=product_case.ID
+  JOIN product_items
+  ON product_case_items.product_ID = product_items.ID
+  WHERE product_case.user_ID='${req.params.userID}' and product_case.ID ='${req.params.caseID}' `;
   const [datas] = await connection.query(sql).catch((error) => {
     console.log(`執行 Query : ${sql}時出錯 `);
   });
@@ -469,7 +522,6 @@ sales.get("/api/orderShop", async (req, res, next) => {
   if (itemsName.length != 0) {
     sql += ` and product_items.product_name like '%%${req.query.itemsName}%%'`;
   }
-  
 
   const [datas] = await connection.query(sql).catch((error) => {
     console.log(`執行 Query : ${sql}時出錯 `);

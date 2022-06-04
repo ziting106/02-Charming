@@ -58,9 +58,9 @@ function ProductPage() {
       alert('已成功加入購物車')
     } else {
       if (storage['addItemList'] == null) {
-        storage['addItemList'] = `${products.ID}`
+        storage['addItemList'] = `${products.ID} |`
       } else {
-        storage['addItemList'] += `| ${products.ID}`
+        storage['addItemList'] += `${products.ID} |`
       }
       const productCart = {
         ID: products.ID,

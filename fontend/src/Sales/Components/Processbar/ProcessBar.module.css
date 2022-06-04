@@ -27,7 +27,7 @@
 .progressLine {
   width: 50%;
   height: 5px;
-  /* right: 20px; */
+  right: 10px;
   top:calc(var(--circleSize) *2 + 2.5px);
   margin: -50px;
   background-color: var(--yellow1);

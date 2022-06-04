@@ -10,7 +10,7 @@ function Processbar(props) {
           <div
             className={`${style.progressRound} ${style.progressActive}`}
           ></div>
-          <p>步驟一：購物車</p>
+          <p>步驟一：確認購物車</p>
         </div>
         {start >= 2 ? (
           <div

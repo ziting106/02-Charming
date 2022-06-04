@@ -1,9 +1,105 @@
 :root {
-  --table-block-size_s: 100px;
-  --table-block-size_m: 150px;
-  --table-block-size_l: 200px;
-  --table-block-size_ll: 350px;
+  --sizeS: 100px;
+  --sizeM: 150px;
+  --sizeL: 200px;
+  --sizeXL: 450px;
 }
+/* 表格-固定尺寸 */
+.blockSizeS {
+  width: var(--sizeS);
+}
+.blockSizeM {
+  width: var(--sizeM);
+}
+.blockSizeL {
+  width: var(--sizeL);
+}
+.blockSizeXL {
+  width: var(--sizeXL);
+}
+/* —————————————表格———————————————— */
+.shoppingList{
+  width: 80%;
+  display: flex;  
+  flex-direction: column;
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+/* 表單項目名稱 */
+.listTitle{
+  border-radius: 15px 15px 0 0 ;
+  padding: 10px 0;
+  font-size: var(--heading5);
+  background-color: var(--brown2);
+  color: var(--white);
+}
+/* 表單項目 */ 
+.listItem:last-child{
+  border: 2px solid var(--brown3);
+  border-radius: 0 0 15px 15px;
+}
+.listItem tr{
+  display: flex;
+  align-items: center;
+}
+.listItem tr:last-child{
+  border-radius: 0 0 15px 15px;
+}
+
+.listItem td{
+  border-radius: 15px;
+  font-size: var(--heading4);
+}
+.listItem img{
+  height: 100px;
+}
+.shoppingList tr:nth-child(2n) {
+  background-color: var(--brown4);
+  /* border-radius:0 0 15px 15px; */
+}
+/* ——————————————————————————————————————— */
+/* ————————————————按鈕——————————————————— */
+/* 刪除按鈕 */
+.blockButton {
+  padding: 5px 15px;
+  color: var(--white);
+  background-color: var(--red);
+  font-size: var(--heading5);
+  border: 0px;
+  border-radius: 99px;
+}
+.blockButton:hover {
+  background-color: var(--red1);
+}
+
+/* 送出按鈕 */
+.checkButton{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+}
+.button1{
+    color: var(--white);
+    background-color: var(--brown2);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 99px;
+    font-size: var(--heading4);
+    margin: 0px 30px;
+}
+.button2{
+    color: var(--white);
+    background-color: var(--brown3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 99px;
+    font-size: var(--heading4);
+    margin: 0px 30px;
+}
+/* ——————————————————————————————————————— */
+
 /* ————cart.js（購物車為空時出現的畫面）———— */
 .emptyCart{
   height: 100vh;
@@ -31,79 +127,8 @@
   background-color: var(--brown3);
 }
 /* ——————————————————————————————————————— */
-/* —————————————cart1.js———————————————— */
-/* 表格-本體 */
-.shoppingList{
-  display: flex;
-  justify-content: center;
-  vertical-align: top;
-  border-collapse: collapse;
-  text-align: center;
-}
-.shoppingList thead{
-  height: 64px;
-  background-color: var(--brown2);
-  color: var(--white);
-}
-.blockPicture{
-  word-break: break-all;
-  height: 180px;
-}
-.blockNoPicture{
-  word-break: break-all;
-  height: 64px;
-}
-.shoppingListtr tr img {
-  width: 160px;
-  height: 160px;
-}
-.shoppingListtr tr:nth-child(2n) {
-  background-color: var(--brown4);
-}
-/* 表格-固定尺寸 */
-.blockSizeS {
-  width: var(--table-block-size_s);
-}
-.blockSizeM {
-  width: var(--table-block-size_m);
-}
-.blockSizeL {
-  width: var(--table-block-size_l);
-}
-.blockSizeLL {
-  width: var(--table-block-size_ll);
-}
-/* 表格-按鈕 */
-.blockButton {
-  width: 90px;
-  height: 40px;
-  color: var(--brown2);
-  background-color: var(--yellow1);
-  font-weight: bold;
-  border: 0px;
-  border-radius: 20px;
-}
-.blockButton:hover {
-  color: var(--yellow1);
-  background-color: var(--brown2);
-}
-.tableScroll{
-  margin: 50px 0;
-  width: 1090px;
-  height: 500px;
-  overflow-y:scroll;
-}
-/* 按鈕 */
-.button {
-    width: 90px;
-    height: 40px;
-    color: var(--white);
-    background-color: var(--brown2);
-    font-weight: bold;
-    border: 0px;
-    border-radius: var(--desk-border-radius);
-}
-/* 文字方塊 */
+/* ————cart2.js（填資料頁面）———— */
+/* 輸入框 */
 .block{
   display: flex;
 }
@@ -119,4 +144,11 @@
 .successText{
   color: var(--green3);
 }
+
 /* 信用卡Form */
+.tableScroll{
+  margin: 50px 0;
+  width: 1090px;
+  height: 500px;
+  overflow-y:scroll;
+}
