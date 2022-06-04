@@ -8,7 +8,7 @@ import 'react-credit-cards/es/styles-compiled.css'
 import './CreditCard.css'
 import Style from "./Cart.module.css";
 
-import Processbar from '../../Components/ProcessBar/ProcessBar'
+import Processbar from '../../Components/Processbar/Processbar'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
 
 function Cart3() {

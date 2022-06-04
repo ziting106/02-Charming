@@ -31,9 +31,11 @@
   background-color: var(--brown3);
 }
 /* ——————————————————————————————————————— */
-
+/* —————————————cart1.js———————————————— */
 /* 表格-本體 */
-.shoppingList {
+.shoppingList{
+  display: flex;
+  justify-content: center;
   vertical-align: top;
   border-collapse: collapse;
   text-align: center;
@@ -55,7 +57,7 @@
   width: 160px;
   height: 160px;
 }
-tr:nth-child(2n) {
+.shoppingListtr tr:nth-child(2n) {
   background-color: var(--brown4);
 }
 /* 表格-固定尺寸 */
