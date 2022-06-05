@@ -76,6 +76,7 @@
 }
 .listItem img{
   height: 100px;
+  object-fit: cover;
 }
 /* Cart2.js使用 */
 .listItem{
@@ -105,6 +106,7 @@
 
 /* 送出按鈕 */
 .checkButton{
+  width: 100%;
   display: flex;
   justify-content: center;
   margin: 30px 0px;
@@ -217,11 +219,27 @@
   font-size: var(--heading4);
   color: var(--brown2);
 }
-
-.date{
-  display: flex;
-  align-items: center;
-  /* white-space:nowrap; */
+.card div{
+  max-width:100%;
+  margin:5px 0;
+}
+.card label{
+  width: 150px;
+  display: inline-block;
+  text-align: right;
+}
+.card input, select{
+  width: 250px;
+  font-size: var(--heading4);
+  border: 1px solid var(--brown3);
+  border-radius: 15px;
+  margin: 0 10px;
+  color: var(--brown2);
+  padding: 5px 10px;
+  vertical-align: middle;
+}
+.card select{
+  width: 115px;
 }
 /* ——————————————————————————————————————— */
 .tableScroll{
@@ -242,4 +260,48 @@
 
 .block{
   display: flex;
+}
+@media screen and (max-width:1024px){
+  
+}
+@media screen and (max-width:780px) {
+    
+}
+@media screen and (max-width:441px){
+  .shoppingList{
+    width: 100%;
+  }
+  .listTitle{
+    display: none;
+  }
+  .listItem{
+    border: none;
+    margin-bottom: 150px;
+  }
+  .checkButton{
+    position: fixed;
+    bottom: 46px;
+    background-color: #fff;
+    padding: 10px 0px;
+    box-shadow: 5px 5px 10px var(--brown1);
+  }
+  .card{
+    margin: 10px 0;
+  }
+  .card label{
+    width: 200px;
+    /* display: block; */
+    text-align:left;
+  }
+  .card input, select{
+    margin:5px 0px;
+  }
+  .date{
+    margin-right: 15px;
+
+  }
+  .card div{
+    max-width:70%;
+    margin:5px 0;
+  }
 }
