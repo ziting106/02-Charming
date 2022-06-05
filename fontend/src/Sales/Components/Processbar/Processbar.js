@@ -5,14 +5,16 @@ function Processbar(props) {
   let start = step;
   return (
     <section>
+      <div className={style.title}>
+      <p>購物車</p>
+      </div>
       <div className={style.progressBar}>
-
         {/* 確認購物車 */}
         <div className={style.center}>
           <div
             className={`${style.progressRound} ${style.progressActive}`}
           ></div>
-          <p>步驟一：確認購物車</p>
+          <p>確認購物車</p>
         </div>
         {start >= 2 ? (
           <div
@@ -31,7 +33,7 @@ function Processbar(props) {
           ) : (
             <div className={style.progressRound}></div>
           )}
-          <p>步驟二：填資料</p>
+          <p>填資料</p>
         </div>
         {start > 2 ? (
           <div
@@ -50,7 +52,7 @@ function Processbar(props) {
           ) : (
             <div className={style.progressRound}></div>
           )}
-          <p>步驟三：付款</p>
+          <p>付款</p>
         </div>
       </div>
     </section>

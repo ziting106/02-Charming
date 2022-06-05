@@ -156,7 +156,7 @@ function Cart2() {
             storage.setItem("addUser", `1 | ${totalPrice}`);
           }}
         >
-          下一步
+  確認訂單
         </button>
       </div>
     </>

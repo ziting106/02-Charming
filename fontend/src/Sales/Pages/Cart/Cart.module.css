@@ -99,6 +99,7 @@
   font-size: var(--heading5);
   border: 0px;
   border-radius: 99px;
+  white-space:nowrap;
 }
 .blockButton:hover {
   background-color: var(--red1);
@@ -261,29 +262,101 @@
 .block{
   display: flex;
 }
-@media screen and (max-width:1024px){
-  
-}
-@media screen and (max-width:780px) {
-    
-}
+
 @media screen and (max-width:441px){
+  /* ------Card------ */
+  .emptyCart{
+    height: 100vh;
+    background-size: 100%;
+  }
+  .emptyCart div{
+    font-size: var(--heading4);
+  }
+  /* ---------------- */
+  /* ----card1.js---- */
+
+  .blockPicture{
+    margin: 5px 0px;
+  }
+  .blockPicture th{
+    display: none;
+  }
+  .phoneCart{
+    padding: 0px 10px;
+    display:flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .phoneCart td:first-child{
+  order: 1;
+  padding-top: 10px;
+  font-weight: bold;
+  color: var(--green2);
+  }
+  .listItem td{
+    font-size: var(--heading5);
+  }
+  .cartTable{
+    padding: 0px 10px;
+  }
+  .phoneCart td{ 
+    font-size: var(--heading6);
+  }
+  .price{
+    font-weight: bold;
+    padding-right:10px ;
+  }
+  /* ---------------- */
+  /* ------表格------ */
   .shoppingList{
     width: 100%;
   }
-  .listTitle{
+  .displayNone{
     display: none;
   }
-  .listItem{
-    border: none;
-    margin-bottom: 150px;
+  .listTitle{
+   display: none;
   }
+  .listItem{
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+  .listItem:last-child{
+    border: none;
+  }
+  /* 按鈕 */
   .checkButton{
     position: fixed;
-    bottom: 46px;
-    background-color: #fff;
+    z-index: 999;
+    top: 20px;
+    background-color: rgba(255,255,255,1);
     padding: 10px 0px;
-    box-shadow: 5px 5px 10px var(--brown1);
+    box-shadow: 0px 6px 5px var(--brown2);
+    justify-content: space-between;
+  }
+  .button2, .button1{
+    margin: 0px;
+    color: var(--brown1);
+    padding: 10px 20px;
+    background-color: #fff;
+  }
+  .button2::before{
+    content: "<< ";
+    font-weight: bold;
+  }
+  .button1{
+    font-weight: bold;
+  }
+  .button1::after{
+    content: " >>";
+    font-weight: bold;
+  }
+  .button1:hover{
+    background-color: var(--brown4);
+  }
+  /*------card3------- */
+  .creditCard{
+    margin-bottom: 150px;
   }
   .card{
     margin: 10px 0;

@@ -33,16 +33,23 @@ function Cart1() {
       );
       cartTable.push(
         <tr key={i + 1} className={Style.blockPicture} id={ID}>
-          <th className={Style.blockSizeS} scope="row">{i + 1}</th>
+          <th className={Style.blockSizeS} scope="row">
+            {i + 1}
+          </th>
           <td className={Style.blockSizeL}>
-            <img className={Style.blockSizeM}
+            <img
+              className={Style.blockSizeM}
               alt="圖片無法顯示"
               src={`http://localhost:3000/Home/ProductImg/${pic_path}`}
             />
           </td>
-          <td className={Style.blockSizeM}>{author_name}</td>
-          <td className={Style.blockSizeXL}>{product_name}</td>
-          <td className={`${Style.blockSizeM} ${Style.price}`}>{"$" + price}</td>
+          <div className={Style.phoneCart}>
+            <td className={Style.blockSizeM}>{author_name}</td>
+            <td className={Style.blockSizeXL}>{product_name}</td>
+          </div>
+          <td className={`${Style.blockSizeM} ${Style.price}`}>
+            {"$" + price}
+          </td>
           <td className={Style.blockSizeM}>
             <button id={ID} onClick={deleteItem} className={Style.blockButton}>
               刪除
@@ -66,22 +73,22 @@ function Cart1() {
 
   return (
     <>
-      <LoginNav />
-
-      {/* <Cart/> 購物車為空時出現的畫面 */}
+      <LoginNav/>
+      {/* 購物車為空時出現的畫面 */}
+      {/* <Cart /> */}
       {/* 進度條 */}
       <Processbar step="1" />
       {/* 表格 */}
       <table className={Style.shoppingList}>
         <thead className={Style.listTitle}>
           <tr>
-            <th scope="col" className={Style.blockSizeS}>
+            <th scope="col" className={`${Style.blockSizeS} ${Style.displayNone}`}>
               No.
             </th>
             <th scope="col" className={Style.blockSizeL}>
               產品圖
             </th>
-            <th scope="col" className={Style.blockSizeM}>
+            <th scope="col" className={`${Style.blockSizeM} ${Style.displayNone}`}>
               設計師
             </th>
             <th scope="col" className={Style.blockSizeXL}>
@@ -95,7 +102,9 @@ function Cart1() {
             </th>
           </tr>
         </thead>
-        <tbody className={Style.listItem}>{cartTable}</tbody>
+        <tbody className={Style.listItem}>
+          <div className={Style.cartTable}>{cartTable}</div>
+        </tbody>
       </table>
       {/* 按鈕 */}
       <div className={Style.checkButton}>
@@ -103,10 +112,12 @@ function Cart1() {
           className={Style.button2}
           onClick={() => {
             Navigate("/Product/1");
-          }}>
+          }}
+        >
           繼續選購
         </button>
-        <button className={Style.button1}
+        <button
+          className={Style.button1}
           onClick={() => {
             // 到下一頁
             if (storage.getItem("addItemList")) {
