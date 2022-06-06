@@ -57,11 +57,15 @@ function App() {
         {/* --------首頁------- */}
         <Route path="/" element={<UnloginHome />} />
         {/* 商品總覽頁 */}
-        <Route path="/Product/:UserId" element={<LoginHome />} />
+        {/* http://localhost:3000/Product?id=1&page=1&order=sell_count&sort=desc */}
+        <Route path="/Product" element={<LoginHome />} />
+        {/* http://localhost:3000/Product/1/13 */}
         <Route path="/Product/:UserId/:ProductID" element={<ProductPage />} />
-        {/* <Route path="/Product/:UserId/:ProductID" element={<ProductPage2 />} /> */}
-
-        <Route path="/MyProduct/:UserId" element={<MyProduct />} />
+        {/* http://localhost:3000/Product/13 */}
+        <Route path="/Product/:ProductID" element={<ProductPage />} />
+        {/* http://localhost:3000/MyProduct?id=1&page=1 */}
+        <Route path="/MyProduct" element={<MyProduct />} />
+        {/* http://localhost:3000/MyProduct/1/19 */}
         <Route
           path="/MyProduct/:UserId/:ProductID"
           element={<ProductPageEditButton />}
@@ -71,7 +75,15 @@ function App() {
           element={<EditProductPage />}
         />
         <Route path="/MyProduct/AddProduct" element={<AddProduct />} />
-        {/* <Route path="/LoginHome/Product/:UserId" element={<Product />} /> */}
+        {/* --------商品頁面-------- */}
+        <Route path="Sales/Cart1" element={<Cart1 />} />
+        <Route path="Sales/Cart2" element={<Cart2 />} />
+        <Route path="Sales/Cart3" element={<Cart3 />} />
+        <Route path="Sales/Cart4" element={<Cart4 />} />
+
+        <Route path="BtocPage/MySale" element={<MySale />} />
+        <Route path="BtobPage/Order/:id" element={<Order />} />
+        <Route path="BtobPage/Order" element={<OrderList />} />
 
         {/* --------註冊及登入----- */}
         {/* 忘記密碼 */}
@@ -92,21 +104,10 @@ function App() {
         <Route path="/account" element={<MyAccount />} />
         <Route path="/notice" element={<MyNotice />} />
 
-        {/* --------商品頁面-------- */}
-        <Route path="Sales/Cart1" element={<Cart1 />} />
-        <Route path="Sales/Cart2" element={<Cart2 />} />
-        <Route path="Sales/Cart3" element={<Cart3 />} />
-        <Route path="Sales/Cart4" element={<Cart4 />} />
-
-        <Route path="BtocPage/MySale" element={<MySale />} />
-        <Route path="BtobPage/Order/:id" element={<Order />} />
-        <Route path="BtobPage/Order" element={<OrderList />} />
-
         {/* 部落格 */}
         {/* <Route path="/blog" element={<Blog />} />
         <Route path="/blog/article/:id" element={<Article />} />
         <Route path="/blog/search/:category" element={<Search />} /> */}
-
       </Routes>
       <Footer />
       <PhoneFooter />

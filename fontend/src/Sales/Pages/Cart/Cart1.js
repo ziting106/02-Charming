@@ -75,7 +75,7 @@ function Cart1() {
     <>
       <LoginNav/>
       {/* 購物車為空時出現的畫面 */}
-      {/* <Cart /> */}
+      <Cart />
       {/* 進度條 */}
       <Processbar step="1" />
       {/* 表格 */}
