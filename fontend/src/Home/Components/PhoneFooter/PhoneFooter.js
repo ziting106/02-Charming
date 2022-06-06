@@ -12,15 +12,15 @@ function PhoneFooter() {
           <ImProfile className={Style.icon}/>
           <p>柴米人</p>
         </a>
-        <a href="/blog">
+        <a href="/Blog">
           <GiOpenBook className={Style.icon}/>
           <p>柴訊</p>
         </a>
-        <a href="/Product/1">
+        <a href="/Product">
           <MdOutlineVolunteerActivism className={Style.icon}/>
           <p>精選商品</p>
         </a>
-        <a href="/AskPage">
+        <a href="/Communication">
           <GiDiscussion className={Style.icon}/>
           <p>柴社</p>
         </a>
