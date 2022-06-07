@@ -1,6 +1,6 @@
 import React from "react";
 import Style from "./Cart.module.css";
-import check from "./check.png";
+import check from "../../Assets/check.png";
 function ComponentsName() {
   return (
     <div className={`${Style.emptyCart} ${Style.SuccessCart}`}>

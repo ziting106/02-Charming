@@ -2,7 +2,7 @@
 // http://localhost:3000/BtobPage/Order?id=1&page=1
 
 import React, { useEffect, useRef, useState } from "react";
-import Style from "./MySale.module.css";
+import Style from "./Order.module.css";
 import Pagination from "../../Components/Pagination/Pagination";
 import { useLocation, useNavigate } from "react-router-dom";
 import LoginNav from "../../../Home/Components/LoginNav/LoginNav";

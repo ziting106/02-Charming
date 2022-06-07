@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./MySale.module.css";
+import Style from "./Order.module.css";
 
 function NoSale() {
   return (

@@ -3,7 +3,7 @@
 // 還沒做完，Fetch處 還沒改為變數
 
 import React, { useEffect, useState } from "react";
-import Style from "./MySale.module.css";
+import Style from "./Order.module.css";
 // component
 import LoginNav from "../../../Home/Components/LoginNav/LoginNav";
 import Pagination from "../../Components/Pagination/Pagination";
