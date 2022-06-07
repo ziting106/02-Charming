@@ -25,18 +25,15 @@ import ProductPageEditButton from "./Home/Pages/ProductPageEditButton/ProductPag
 
 //會員
 //Pages
-import SignInIdentify from "./Account/Pages/SignInIdentify";
-import SignInRecover from "./Account/Pages/SignInRecover";
-import SignUpInfo from "./Account/Pages/SignUpInfo";
-import SignUp from "./Account/Pages/SignUp";
-import SignIn from "./Account/Pages/SignIn";
+import SignInIdentify from './Account/Pages/SignInIdentify/SignInIdentify'
+import SignInRecover from './Account/Pages/SignInRecover/SignInRecover'
+import SignUp from './Account/Pages/SignUp/SignUp'
+import SignIn from './Account/Pages/SignIn/SignIn'
 
 //Pages user
-import MyShoppingList from "./Account/Pages/User/MyShoppingList";
-import NoticeSetting from "./Account/Pages/User/NoticeSetting";
-import MyCollection from "./Account/Pages/User/MyCollection";
-import MyAccount from "./Account/Pages/User/MyAccount";
-import MyNotice from "./Account/Pages/User/MyNotice";
+import MyShoppingList from './Account/Pages/User/MyShoppingList'
+import MyCollection from './Account/Pages/User/MyCollection'
+import MyAccount from './Account/Pages/User/MyAccount'
 
 //購物車頁
 import Cart1 from "./Sales/Pages/Cart/Cart1";
@@ -80,29 +77,26 @@ function App() {
         <Route path="Sales/Cart2" element={<Cart2 />} />
         <Route path="Sales/Cart3" element={<Cart3 />} />
         <Route path="Sales/Cart4" element={<Cart4 />} />
-
+        {/* 銷售記錄*/}
         <Route path="BtocPage/MySale" element={<MySale />} />
+        {/* 購買清單*/}
         <Route path="BtobPage/Order/:id" element={<Order />} />
+        {/* 購買清單細項*/}
         <Route path="BtobPage/Order" element={<OrderList />} />
+        {/* 我的蒐藏->商品頁 */}
 
         {/* --------註冊及登入----- */}
         {/* 忘記密碼 */}
         <Route path="/signin/identify" element={<SignInIdentify />} />
         <Route path="/signin/recover" element={<SignInRecover />} />
-        {/* 基本資料 */}
-        <Route path="/signup/info" element={<SignUpInfo />} />
-
         {/* 註冊 */}
         <Route path="/signup" element={<SignUp />} />
         {/* 登入 */}
         <Route path="/signin" element={<SignIn />} />
-
         {/* -------user 登入後頁面------- */}
         <Route path="/shoppinglist" element={<MyShoppingList />} />
-        <Route path="/notice/setting" element={<NoticeSetting />} />
         <Route path="/collection" element={<MyCollection />} />
         <Route path="/account" element={<MyAccount />} />
-        <Route path="/notice" element={<MyNotice />} />
 
         {/* 部落格 */}
         {/* <Route path="/blog" element={<Blog />} />

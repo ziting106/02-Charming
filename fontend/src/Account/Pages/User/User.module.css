@@ -1,33 +1,45 @@
-/* 清除浮動問題 */
-.clear{
-  clear: both;
-}
-
-/* Pages */
+/* 上方nav */
 .navLeft {
-  padding: 10px px;
+  padding: 0px 0px 10px 20px;
   font-size: 24px;
   display: flex;
+  position: relative;
+  transition: .5s 0.2s;
 }
 
-.navLeft a {
+.navLeft a{
+  transition: .3s 0.1s;
+}
+
+.unactive{
+  padding: 0px 50px 0px 0px;
   margin: 15px;
   font-weight: 700;
+  text-decoration: none;
+  color: var(--brown3);
+}
+.active{
+  padding: 0px 50px 0px 0px;
+  margin: 15px;
+  font-weight: 700;
+  font-size: 28px;
   text-decoration: none;
   color: var(--brown2);
 }
 
 .navLeft a hr {
-  width: 100px;
+  width: 150px;
   border-top: 5px solid;
+  position: absolute;
+  left: -20px;
 }
 
 .navLeft a:hover {
-  color: var(--brown1);
+  color: var(--brown2);
 }
 
 /* 左側邊選單 */
-.aside {
+/* .aside {
   margin: 0px 55px;
   width: 15%;
   display: flex;
@@ -51,19 +63,18 @@
 .ul li a:hover {
   margin: 0;
   font-size: 26px;
-}
+} */
 
 /* 右側邊內文 */
 .main {
-  margin: 0px 55px 30px 0px;
-  width: 75%;
+  margin: 10px auto 50px;
+  width: 80%;
   border-radius: var(--desk-border-radius);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   color: var(--brown2);
   font-weight: 700;
   display: flex;
   flex-direction: column;
-  float: right;
 }
 
 .main img {
@@ -111,8 +122,6 @@
 }
 
 .form {
-  /* display: flex;
-  flex-direction: column; */
   color: var(--main-color);
 }
 
@@ -128,4 +137,5 @@
   border: 2px solid var(--brown2);
   background-color: var(--brown2);
   color: #ffffff;
+  cursor: pointer
 }

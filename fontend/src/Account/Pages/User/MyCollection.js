@@ -10,26 +10,26 @@ function MyCollection() {
       <BreadCrumb />
       {/* 上方選單 */}
       <nav className={style.navLeft}>
-        <Link to="/account">
+        <Link to="/account" className={style.unactive}>
           會員中心 <hr />
         </Link>
-        <Link to="/shoppinglist">
+        <Link to="/shoppinglist" className={style.unactive}>
           購買清單 <hr />
         </Link>
-        <Link to="/collection">
+        <Link to="/collection" className={style.active}>
           我的收藏 <hr />
         </Link>
-        <Link to="/notice">
-          我的通知 <hr />
-        </Link>
+
       </nav>
 
-      {/* 內文 */}
-      <main>
-        <h1>我的收藏</h1>
+      {/* 右側內文 */}
+
+      <main className={style.main}>
+        <h1 className={style.h1}>我的收藏</h1>
       </main>
+
     </>
-  )
+  );
 }
 
 export default MyCollection
