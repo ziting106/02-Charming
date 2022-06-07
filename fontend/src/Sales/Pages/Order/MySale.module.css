@@ -1,0 +1,123 @@
+:root {
+  --sizeS: 100px;
+  --sizeM: 150px;
+  --sizeL: 200px;
+  --sizeXL: 440px;
+}
+/* 表格-固定尺寸 */
+.blockSizeS {
+  width: var(--sizeS);
+}
+.blockSizeM {
+  width: var(--sizeM);
+}
+.blockSizeL {
+  width: var(--sizeL);
+}
+.blockSizeXL {
+  width: var(--sizeXL);
+}
+.price{
+  color: var(--red);
+}
+/* ——
+/* —————————————表格———————————————— */
+.shoppingListS{
+  width: 60%;
+  display: flex;  
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--brown1);
+}
+.shoppingListS tr:nth-child(2n) {
+  background-color: var(--brown4);
+  /* border-radius:0 0 15px 15px; */
+}
+/* 表單項目名稱 */
+.listTitle{
+  border-radius: 15px 15px 0 0 ;
+  padding: 10px 0;
+  font-size: var(--heading5);
+  background-color: var(--brown2);
+  color: var(--white);
+}
+/* 表單項目 */ 
+.listItem:last-child{
+  border: 2px solid var(--brown3);
+  border-radius: 0 0 15px 15px;
+}
+.listItem tr{
+  display: flex;
+  align-items: center;
+}
+.listItem tr:last-child{
+  border-radius: 0 0 15px 15px;
+}
+.listItem th{
+  font-size: var(--heading5);
+}
+.listItem td{
+  border-radius: 15px;
+  font-size: var(--heading4);
+}
+.listItem img{
+  height: 100px;
+  object-fit: cover;
+}
+/* Cart2.js使用 */
+.listItem{
+  border:2px solid var(--brown3);
+  border-radius:0 0 15px 15px;
+}
+.listItem2{
+  padding: 10px 0px;
+}
+.listItem2:last-child{
+  border-radius: 0 0 15px 15px;
+}
+/* ——————————————————————————————————————— */
+@media screen and (max-width:441px){
+  /* ----card1.js---- */
+  .listItem{
+    border: none;
+  }
+  .listItem td{
+    font-size: var(--heading5);
+  }
+  .cartTable{
+    padding: 0px 10px;
+  }
+  .price{
+    font-weight: bold;
+    padding-right:10px ;
+  }
+  /* ---------------- */
+  /* -------cart2.js--------- */
+  .shoppingListS{
+    width: 95%;
+    display: flex;  
+    flex-direction: column;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: var(--brown1);
+  }
+  /* ------表格------ */
+  .listTitle{
+   display: none;
+  }
+  .listItem{
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+  .listItem:last-child{
+    border: none;
+  }
+  .phoneCart{
+  padding: 0px 10px;
+  display:flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+}
