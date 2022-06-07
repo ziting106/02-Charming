@@ -78,7 +78,7 @@ function OrderList() {
                 );
               })}
               {/* 範例 */}
-                  <tr className={Style.listItem2}>
+                  {/* <tr className={Style.listItem2}>
                     <th className={Style.blockSizeL} scope="row">
                       55544363 
                     </th>
@@ -91,7 +91,7 @@ function OrderList() {
                     <td className={Style.blockSizeL}>
                       <button className={Style.detailButton}>詳細</button>
                     </td>
-                  </tr>
+                  </tr> */}
             </tbody>
           </table>
           <Pagination totalPages={totalPage} />
