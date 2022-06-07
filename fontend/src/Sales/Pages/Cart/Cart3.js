@@ -178,7 +178,7 @@ function Cart3() {
                 }}
                 onFocus={(e) => SetFocus(e.target.name)}
               ></input>
-              <div id="cardNumberMsg"></div>
+              <div className={Style.warning} id="cardNumberMsg"></div>
             </div>
             {/* 持卡者姓名 */}
             <div>
@@ -197,7 +197,7 @@ function Cart3() {
                 onFocus={(e) => SetFocus(e.target.name)}
                 required
               ></input>
-              <div id="cardNameMsg"></div>
+              <div className={Style.warning} id="cardNameMsg"></div>
             </div>
             {/* 到期日期 */}
             <div>
@@ -235,7 +235,7 @@ function Cart3() {
                 <option value="29">2029</option>
                 <option value="30">2030</option>
               </select>
-              <div id="cardDateMsg"></div>
+              <div className={Style.warning} id="cardDateMsg"></div>
             </div>
             {/* 驗證碼 */}
             <div>
@@ -252,7 +252,7 @@ function Cart3() {
                 }}
                 onFocus={(e) => SetFocus(e.target.name)}
               ></input>
-              <div id="cardCvcMsg"></div>
+              <div className={Style.warning} id="cardCvcMsg"></div>
             </div>
           </form>
         </section>
