@@ -1,3 +1,4 @@
+
 /* 表格-固定尺寸 */
 .blockSizeS {
   width: var(--sizeS);
@@ -29,7 +30,6 @@
 }
 .shoppingListS tr:nth-child(2n) {
   background-color: var(--brown4);
-  /* border-radius:0 0 15px 15px; */
 }
 /* 表單項目名稱 */
 .listTitle{
@@ -63,6 +63,12 @@
   border:2px solid var(--brown3);
   border-radius:0 0 15px 15px;
 }
+.listItem2{
+  padding: 5px 0px;
+}
+.listItem2:last-child{
+  border-radius: 0 0 15px 15px;
+}
 /* 沒有銷售紀錄時出現 */
 .nosale{
   height: 50vh;
@@ -77,6 +83,15 @@
 .nosale p{
   color: var(--brown2);
   font-size: var(--heading3);
+}
+/* OrderList.js */
+.detailButton{
+  padding: 8px 20px;
+  border-radius: 99px;
+  border: none;
+  margin: 5px 0px;
+  background-color: var(--yellow1);
+  font-size: var(--heading5);
 }
 /* ——————————————————————————————————————— */
 @media screen and (max-width:441px){
@@ -107,7 +122,7 @@
   }
   /* ------表格------ */
   .listTitle{
-   display: none;
+   /* display: none; */
   }
   .listItem{
     margin-top: 60px;
@@ -118,7 +133,6 @@
   }
   .phoneCart{
   padding: 0px 10px;
-  display:flex;
   flex-wrap: wrap;
   overflow: hidden;
 }

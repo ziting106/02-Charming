@@ -54,11 +54,11 @@ function MySale() {
             </thead>
             {/* ——————————————接資料處————————————————— */}
 
-            <tbody className={Style.phoneCart}>
+            <tbody className={`${Style.phoneCart} ${Style.listItem}`}>
               {products.map((v, i) => {
                 const { ID, product_name, create_time, price } = v;
                 return (
-                  <tr className={Style.listItem}>
+                  <tr className={Style.listItem2}>
                     <th className={Style.blockSizeM} scope="row">
                       訂單編號 : {ID}
                     </th>
