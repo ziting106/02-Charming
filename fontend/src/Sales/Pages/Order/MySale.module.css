@@ -1,9 +1,3 @@
-:root {
-  --sizeS: 100px;
-  --sizeM: 150px;
-  --sizeL: 200px;
-  --sizeXL: 440px;
-}
 /* 表格-固定尺寸 */
 .blockSizeS {
   width: var(--sizeS);
@@ -19,6 +13,9 @@
 }
 .price{
   color: var(--red);
+}
+.flex{
+  display: flex;
 }
 /* ——
 /* —————————————表格———————————————— */
@@ -61,20 +58,25 @@
   border-radius: 15px;
   font-size: var(--heading4);
 }
-.listItem img{
-  height: 100px;
-  object-fit: cover;
-}
 /* Cart2.js使用 */
 .listItem{
   border:2px solid var(--brown3);
   border-radius:0 0 15px 15px;
 }
-.listItem2{
-  padding: 10px 0px;
+/* 沒有銷售紀錄時出現 */
+.nosale{
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./noSale.png) no-repeat center;
+  background-color: rgba(255,255,255,.7);
+  background-blend-mode:screen;
+  background-size: 100%;
 }
-.listItem2:last-child{
-  border-radius: 0 0 15px 15px;
+.nosale p{
+  color: var(--brown2);
+  font-size: var(--heading3);
 }
 /* ——————————————————————————————————————— */
 @media screen and (max-width:441px){

@@ -3,10 +3,12 @@
 // 還沒做完，Fetch處 還沒改為變數
 
 import React, { useEffect, useState } from "react";
+import Style from "./MySale.module.css";
+// component
 import LoginNav from "../../../Home/Components/LoginNav/LoginNav";
 import Pagination from "../../Components/Pagination/Pagination";
 import ProductBtobButton from "../../../Home/Components/ProductBtobButton/ProductBtobButton";
-import Style from "./MySale.module.css";
+import NoSale from "./NoSale";
 
 function MySale() {
   const [products, setProducts] = useState([]);
@@ -29,49 +31,55 @@ function MySale() {
   return (
     <>
       <LoginNav />
-      <section>
-        {/* <ProductBtobButton /> */}
-        <table className={Style.shoppingListS}>
-          <thead className={Style.listTitle}>
-            <tr>
-              <th scope="col" className={Style.blockSizeS}>
-                訂單編號
-              </th>
-              <th scope="col" className={Style.blockSizeXL}>
-                產品名稱
-              </th>
-              <th scope="col" className={Style.blockSizeM}>
-                產品價格
-              </th>
-              <th scope="col" className={Style.blockSizeL}>
-                訂單日期
-              </th>
-            </tr>
-          </thead>
-          {/* ——————————————接資料處————————————————— */}
-          <tbody className={Style.phoneCart}>
-            {products.map((v, i) => {
-              const { ID, product_name, create_time, price } = v;
-              return (
-                <tr className={Style.listItem}>
-                  <th className={Style.blockSizeS} scope="row">
-                    訂單編號 : {ID}
-                  </th>
-                  <td className={Style.blockSizeXL}>
-                    產品名稱 : {product_name}
-                  </td>
-                  <td className={`${Style.blockSizeS} ${Style.price}`}>
-                    產品價格 : {price}
-                  </td>
-                  <td className={Style.blockSizeL}>訂單日期 : {create_time}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <section className={Style.flex}>
+        <ProductBtobButton />
+        <div>
+          <NoSale />
+          <table className={Style.shoppingListS}>
+            <thead className={Style.listTitle}>
+              <tr>
+                <th scope="col" className={Style.blockSizeM}>
+                  訂單編號
+                </th>
+                <th scope="col" className={Style.blockSizeXL}>
+                  產品名稱
+                </th>
+                <th scope="col" className={Style.blockSizeM}>
+                  產品價格
+                </th>
+                <th scope="col" className={Style.blockSizeL}>
+                  訂單日期
+                </th>
+              </tr>
+            </thead>
+            {/* ——————————————接資料處————————————————— */}
+
+            <tbody className={Style.phoneCart}>
+              {products.map((v, i) => {
+                const { ID, product_name, create_time, price } = v;
+                return (
+                  <tr className={Style.listItem}>
+                    <th className={Style.blockSizeM} scope="row">
+                      訂單編號 : {ID}
+                    </th>
+                    <td className={Style.blockSizeXL}>
+                      產品名稱 : {product_name}
+                    </td>
+                    <td className={`${Style.blockSizeS} ${Style.price}`}>
+                      產品價格 : {price}
+                    </td>
+                    <td className={Style.blockSizeL}>
+                      訂單日期 : {create_time}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <Pagination totalPages={totalPage} />
+        </div>
       </section>
-          {/* 總頁數 */}
-      <Pagination totalPages={totalPage} />
+      {/* 總頁數 */}
     </>
   );
 }
