@@ -152,7 +152,7 @@ function ProductPage() {
         {/* 商品簡介 */}
         <article className={style.ProductText}>
           <div className={style.ProductTitle}>商品介紹</div>
-          <div dangerouslySetInnerHTML={{ __html: products.product_copy }} />
+          <pre dangerouslySetInnerHTML={{ __html: products.product_copy }} />
         </article>
       </section>
     </>

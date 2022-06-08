@@ -25,11 +25,7 @@ function Pagination(props) {
         <li key={i}>
           <Link
             to={`${location.pathname}?id=${userId}&page=${i}`}
-            className={[
-              'page',
-              i === parseInt(currentPages) ? ' active' : '',
-            ].join('')}
-          >
+            className={[` ${Style.page} , i === parseInt(currentPages) ? ${Style.active} : ''`].join('')}>
             {i}
           </Link>
         </li>
@@ -41,10 +37,10 @@ function Pagination(props) {
     <>
       <ul className={Style.pagination}>
         {/* 到最初頁*/}
-        <li className={parseInt(currentPages) === 1 ? 'disabled' : ''}>
+        <li className={parseInt(currentPages) === 1 ? `${Style.disabled}`: ''}>
           <Link to={`${location.pathname}?id=${userId}&page=1`}>
-            <i className="arrow left"></i>
-            <i className="arrow left"></i>
+            <i className={`${Style.arrow} ${Style.left}`}></i>
+            <i className={`${Style.arrow} ${Style.left}`}></i>
           </Link>
         </li>
         {/* 到上頁 */}
@@ -54,7 +50,7 @@ function Pagination(props) {
               parseInt(currentPages) - 1 > 0 ? parseInt(currentPages) - 1 : 1
             }`}
           >
-            <i className="arrow left"></i>
+            <i className={`${Style.arrow} ${Style.left}`}></i>
           </Link>
         </li>
         {/* 當前頁面 */}
@@ -68,14 +64,14 @@ function Pagination(props) {
                 : parseInt(currentPages) + 1
             }`}
           >
-            <i className="arrow right"></i>
+            <i className={`${Style.arrow} ${Style.right}`}></i>
           </Link>
         </li>
         {/* 到最末頁 */}
-        <li className={parseInt(currentPages) === totalPages ? 'disabled' : ''}>
+        <li className={parseInt(currentPages) === totalPages ? `${Style.disabled}` : ''}>
           <Link to={`${location.pathname}?id=${userId}&page=${totalPages}`}>
-            <i className="arrow right"></i>
-            <i className="arrow right"></i>
+            <i className={`${Style.arrow} ${Style.right}`}></i>
+            <i className={`${Style.arrow} ${Style.right}`}></i>
           </Link>
         </li>
       </ul>
