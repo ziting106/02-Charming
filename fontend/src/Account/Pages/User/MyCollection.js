@@ -29,7 +29,6 @@ function MyCollection() {
       <main className={style.main}>
         <MyLoveProduct />
       </main>
-
       </section>
     </>
   );

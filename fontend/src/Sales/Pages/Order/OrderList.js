@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Style from "./Order.module.css";
 import Pagination from "../../Components/Pagination/Pagination";
 import { useLocation, useNavigate } from "react-router-dom";
-import LoginNav from "../../../Home/Components/LoginNav/LoginNav";
 
 function OrderList() {
   // 取得包含目前URL的狀態和位置的物件函數
@@ -35,7 +34,6 @@ function OrderList() {
 
   return (
     <>
-      <LoginNav />
       <section>
           <table className={Style.shoppingListS}>
             <thead className={Style.listTitle}>
@@ -78,7 +76,7 @@ function OrderList() {
                 );
               })}
               {/* 範例 */}
-                  {/* <tr className={Style.listItem2}>
+                  <tr className={Style.listItem2}>
                     <th className={Style.blockSizeL} scope="row">
                       55544363 
                     </th>
@@ -91,7 +89,35 @@ function OrderList() {
                     <td className={Style.blockSizeL}>
                       <button className={Style.detailButton}>詳細</button>
                     </td>
-                  </tr> */}
+                  </tr>
+                  <tr className={Style.listItem2}>
+                    <th className={Style.blockSizeL} scope="row">
+                      55544363 
+                    </th>
+                    <td className={`${Style.blockSizeL} ${Style.price}`}>
+                      5600 
+                    </td>
+                    <td className={Style.blockSizeL}>
+                      2022/10/4
+                    </td>
+                    <td className={Style.blockSizeL}>
+                      <button className={Style.detailButton}>詳細</button>
+                    </td>
+                  </tr>
+                  <tr className={Style.listItem2}>
+                    <th className={Style.blockSizeL} scope="row">
+                      55544363 
+                    </th>
+                    <td className={`${Style.blockSizeL} ${Style.price}`}>
+                      5600 
+                    </td>
+                    <td className={Style.blockSizeL}>
+                      2022/10/4
+                    </td>
+                    <td className={Style.blockSizeL}>
+                      <button className={Style.detailButton}>詳細</button>
+                    </td>
+                  </tr>
             </tbody>
           </table>
           <Pagination totalPages={totalPage} />

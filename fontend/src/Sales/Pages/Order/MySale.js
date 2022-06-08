@@ -5,9 +5,7 @@
 import React, { useEffect, useState } from "react";
 import Style from "./Order.module.css";
 // component
-import LoginNav from "../../../Home/Components/LoginNav/LoginNav";
 import Pagination from "../../Components/Pagination/Pagination";
-import ProductBtobButton from "../../../Home/Components/ProductBtobButton/ProductBtobButton";
 import NoSale from "./NoSale";
 
 function MySale() {
@@ -30,9 +28,7 @@ function MySale() {
 
   return (
     <>
-      <LoginNav />
       <section className={Style.flex}>
-        <ProductBtobButton />
         <div>
           <NoSale />
           <table className={Style.shoppingListS}>

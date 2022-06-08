@@ -3,6 +3,7 @@ import style from "./User.module.css";
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
 import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
 import Footer from '../../Components/Footer/Footer'
+import OrderList from '../../../Sales/Pages/Order/OrderList';
 
 function MyShoppingList() {
   return (
@@ -25,7 +26,7 @@ function MyShoppingList() {
       {/* 右側內文 */}
 
       <main className={style.main}>
-        <h1 className={style.h1}>購買清單</h1>
+        <OrderList/>
       </main>
 
     </>

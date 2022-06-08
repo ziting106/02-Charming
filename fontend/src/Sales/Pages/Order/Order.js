@@ -4,7 +4,6 @@
 import React, { useEffect, useState } from "react";
 import Style from "./Order.module.css";
 import { useParams } from "react-router-dom";
-import LoginNav from "../../../Home/Components/LoginNav/LoginNav";
 
 function Order() {
   // 取得使用者id
@@ -34,7 +33,6 @@ function Order() {
 
   return (
     <>
-      <LoginNav />
       {/* <h3>To C -購買清單-細項 Page</h3> */}
       {/* {products.map((v, i) => {
         const {
