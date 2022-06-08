@@ -65,6 +65,7 @@
 }
 .listItem2{
   padding: 5px 0px;
+  word-break: break-all;
 }
 .listItem2:last-child{
   border-radius: 0 0 15px 15px;
@@ -92,6 +93,41 @@
   margin: 5px 0px;
   background-color: var(--yellow1);
   font-size: var(--heading5);
+}
+/* Order.js */
+/* 最外圍統一置中排版 */
+.Orderflex{
+  display: flex;
+  flex-direction: column;
+}
+.orderInfo{
+  margin: 50px 0px;
+}
+.orderInfo div{
+  display: flex;
+  font-size: var(--heading4);
+}
+.orderInfo div p{
+  padding: 10px 0px;
+}
+.orderInfo div :first-child{
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+  font-weight: bold;
+  color: var(--brown1);
+}
+.turnBack{
+  /* display: inline; */
+  margin: 15px auto;
+  cursor:pointer;
+  border-radius: 99px;
+  border: none;
+  padding: 10px 20px;
+
+  color: #fff;
+  font-weight: bold;
+  background-color: var(--brown2);
 }
 /* ——————————————————————————————————————— */
 @media screen and (max-width:441px){
@@ -121,9 +157,6 @@
     color: var(--brown1);
   }
   /* ------表格------ */
-  .listTitle{
-   /* display: none; */
-  }
   .listItem{
     margin-top: 60px;
     margin-bottom: 80px;
