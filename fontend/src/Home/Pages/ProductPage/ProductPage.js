@@ -26,7 +26,7 @@ function ProductPage() {
       let data = await response.json()
       let dt = new Date(data[0]['create_time'])
       data[0]['create_time'] = dt.toLocaleString()
-      console.log(data[0]);
+      console.log(data[0])
       setProducts(data[0])
     } else {
       const response = await fetch(
@@ -36,7 +36,7 @@ function ProductPage() {
       let data = await response.json()
       let dt = new Date(data[0]['create_time'])
       data[0]['create_time'] = dt.toLocaleString()
-      console.log(data[0]);
+      console.log(data[0])
       setProducts(data[0])
     }
   }
@@ -51,7 +51,7 @@ function ProductPage() {
   // 小圖
   let p = []
   for (let i = 0; i < a.length; i++) {
-    const s =style["bigImg"+i]
+    const s = style['bigImg' + i]
     p.push(
       <button className={style.smallImg}>
         <img
@@ -66,7 +66,6 @@ function ProductPage() {
         />
       </button>
     )
-    console.log(`style.bigImg${i}`)
   }
   // new
   let storage = localStorage
@@ -102,11 +101,6 @@ function ProductPage() {
         {/* 圖片放置區 */}
 
         <div className={style.displayFlex}>
-          {/* <img
-            className={style.bigImg}
-            alt=""
-            src={`http://localhost:3000/Home/ProductImg/${a[0]}`}
-          /> */}
           <div>{p}</div>
           {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}
           <div className={style.priceDiv}>
@@ -158,7 +152,7 @@ function ProductPage() {
         {/* 商品簡介 */}
         <article className={style.ProductText}>
           <div className={style.ProductTitle}>商品介紹</div>
-          <pre>{products.product_copy}</pre>
+          <div dangerouslySetInnerHTML={{ __html: products.product_copy }} />
         </article>
       </section>
     </>

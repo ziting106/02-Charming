@@ -5,53 +5,50 @@ import { BsFillBellFill } from 'react-icons/bs'
 import { FaShoppingCart, FaAngleDown } from 'react-icons/fa'
 import { ImSearch } from 'react-icons/im'
 import logo from '../../Assets/charming_logo.png'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 function LoginNav(props) {
-  // 取得包含目前URL的狀態和位置的物件函數
   const MySwal = withReactContent(Swal)
 
-const logOut = (e) => {
-  //—————————————登出畫面———————————————
-    e.preventDefault();
+  const logOut = (e) => {
+    //—————————————登出畫面———————————————
+    e.preventDefault()
     MySwal.fire({
-      title: "確定要登出嗎?",
-      icon: "warning",
+      title: '確定要登出嗎?',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#795252",
-      confirmButtonText: "確定",
-      cancelButtonColor: "#d33",
-      cancelButtonText: "取消",
+      confirmButtonColor: '#795252',
+      confirmButtonText: '確定',
+      cancelButtonColor: '#d33',
+      cancelButtonText: '取消',
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem('id')
-        localStorage.setItem('auth',false)
+        localStorage.setItem('auth', false)
         MySwal.fire({
           title: '登出成功',
           icon: 'success',
           showConfirmButton: false,
-          timer: 1500
-        }).then(()=>{
+          timer: 1500,
+        }).then(() => {
           navigate('/')
         })
       }
     })
-  };
-  // ———————————————————————————————————————
+  }
+
+  // 取得包含目前URL的狀態和位置的物件函數
   const location = useLocation()
   const Params = useParams()
   const navigate = useNavigate()
 
   const searchParams = new URLSearchParams(location.search)
-
   let userId = searchParams.get('id') ? searchParams.get('id') : ''
   let type = searchParams.get('typeID') ? searchParams.get('typeID') : ''
 
-  let searchItem = searchParams.get('itemsName')
-    ? searchParams.get('itemsName')
-    : ''
+  let userIdParams = Params.userId ? Params.userId : ''
 
   const [searchValue, setSearchValue] = useState('')
 
@@ -67,22 +64,7 @@ const logOut = (e) => {
   window.addEventListener('scroll', displayItemType)
 
   function goPath() {
-    console.log(searchItem)
-    if (searchItem) {
-      navigate(
-        `../${
-          location.pathname +
-          location.search.replace(
-            `itemsName=${searchItem}`,
-            `itemsName=${searchValue}`
-          )
-        }`
-      )
-    } else {
-      navigate(
-        `../${location.pathname + location.search}&itemsName=${searchValue}`
-      )
-    }
+    navigate(`../Product?id=${userId}&page=1&itemsName=${searchValue}`)
   }
 
   return (
@@ -91,6 +73,8 @@ const logOut = (e) => {
       <nav className={style.navBar}>
         {/* logo 與charming文字 */}
         <div className={style.charmingLogo}>
+          {/* 未登入，跳"/"  */}
+          {/* 已登入，跳"/Product?id=${userId}&page=1" */}
           <a href={`/Product?id=${userId}&page=1`} className={style.logoIcon}>
             <img src={logo} alt="logo" />
             <p>柴米Charming</p>
@@ -175,9 +159,11 @@ const logOut = (e) => {
                 <div className={style.navList}>
                   <a href="">會員資料修改</a>
                   <a href="">我的設計</a>
-                  <a href={`/MyProduct?id=${userId}&page=1`}>我的商品</a>
+                  <Link to={`../MyProduct?id=${userId}&page=1`}>我的商品</Link>
                   <a href="/collection">我的收藏</a>
-                  <a href={`/BtobPage/Order?id=${userId}&page=1`}>購買清單</a>
+                  <Link to={`../BtobPage/Order?id=${userId}&page=1`}>
+                    購買清單
+                  </Link>
                   <button onClick={logOut}>登出</button>
                 </div>
                 {/* ——————————————————————————————————————— */}

@@ -1,48 +1,52 @@
-.pagination{
+* {
+  --main-brown: #795252;
+  --sub-brown: #472929;
+  --main-yellow: #ffd247;
+  --table-block-size_s: 100px;
+  --table-block-size_m: 150px;
+  --table-block-size_l: 200px;
+  --table-block-size_ll: 350px;
+}
+
+ul.pagination {
   display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
 }
 
-.pagination  li{
+ul.pagination li {
   display: inline;
   padding-top: 2px;
-  font-size: var(--heading4);
 }
 
-.pagination li a {
-  width: 100%;
+ul.pagination li a {
   color: white;
   display: block;
   text-align: center;
-  align-items: center;
   font-weight: bold;
   text-decoration: none;
   border-radius: 15px;
   transition: background-color 0.3s;
-  margin: 20px 10px;
-
-  /* border: 1px solid var(--brown2); */
+  margin: 0 5px;
 }
 
-/* 當前頁碼 */
-.pagination li a.active {
-  background-color: none;
-  color: var(--brown3);
+ul.pagination li a.active {
+  background-color: #4caf50;
+  color: white;
 }
 
-.pagination li:hover {
+ul.pagination li:hover {
   border-radius: 5px;
-  /* background-color: var(--brown2); */
+  background-color: var(--brown3);
 }
 
 .arrow {
+  margin: 6px auto;
   border: solid var(--main-brown);
-  border-radius: 3px;
-  border-width: 0px 5px 5px 0;
+  border-width: 0px 6px 6px 0;
   display: inline-block;
-  padding: 5px;
+  padding: 3px;
 }
 
 .right {
@@ -60,19 +64,17 @@
 .down {
   transform: rotate(45deg);
 }
-.page{
+.page {
   display: flex;
-  /* align-self: center; */
+  align-self: center;
   line-height: 26px;
   width: 26px;
   height: 26px;
-  font-size: var(--heading3);
-  background-color: none;
+  background-color: var(--main-brown);
 }
 
-.active{
-  color: var(--brown1);
-  /* background-color: var(--brown1); */
+.page .active{
+  background-color: var(--sub-brown);
 }
 
 .disabled {

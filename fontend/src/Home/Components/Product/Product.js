@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Style from './Product.module.css'
 import Card from '../Card/Card'
-import Pagination from '../../../Sales/Components/Pagination/Pagination'
-import {FaBorderAll} from "react-icons/fa"
+import Pagination from '../Pagination/Pagination'
+import { FaBorderAll } from 'react-icons/fa'
 
 function MyProduct() {
   const [products, setProducts] = useState([])
@@ -71,7 +71,7 @@ function MyProduct() {
       {/* 排序 */}
       <div className={Style.order} id="select">
         <label for="sort" htmlFor="cars">
-        <FaBorderAll/>
+          <FaBorderAll />
         </label>
         <select
           name="sort"
