@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import Style from './Product.module.css'
 import Card from '../Card/Card'
-import Pagination from '../Pagination/Pagination'
+import Pagination from '../../../Sales/Components/Pagination/Pagination'
 import { FaBorderAll } from 'react-icons/fa'
 
 function MyProduct() {

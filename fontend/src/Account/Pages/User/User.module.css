@@ -139,3 +139,7 @@
   color: #ffffff;
   cursor: pointer
 }
+/* 我的收藏排版 */
+.dispalyFlex{
+  display: flex;
+}
