@@ -21,6 +21,7 @@ import EditProductPage from "./Home/Pages/EditProductPage/EditProductPage";
 import AddProduct from "./Home/Pages/AddProduct/AddProduct";
 import ProductPage from "./Home/Pages/ProductPage/ProductPage";
 import ProductPageEditButton from "./Home/Pages/ProductPageEditButton/ProductPageEditButton";
+import MyLikeProduct from "./Home/Components/MyLikeProduct/MyLikeProduct"
 // import ProductPage2 from "./Home/Pages/ProductPage/ProductPage4"
 
 //會員
@@ -43,6 +44,7 @@ import Cart4 from "./Sales/Pages/Cart/Cart4";
 import MySale from "./Sales/Pages/Order/MySale";
 import Order from "./Sales/Pages/Order/Order";
 import OrderList from "./Sales/Pages/Order/OrderList";
+import { ImOpt } from "react-icons/im";
 
 //討論區
 
@@ -96,6 +98,7 @@ function App() {
         {/* -------user 登入後頁面------- */}
         <Route path="/shoppinglist" element={<MyShoppingList />} />
         <Route path="/collection" element={<MyCollection />} />
+        <Route path="/collection/MyLikeProduct" element={<MyLikeProduct />} />
         <Route path="/account" element={<MyAccount />} />
 
         {/* 部落格 */}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import './Pagination.css'
+import Style from './Pagination.module.css'
 function Pagination(props) {
   // 當前頁數 & 總頁數
   const { totalPages } = props
@@ -39,7 +39,7 @@ function Pagination(props) {
 
   return (
     <>
-      <ul className="pagination">
+      <ul className={Style.pagination}>
         {/* 到最初頁*/}
         <li className={parseInt(currentPages) === 1 ? 'disabled' : ''}>
           <Link to={`${location.pathname}?id=${userId}&page=1`}>
