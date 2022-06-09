@@ -19,7 +19,7 @@ import UnloginHome from "./Home/Pages/UnloginHome/UnloginHome";
 import MyProduct from "./Home/Pages/MyProduct/MyProduct";
 import EditProductPage from "./Home/Pages/EditProductPage/EditProductPage";
 import AddProduct from "./Home/Pages/AddProduct/AddProduct";
-import ProductPage from "../../ProductPage/ProductPage";
+import ProductPage from "./Home/Pages/ProductPage/ProductPage";
 import ProductPageEditButton from "./Home/Pages/ProductPageEditButton/ProductPageEditButton";
 import MyLikeProduct from "./Home/Components/MyLikeProduct/MyLikeProduct"
 // import ProductPage2 from "./Home/Pages/ProductPage/ProductPage4"
