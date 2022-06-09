@@ -54,11 +54,11 @@ function ProductPage() {
     const s = style['bigImg' + i]
     picture.push(
       <button className={style.ProductImg}>
-        <img
+        {/* <img
           className={`${s} ${style.bigImg}`}
           alt="圖片顯示失敗"
           src={`http://localhost:3000/Home/ProductImg/${a[i]}`}
-        />
+        /> */}
         <img
           className={style.smallImg}
           alt="圖片顯示失敗"
@@ -101,7 +101,7 @@ function ProductPage() {
         <div className={style.displayFlex}>
 
           {/*———————————————圖片放置區————————————————  */}
-          <div>{picture}</div>
+          <div className={style.phonePicture}>{picture}</div>
           {/* ——————————————————————————————————————— */}
 
           {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}

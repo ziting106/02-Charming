@@ -1,9 +1,8 @@
 .ProductPage{
-    /* margin: 50px 150px; */
     --borderRadius:15px;
     --bigPictureSize:500px;
     --smallPictureSize:94px;
-    background-color: black;
+    /* background-color: black; */
 }
 /* 主要商品名稱 */
 .ProductPage h3{
@@ -28,7 +27,7 @@
     margin: 20px;
     object-fit: cover;
     border: 2px solid var(--brown1);
-    border-radius: 999px;
+    border-radius: 99px;
 }
 .displaySpaceAround{
     display: flex;
@@ -103,7 +102,7 @@
 
 }
 .shoppingCar{
-    width: 200px;
+    max-width: 200px;
     display: block;
     appearance: none;
     padding:15px 30px;
@@ -165,16 +164,11 @@
     padding-right:50px ;
     white-space: nowrap;
 }
-/* 照片 */
-.ProductPage{
-    margin: 50px 150px;
-    --borderRadius:15px;
-    --bigPictureSize:50%;
-    --smallPictureSize:94px;
-}
 
+
+/*-----照片切換----- */
 .ProductImg{
-    left: 650px;
+    left: 750px;
     display: block;
     width: var(--smallPictureSize);
     height: var(--smallPictureSize);
@@ -183,9 +177,6 @@
     border-radius: var(--borderRadius);
     background-color: #fff;
 }
-
-/*-----照片切換----- */
-
 .bigImg{
     background-color: #fff;
     width: 600px;
@@ -243,8 +234,52 @@
     }
 }
 @media screen and (max-width:780px) {
-    
+    .bigImg{
+        width: 400px;
+        left: -450px;
+    }
+    .ProductImg{
+        left: 350px;
+    }
 }
 @media screen and (max-width:441px){
-  
+    .bigImg{
+        width: 250px;
+        left: -300px;
+    }
+    .ProductImg{
+        left: 450px;
+    }
+    .displayFlex{
+        display: flex;
+        flex-direction: column;
+    }
+    /* 圖片外框button */
+    .ProductImg{
+        display: flex;
+        left: 0px;
+        top: 250px;
+        width: var(--smallPictureSize);
+        height: var(--smallPictureSize);
+        margin-bottom: 20px;
+        border: none;
+        border-radius: var(--borderRadius);
+        background-color: #fff;
+    }
+    /* 圖片button集合排列 */
+    .phonePicture{
+        display: flex;
+
+    }
+    .smallImg{
+        margin: 5px;
+    }
+    .ProductPage{
+        --smallPictureSize:65px;
+        --topHight:250px
+        /* background-color: black; */
+    }
+    .priceDiv{
+        width: 100%;
+    }
 }
