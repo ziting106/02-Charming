@@ -106,6 +106,7 @@
     display: none;
     border: 1px solid var(--gray3);
     border-radius:15px;
+    background-color: #fff;
   }
   /* 小箭頭 */
   .navList::before{

@@ -132,10 +132,8 @@ input:active {
   border: 2px solid var(--brown1);
 }
 
-.textEditor {
-  width: 840px;
-  margin: 0 auto;
-}
-.ql-editor {
-  min-height: 100px;
+
+.textTool{
+  display: flex;
+  flex-direction: column;
 }

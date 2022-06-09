@@ -1,134 +1,134 @@
 // 新增的商品的主人要改變數！！
 // 看會員怎麼寫
 
-import React, { useState } from 'react'
-import LoginNav from '../../Components/LoginNav/LoginNav'
-import style from './AddProduct.module.css'
-import { IoIosAddCircleOutline } from 'react-icons/io'
-import { BsCaretDownFill } from 'react-icons/bs'
+import React, { useState } from "react";
+import LoginNav from "../../Components/LoginNav/LoginNav";
+import style from "./AddProduct.module.css";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { BsCaretDownFill } from "react-icons/bs";
 
 // Quill.js
-import ReactQuill from 'react-quill'
+import ReactQuill from "react-quill";
 import EditorToolbar, {
   modules,
   formats,
-} from '../../Components/EditorTool/EditorToolbar'
-import 'react-quill/dist/quill.snow.css'
+} from "../../Components/EditorTool/EditorToolbar";
+import "react-quill/dist/quill.snow.css";
 
 function AddProduct() {
-  const [img1, setImg1] = useState()
-  const [productName, setProductName] = useState('')
-  const [productCopy, setProductCopy] = useState()
-  const [productPrice, setProductPrice] = useState('')
-  const [productType, setProductType] = useState('101')
-  let picPath = ''
+  const [img1, setImg1] = useState();
+  const [productName, setProductName] = useState("");
+  const [productCopy, setProductCopy] = useState();
+  const [productPrice, setProductPrice] = useState("");
+  const [productType, setProductType] = useState("101");
+  let picPath = "";
 
   // Quill.js
-  const [state, setState] = React.useState({ value: null })
+  const [state, setState] = React.useState({ value: null });
   const handleChange = (value) => {
-    setState({ value })
-  }
+    setState({ value });
+  };
 
-  const picMsg = document.getElementById('thePicMsg')
-  const nameMsg = document.getElementById('theNameMsg')
-  const priceMsg = document.getElementById('thePriceMsg')
+  const picMsg = document.getElementById("thePicMsg");
+  const nameMsg = document.getElementById("theNameMsg");
+  const priceMsg = document.getElementById("thePriceMsg");
 
   // 新建formData物件，用於處理整個form
-  const formData = new FormData()
+  const formData = new FormData();
   // 存放圖片路徑 (string)
   // 處理圖片，可以多張，不會保留上次按的圖片
   function fileChange(e) {
     if (e.target.files.length < 6) {
       for (let i = 0; i < e.target.files.length; i++) {
-        let file = document.getElementById(`theFile1`).files
-        let image = document.getElementById(`image${i + 1}`)
-        let readFile = new FileReader()
-        readFile.readAsDataURL(file[i])
-        readFile.addEventListener('load', function () {
-          image.src = readFile.result
-          image.style.maxWidth = '500px'
-          image.style.maxHeight = '500px'
-        })
+        let file = document.getElementById(`theFile1`).files;
+        let image = document.getElementById(`image${i + 1}`);
+        let readFile = new FileReader();
+        readFile.readAsDataURL(file[i]);
+        readFile.addEventListener("load", function () {
+          image.src = readFile.result;
+          image.style.maxWidth = "500px";
+          image.style.maxHeight = "500px";
+        });
       }
       for (let j = 0; j < 5 - e.target.files.length; j++) {
-        let image = document.getElementById(`image${5 - j}`)
-        image.removeAttribute('src')
+        let image = document.getElementById(`image${5 - j}`);
+        image.removeAttribute("src");
       }
     } else {
-      alert('抱歉，我們只能存五筆')
+      alert("抱歉，我們只能存五筆");
     }
   }
   const fetchProducts = async () => {
     // 新建formDataImg物件，用於處理照片
-    const formDataImg = new FormData()
+    const formDataImg = new FormData();
     // 將每張圖片都加入formData的theFile1值內
     for (let i = 0; i < img1.length; i++) {
-      formDataImg.append('theFile1', img1[i])
+      formDataImg.append("theFile1", img1[i]);
     }
     // 與後端API取值，取新圖片的資訊
-    const response = await fetch('http://localhost:3001/Sales/api/upload', {
-      method: 'POST',
+    const response = await fetch("http://localhost:3001/Sales/api/upload", {
+      method: "POST",
       body: formDataImg,
-    })
-    const data = await response.json()
+    });
+    const data = await response.json();
     // 取得新圖片的資訊後，另組成字串存入formData
     if (data.length > 1) {
       for (let i = 0; i < data.length - 1; i++) {
-        picPath += data[i]['filename'] + ' '
+        picPath += data[i]["filename"] + " ";
       }
       // 最後一筆，不用加空白做區隔
-      picPath += data[data.length - 1]['filename']
+      picPath += data[data.length - 1]["filename"];
     } else {
-      picPath = data[0]['filename']
+      picPath = data[0]["filename"];
     }
     // 準備新增商品資料進SQL
-    formData.append('picPath', picPath)
-    formData.append('productName', productName)
-    formData.append('authorName', localStorage.getItem('name'))
-    formData.append('productCopy', state.value)
+    formData.append("picPath", picPath);
+    formData.append("productName", productName);
+    formData.append("authorName", localStorage.getItem("name"));
+    formData.append("productCopy", state.value);
     // formData.append('productCopy', productCopy)
-    formData.append('price', productPrice)
-    formData.append('typeID', productType)
+    formData.append("price", productPrice);
+    formData.append("typeID", productType);
 
-    fetch('http://localhost:3001/Sales/api/product', {
-      method: 'POST',
+    fetch("http://localhost:3001/Sales/api/product", {
+      method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log('Success:', result)
+        console.log("Success:", result);
       })
       .catch((error) => {
-        console.error('Error:', error)
-      })
-  }
+        console.error("Error:", error);
+      });
+  };
 
   function getfetch(e) {
     // 取消form按鈕的預設動作
-    let isPass = true
-    e.preventDefault()
+    let isPass = true;
+    e.preventDefault();
 
     // 先清空訊息
-    picMsg.innerHTML = ''
-    nameMsg.innerHTML = ''
-    priceMsg.innerHTML = ''
+    picMsg.innerHTML = "";
+    nameMsg.innerHTML = "";
+    priceMsg.innerHTML = "";
 
     // 正規表達式，判斷只能數字或英文
-    const numRegExp = /^[0-9]*$/
+    const numRegExp = /^[0-9]*$/;
     if (!numRegExp.test(productPrice)) {
-      isPass = false
-      priceMsg.innerHTML = '價格必須為數字'
+      isPass = false;
+      priceMsg.innerHTML = "價格必須為數字";
     }
     if (productName.length > 50) {
-      isPass = false
-      nameMsg.innerHTML = '商品名稱需小於50字'
+      isPass = false;
+      nameMsg.innerHTML = "商品名稱需小於50字";
     }
     if (img1.length === 0) {
-      isPass = false
-      picMsg.innerHTML = '圖片尚未選取'
+      isPass = false;
+      picMsg.innerHTML = "圖片尚未選取";
     }
     if (isPass) {
-      fetchProducts()
+      fetchProducts();
     }
   }
   return (
@@ -170,8 +170,8 @@ function AddProduct() {
               className={style.btn}
               type="file"
               onChange={(e) => {
-                setImg1(e.target.files)
-                fileChange(e)
+                setImg1(e.target.files);
+                fileChange(e);
               }}
               multiple="multiple"
             ></input>
@@ -188,7 +188,7 @@ function AddProduct() {
               value={productName}
               placeholder="請輸入商品名稱"
               onChange={(e) => {
-                setProductName(e.target.value)
+                setProductName(e.target.value);
               }}
               required
             ></input>
@@ -198,16 +198,19 @@ function AddProduct() {
 
           <div className={style.pictureField}>
             <p className={style.title}>描述文案</p>
-            <EditorToolbar />
-            <ReactQuill
-              className="test"
-              theme="snow"
-              value={state.value}
-              onChange={handleChange}
-              placeholder={'Write something awesome...'}
-              modules={modules}
-              formats={formats}
-            />
+            <div className={style.textTool}>
+              <EditorToolbar />
+              <ReactQuill
+                className="test"
+                theme="snow"
+                value={state.value}
+                onChange={handleChange}
+                placeholder={"Write something awesome..."}
+                modules={modules}
+                formats={formats}
+              />
+            </div>
+
             {/* <textarea
               id="theCopy"
               name="theCopy"
@@ -234,7 +237,7 @@ function AddProduct() {
                   placeholder="商品價格"
                   value={productPrice}
                   onChange={(e) => {
-                    setProductPrice(e.target.value)
+                    setProductPrice(e.target.value);
                   }}
                   required
                 ></input>
@@ -248,14 +251,14 @@ function AddProduct() {
                   name="theType"
                   value={productType}
                   onChange={(e) => {
-                    setProductType(e.target.value)
+                    setProductType(e.target.value);
                   }}
                 >
-                  <option value={'101'}>攝影</option>
-                  <option value={'102'}>NFT</option>
-                  <option value={'103'}>UI/UX</option>
-                  <option value={'104'}>報告/教材</option>
-                  <option value={'105'}>Logo/插圖</option>
+                  <option value={"101"}>攝影</option>
+                  <option value={"102"}>NFT</option>
+                  <option value={"103"}>UI/UX</option>
+                  <option value={"104"}>報告/教材</option>
+                  <option value={"105"}>Logo/插圖</option>
                 </select>
                 <BsCaretDownFill className={style.iconSelect} />
               </div>
@@ -270,6 +273,6 @@ function AddProduct() {
         </form>
       </section>
     </>
-  )
+  );
 }
-export default AddProduct
+export default AddProduct;

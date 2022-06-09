@@ -1,0 +1,15 @@
+.ql-totalstyle{
+ border: 2px solid var(--brown3);
+  border-radius: 15px 15px 0px 0px;
+}
+.ql-formats{
+  border-radius: 0px 0px 15px 15px;
+}
+.text-editor {
+  width: 1086px;
+  margin: 0 auto;
+  border-radius: 0px 0px 15px 15px;
+}
+.ql-editor {
+  min-height: 200px;
+}
