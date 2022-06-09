@@ -137,7 +137,7 @@ function UnloginHome() {
             />
           </a>
         </div>
-        <a href="login">
+        <a href="/signup">
           <button className={`${style.joinButton} ${style.heading4}`}>
             加入Charming
           </button>

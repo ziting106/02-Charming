@@ -80,8 +80,9 @@
       --circleSize:40px;
     }
     /* hover頭像顯示清單的參照物 */
-    .showList img{
-     object-fit:cover;
+    .showList a img{
+      top: 5px;
+      width: 100%;
     }
     .showList > :first-child{
       display: inline-block;
@@ -282,7 +283,7 @@
   }
   /* -------------- */
   .showList{
-    display: none;
+    /* display: none; */
   }
   .phoneDisplayNone{
     display: none;
