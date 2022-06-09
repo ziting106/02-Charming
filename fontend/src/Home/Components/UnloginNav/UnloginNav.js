@@ -1,27 +1,61 @@
-import React, { useState } from "react";
-import style from "./UnloginNav.module.css";
-import { AiOutlineGlobal } from "react-icons/ai";
-import { FaAngleDown } from "react-icons/fa";
-import { ImSearch } from "react-icons/im";
-import logo from "../../Assets/charming_logo.png";
+import React, { useState } from 'react'
+import style from './UnloginNav.module.css'
+import { ImSearch } from 'react-icons/im'
+import logo from '../../Assets/charming_logo.png'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function UnloginNav(props) {
-  const [typebar, setNavbar] = useState(false);
+  // 取得包含目前URL的狀態和位置的物件函數
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const searchParams = new URLSearchParams(location.search)
+  let type = searchParams.get('typeID') ? searchParams.get('typeID') : ''
+  let searchItem = searchParams.get('itemsName')
+    ? searchParams.get('itemsName')
+    : ''
+
+  const [searchValue, setSearchValue] = useState('')
+
+  const [typebar, setNavbar] = useState(false)
+
   const displayItemType = () => {
     if (window.scrollY >= 350) {
-      setNavbar(true);
+      setNavbar(true)
     } else {
-      setNavbar(false);
+      setNavbar(false)
     }
-  };
-  window.addEventListener("scroll", displayItemType);
+  }
+  window.addEventListener('scroll', displayItemType)
+
+  function goPath() {
+    // 先判斷搜尋欄內是否有值
+    if (searchValue) {
+      // 判斷是否已經有搜尋過
+      if (searchItem) {
+        navigate(
+          `../Product${location.search.replace(
+            `itemsName=${searchItem}`,
+            `itemsName=${searchValue}`
+          )}`
+        )
+      } else {
+        // 判斷來源處有沒有Query
+        if (searchParams.search) {
+          navigate(`../Product${searchParams}&page=1&itemsName=${searchValue}`)
+        } else {
+          navigate(`../Product?page=1&itemsName=${searchValue}`)
+        }
+      }
+    }
+  }
 
   return (
     <header className={style.mainPage}>
       <nav className={style.navBar}>
         {/* logo 與charming文字 */}
         <div className={style.charmingLogo}>
-          <a href="/" className={style.logoIcon}>
+          <a href={`/Product?page=1`} className={style.logoIcon}>
             <img src={logo} alt="logo" />
             <p>柴米Charming</p>
           </a>
@@ -32,45 +66,59 @@ function UnloginNav(props) {
         >
           <input
             type="search"
-            placeholder="Search.."
+            placeholder="Search product or author"
             onChange={(e) => {
-              console.log(e);
+              setSearchValue(e.target.value)
             }}
             onKeyDown={(e) => {
-              if (e.key === "Enter") console.log(e);
+              if (e.key === 'Enter') {
+                setSearchValue(e.target.value)
+                goPath()
+              }
             }}
           />
 
-          <input type="submit" value="搜尋" />
+          <input type="submit" value="搜尋" onClick={goPath} />
         </div>
 
         {/* 平版版搜尋 */}
-        {/* <div className={style.padSearch}> */}
         <div
           className={typebar ? `${style.padSearch}` : `${style.displayNone}`}
         >
-          <ImSearch className={style.padSearchIcon} />
-          <input type="search" className={style.padSearchBar}></input>
+          <ImSearch className={style.padSearchIcon} onClick={goPath} />
+          <input
+            type="search"
+            className={style.padSearchBar}
+            onChange={(e) => {
+              setSearchValue(e.target.value)
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                setSearchValue(e.target.value)
+                goPath()
+              }
+            }}
+          ></input>{' '}
         </div>
         {/* -------選項------- */}
         <div className={style.charmingItem}>
           <ul className={style.itemStyle}>
             <div>
-              <li className={style.changeLanguage}>
+              {/* <li className={style.changeLanguage}>
                 <AiOutlineGlobal />
                 <select>
                   <option value="australia">繁體中文</option>
                   <option value="English">English</option>
                 </select>
                 <FaAngleDown />
-              </li>
+              </li> */}
               <a href="/Portfolio" className={style.phoneDisplayNone}>
                 <li>柴米人</li>
               </a>
-              <a href="/Blog" className={style.phoneDisplayNone}>
+              <a href="/blog" className={style.phoneDisplayNone}>
                 <li>柴訊</li>
               </a>
-              <a href="/Communication" className={style.phoneDisplayNone}>
+              <a href="/AskPage" className={style.phoneDisplayNone}>
                 <li>柴社</li>
               </a>
             </div>
@@ -83,31 +131,10 @@ function UnloginNav(props) {
           </ul>
         </div>
       </nav>
-
       <div
         className={typebar ? `${style.displayblock}` : `${style.displayNone}`}
-      >
-        <hr />
-        <ul className={style.itemList}>
-          <a href="">
-            <li>UI/UX</li>
-          </a>
-          <a href="">
-            <li>品牌宣傳</li>
-          </a>
-          <a href="">
-            <li>插圖</li>
-          </a>
-          <a href="">
-            <li>網頁設計</li>
-          </a>
-          <a href="">
-            <li>攝影</li>
-          </a>
-        </ul>
-        <hr />
-      </div>
+      ></div>
     </header>
-  );
+  )
 }
-export default UnloginNav;
+export default UnloginNav

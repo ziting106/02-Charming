@@ -1,14 +1,12 @@
-// 功能：新增訂單。Method: POST。URL: /api/order
 // http://localhost:3000/Sales/Cart3
-
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Cards from 'react-credit-cards'
 import 'react-credit-cards/es/styles-compiled.css'
 import './CreditCard.css'
-import './Cart.css'
+import Style from './Cart.module.css'
 
-import Processbar from '../../Components/ProcessBar/ProcessBar'
+import Processbar from '../../Components/Processbar/Processbar'
 import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
 
 function Cart3() {
@@ -137,20 +135,18 @@ function Cart3() {
           // 新增storage:addID 提供給Cart4使用
           storage.setItem('addID', obj)
         })
+      Navigate('../Sales/Cart4')
     }
   }
 
   return (
     <>
       <LoginNav />
-      <h3>購物車-結帳 Page</h3>
       <Processbar step="3" />
-
       {/* 信用卡 */}
-
-      <div className="card">
-        {/* 卡面 */}
-        <div className="rccs__card rccs__card--unknown">
+      {/* 卡面 */}
+      <div className={Style.creditCard}>
+        <div className="rccs__card  rccs__card--unknown">
           <Cards
             number={number}
             name={name}
@@ -159,121 +155,125 @@ function Cart3() {
             focused={focus}
           />
         </div>
-        {/* 輸入欄 */}
-        <form name="card">
-          {/* 卡號 */}
-          <div>
-            <label htmlFor="name" className="blockText">
-              信用卡卡號 :{' '}
-            </label>
-            <input
-              id="cardNumber"
-              type="tel"
-              className="form-control"
-              value={number}
-              name="number"
-              onChange={(e) => {
-                SetNumber(e.target.value)
-              }}
-              onFocus={(e) => SetFocus(e.target.name)}
-            ></input>
-            <div id="cardNumberMsg"></div>
-          </div>
-          {/* 持卡者姓名 */}
-          <div>
-            <label htmlFor="name" className="blockText">
-              持卡者姓名 :{' '}
-            </label>
-            <input
-              id="cardName"
-              type="text"
-              className="form-control"
-              value={name}
-              name="name"
-              onChange={(e) => {
-                SetName(e.target.value)
-              }}
-              onFocus={(e) => SetFocus(e.target.name)}
-              required
-            ></input>
-            <div id="cardNameMsg"></div>
-          </div>
-          {/* 到期日期 */}
-          <div>
-            <label htmlFor="month" className="blockText">
-              有效截止月 / 年 :{' '}
-            </label>
-            <div id="cardDateMsg"></div>
-            <select id="cardMon" name="expiry" onChange={handleDate}>
-              <option value=" ">Month</option>
-              <option value="01">Jan</option>
-              <option value="02">Feb</option>
-              <option value="03">Mar</option>
-              <option value="04">April</option>
-              <option value="05">May</option>
-              <option value="06">June</option>
-              <option value="07">July</option>
-              <option value="08">Aug</option>
-              <option value="09">Sep</option>
-              <option value="10">Oct</option>
-              <option value="11">Nov</option>
-              <option value="12">Dec</option>
-            </select>
-            <select id="cardYear" name="expiry" onChange={handleExpiry}>
-              <option value=" ">Year</option>
-              <option value="21">2021</option>
-              <option value="22">2022</option>
-              <option value="23">2023</option>
-              <option value="24">2024</option>
-              <option value="25">2025</option>
-              <option value="26">2026</option>
-              <option value="27">2027</option>
-              <option value="28">2028</option>
-              <option value="29">2029</option>
-              <option value="30">2030</option>
-            </select>
-          </div>
-          {/* 驗證碼 */}
-          <div>
-            <label htmlFor="cvv" className="blockText">
-              CVV :{' '}
-            </label>
-            <input
-              id="cardCvc"
-              type="tel"
-              name="cvc"
-              value={cvc}
-              onChange={(e) => {
-                SetCvc(e.target.value)
-              }}
-              onFocus={(e) => SetFocus(e.target.name)}
-            ></input>
-            <div id="cardCvcMsg"></div>
-          </div>
-        </form>
-      </div>
 
-      {/* 按鈕 */}
-      <div>
-        <button
-          className="button"
-          onClick={() => {
-            // 做驗證，成功就跳頁 & 新增資料庫
-            checkForm()
-            Navigate('../Sales/Cart4')
-          }}
-        >
-          下一步
-        </button>
-        <button
-          className="button"
-          onClick={() => {
-            // 回首頁
-            Navigate('../Sales/Cart2')
-          }}
-        >
-          回上頁
-        </button>
+        {/* 輸入欄 */}
+        <section>
+          <form className={Style.card} name="card">
+            {/* 卡號 */}
+            <div>
+              <label for="cardNumber" htmlFor="name">
+                信用卡卡號 :{' '}
+              </label>
+              <input
+                id="cardNumber"
+                type="tel"
+                className="form-control"
+                value={number}
+                name="number"
+                onChange={(e) => {
+                  SetNumber(e.target.value)
+                }}
+                onFocus={(e) => SetFocus(e.target.name)}
+              ></input>
+              <div className={Style.warning} id="cardNumberMsg"></div>
+            </div>
+            {/* 持卡者姓名 */}
+            <div>
+              <label for="cardName" htmlFor="name">
+                持卡者姓名 :{' '}
+              </label>
+              <input
+                id="cardName"
+                type="text"
+                className="form-control"
+                value={name}
+                name="name"
+                onChange={(e) => {
+                  SetName(e.target.value)
+                }}
+                onFocus={(e) => SetFocus(e.target.name)}
+                required
+              ></input>
+              <div className={Style.warning} id="cardNameMsg"></div>
+            </div>
+            {/* 到期日期 */}
+            <div>
+              <label htmlFor="month">有效截止月 / 年 : </label>
+              <select
+                className={Style.date}
+                id="cardMon"
+                name="expiry"
+                onChange={handleDate}
+              >
+                <option value=" ">Month</option>
+                <option value="01">Jan</option>
+                <option value="02">Feb</option>
+                <option value="03">Mar</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">Aug</option>
+                <option value="09">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option>
+              </select>
+              <select id="cardYear" name="expiry" onChange={handleExpiry}>
+                <option value=" ">Year</option>
+                <option value="21">2021</option>
+                <option value="22">2022</option>
+                <option value="23">2023</option>
+                <option value="24">2024</option>
+                <option value="25">2025</option>
+                <option value="26">2026</option>
+                <option value="27">2027</option>
+                <option value="28">2028</option>
+                <option value="29">2029</option>
+                <option value="30">2030</option>
+              </select>
+              <div className={Style.warning} id="cardDateMsg"></div>
+            </div>
+            {/* 驗證碼 */}
+            <div>
+              <label for="cardCvc" htmlFor="cvv">
+                後三碼 :{' '}
+              </label>
+              <input
+                id="cardCvc"
+                type="tel"
+                name="cvc"
+                value={cvc}
+                onChange={(e) => {
+                  SetCvc(e.target.value)
+                }}
+                onFocus={(e) => SetFocus(e.target.name)}
+              ></input>
+              <div className={Style.warning} id="cardCvcMsg"></div>
+            </div>
+          </form>
+        </section>
+        {/* 按鈕 */}
+        <div className={Style.checkButton}>
+          <button
+            className={Style.button2}
+            onClick={() => {
+              // 回首頁
+              Navigate('../Sales/Cart2')
+            }}
+          >
+            回上頁
+          </button>
+          <button
+            className={Style.button1}
+            onClick={() => {
+              // 做驗證，成功就跳頁 & 新增資料庫
+              checkForm()
+            }}
+          >
+            確認付款
+          </button>
+        </div>
       </div>
     </>
   )

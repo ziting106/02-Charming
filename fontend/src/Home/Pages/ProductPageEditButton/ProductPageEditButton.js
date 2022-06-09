@@ -1,44 +1,40 @@
-// 功能：取得單筆商品資料。Method: GET。URL: /api/product/:id
-// 功能：加入購物車，Session productList(key) 買那些產品  / productID(key) 產品ID
-// 按圖片會放大 且可以切換上(下)一張
-// 顯示超過4張，右邊最後一張要加半黑濾鏡(+N)
-
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import style from "./ProductPageEditButton.module.css";
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import style from './ProductPageEditButton.module.css'
 //component
-import LoginNav from "../../Components/LoginNav/LoginNav";
+import LoginNav from '../../Components/LoginNav/LoginNav'
 // icon
-import { MdLocationOn, MdCalendarToday } from "react-icons/md";
+import { MdLocationOn, MdCalendarToday } from 'react-icons/md'
 
 function ProductPage() {
   const [products, setProducts] = useState({
-    pic_path: "",
-  });
+    pic_path: '',
+  })
 
   // 連線檔
-  const catchUserId = useParams();
+  let userID = localStorage.getItem('id')
+  const catchUserId = useParams()
   const fetchProducts = async () => {
-    //向遠端伺服器get資料 http://localhost:3000/Sales/api/product?id=1
+    //向遠端伺服器get資料
     const response = await fetch(
       //取單一商品資料
-      `http://localhost:3001/Sales/api/product/${catchUserId.UserId}/${catchUserId.ProductID}`
-    );
-    const data = await response.json();
+      `http://localhost:3001/Sales/api/product/${userID}/${catchUserId.ProductID}`
+    )
+    const data = await response.json()
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
-    setProducts(data[0]);
-  };
+    setProducts(data[0])
+  }
   // console.log(products);
   // didMount
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    fetchProducts()
+  }, [])
 
-  const a = products.pic_path.split(" ");
+  const a = products.pic_path.split(' ')
 
   // 小圖
-  let p = [];
+  let p = []
   for (let i = 0; i < a.length; i++) {
     p.push(
       <button className={style.smallImg}>
@@ -48,7 +44,7 @@ function ProductPage() {
           src={`http://localhost:3000/Home/ProductImg/${a[i]}`}
         />
       </button>
-    );
+    )
   }
   return (
     <>
@@ -86,7 +82,7 @@ function ProductPage() {
                 </pre>
               </div>
               <div className={style.buyNumber}>
-                <a href={`/MyProduct/Edit/1/${products.ID}`}>
+                <a href={`/MyProduct/Edit/${products.ID}`}>
                   <button className={style.EditProduct}>編輯商品</button>
                 </a>
               </div>
@@ -98,7 +94,7 @@ function ProductPage() {
               <img
                 className={style.designerPicture}
                 alt=""
-                src={require("../../Assets/charming_logo.png")}
+                src={require('../../Assets/charming_logo.png')}
               />
               <div>
                 <p className={style.aboutDesigner}>{products.author_name}</p>
@@ -120,10 +116,10 @@ function ProductPage() {
         {/* 商品簡介 */}
         <article className={style.ProductText}>
           <div className={style.ProductTitle}>商品介紹</div>
-          <pre>{products.product_copy}</pre>
+          <div dangerouslySetInnerHTML={{ __html: products.product_copy }} />
         </article>
       </section>
     </>
-  );
+  )
 }
-export default ProductPage;
+export default ProductPage

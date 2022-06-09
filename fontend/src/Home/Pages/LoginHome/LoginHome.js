@@ -1,26 +1,20 @@
-import React from "react";
-import Style from "./LoginHome.module.css";
+import React from 'react'
+import Style from './LoginHome.module.css'
 // component
-import LoginNav from "../../Components/LoginNav/LoginNav";
-import Card from "../../Components/Card/Card";
-import AsideProductLIst from "../../Components/AsideProductLIst/AsideProductLIst";
-import Product from "../../Components/Product/Product";
-import Slider from "../../Components/Slider/Slider";
-import SliderSection from "../../Components/SliderSection/SliderSection";
-import Pagination from "../../Components/Pagination/Pagination";
+import LoginNav from '../../Components/LoginNav/LoginNav'
+import AsideProductLIst from '../../Components/AsideProductLIst/AsideProductLIst'
+import Product from '../../Components/Product/Product'
 
 // react icon
-import { AiTwotoneSound } from "react-icons/ai";
-
-// data
-
-import { ImOpt } from "react-icons/im";
-// const connection = require('../../../../../backend/modules/mysql_config');
+import { AiTwotoneSound } from 'react-icons/ai'
+import UnloginNav from '../../Components/UnloginNav/UnloginNav'
 
 function LoginHome() {
+  let now = localStorage.getItem('auth')
   return (
     <header>
-      <LoginNav />
+      {now == 'true' ? <LoginNav /> : <UnloginNav />}
+
       <hgroup>
         <p className={Style.carousel}>
           <AiTwotoneSound className={Style.icon} />
@@ -35,9 +29,8 @@ function LoginHome() {
         <AsideProductLIst className={Style.displayNone} />
         <Product />
       </section>
-        <Pagination totalPages={5}/>
     </header>
-  );
+  )
 }
 
-export default LoginHome;
+export default LoginHome
