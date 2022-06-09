@@ -1,61 +1,46 @@
-import React from "react";
-import style from "./ProcessBar.module.css";
+import React from 'react'
+import './ProcessBar.css'
 function Processbar(props) {
-  const { step } = props;
-  let start = step;
+  const { step } = props
+  let start = step
   return (
-    <section>
-      <div className={style.title}>
-      <p>購物車</p>
-      </div>
-      <div className={style.progressBar}>
-        {/* 確認購物車 */}
-        <div className={style.center}>
-          <div
-            className={`${style.progressRound} ${style.progressActive}`}
-          ></div>
-          <p>確認購物車</p>
+    <>
+      <div className="progressBar">
+        <div>
+          <div className="progressRound progressActive"></div>
+          <div>步驟一</div>
+          <div>購物車</div>
         </div>
         {start >= 2 ? (
-          <div
-            className={`${style.progressLine} ${style.progressActive}`}
-          ></div>
+          <div className="progressLine progressActive"></div>
         ) : (
-          <div className={style.progressLine}></div>
+          <div className="progressLine"></div>
         )}
-
-        {/* 填資料 */}
-        <div className={style.center}>
+        <div>
           {start >= 2 ? (
-            <div
-              className={`${style.progressRound} ${style.progressActive}`}
-            ></div>
+            <div className="progressRound progressActive"></div>
           ) : (
-            <div className={style.progressRound}></div>
+            <div className="progressRound"></div>
           )}
-          <p>填資料</p>
+          <div>步驟二</div>
+          <div>填資料</div>
         </div>
         {start > 2 ? (
-          <div
-            className={`${style.progressLine} ${style.progressActive}`}
-          ></div>
+          <div className="progressLine progressActive"></div>
         ) : (
-          <div className={style.progressLine}></div>
+          <div className="progressLine"></div>
         )}
-
-        {/* 付款 */}
-        <div className={style.center}>
+        <div>
           {start > 2 ? (
-            <div
-              className={`${style.progressRound} ${style.progressActive}`}
-            ></div>
+            <div className="progressRound progressActive"></div>
           ) : (
-            <div className={style.progressRound}></div>
+            <div className="progressRound"></div>
           )}
-          <p>付款</p>
+          <div>步驟三</div>
+          <div>付款</div>
         </div>
       </div>
-    </section>
-  );
+    </>
+  )
 }
-export default Processbar;
+export default Processbar

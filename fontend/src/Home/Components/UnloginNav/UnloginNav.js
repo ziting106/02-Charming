@@ -1,61 +1,27 @@
-import React, { useState } from 'react'
-import style from './UnloginNav.module.css'
-import { AiOutlineGlobal } from 'react-icons/ai'
-import { FaAngleDown } from 'react-icons/fa'
-import { ImSearch } from 'react-icons/im'
-import logo from '../../Assets/charming_logo.png'
-import { useLocation, useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import style from "./UnloginNav.module.css";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { FaAngleDown } from "react-icons/fa";
+import { ImSearch } from "react-icons/im";
+import logo from "../../Assets/charming_logo.png";
 
 function UnloginNav(props) {
-  // 取得包含目前URL的狀態和位置的物件函數
-  const location = useLocation()
-  const navigate = useNavigate()
-
-  const searchParams = new URLSearchParams(location.search)
-  let type = searchParams.get('typeID') ? searchParams.get('typeID') : ''
-  let page = searchParams.get('page') ? searchParams.get('page') : ''
-
-  let searchItem = searchParams.get('itemsName')
-    ? searchParams.get('itemsName')
-    : ''
-
-  const [searchValue, setSearchValue] = useState('')
-
-  const [typebar, setNavbar] = useState(false)
+  const [typebar, setNavbar] = useState(false);
   const displayItemType = () => {
     if (window.scrollY >= 350) {
-      setNavbar(true)
+      setNavbar(true);
     } else {
-      setNavbar(false)
+      setNavbar(false);
     }
-  }
-  window.addEventListener('scroll', displayItemType)
-
-  function goPath() {
-    console.log(searchItem)
-    if (searchItem) {
-      navigate(
-        `../${
-          location.pathname +
-          location.search.replace(
-            `itemsName=${searchItem}`,
-            `itemsName=${searchValue}`
-          )
-        }`
-      )
-    } else {
-      navigate(
-        `../${location.pathname + location.search}&itemsName=${searchValue}`
-      )
-    }
-  }
+  };
+  window.addEventListener("scroll", displayItemType);
 
   return (
     <header className={style.mainPage}>
       <nav className={style.navBar}>
         {/* logo 與charming文字 */}
         <div className={style.charmingLogo}>
-          <a href={`/`} className={style.logoIcon}>
+          <a href="/" className={style.logoIcon}>
             <img src={logo} alt="logo" />
             <p>柴米Charming</p>
           </a>
@@ -66,19 +32,16 @@ function UnloginNav(props) {
         >
           <input
             type="search"
-            placeholder="Search product or author"
+            placeholder="Search.."
             onChange={(e) => {
-              setSearchValue(e.target.value)
+              console.log(e);
             }}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                setSearchValue(e.target.value)
-                goPath()
-              }
+              if (e.key === "Enter") console.log(e);
             }}
           />
 
-          <input type="submit" value="搜尋" onClick={goPath} />
+          <input type="submit" value="搜尋" />
         </div>
 
         {/* 平版版搜尋 */}
@@ -86,20 +49,8 @@ function UnloginNav(props) {
         <div
           className={typebar ? `${style.padSearch}` : `${style.displayNone}`}
         >
-          <ImSearch className={style.padSearchIcon} onClick={goPath} />
-          <input
-            type="search"
-            className={style.padSearchBar}
-            onChange={(e) => {
-              setSearchValue(e.target.value)
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                setSearchValue(e.target.value)
-                goPath()
-              }
-            }}
-          ></input>{' '}
+          <ImSearch className={style.padSearchIcon} />
+          <input type="search" className={style.padSearchBar}></input>
         </div>
         {/* -------選項------- */}
         <div className={style.charmingItem}>
@@ -116,10 +67,10 @@ function UnloginNav(props) {
               <a href="/Portfolio" className={style.phoneDisplayNone}>
                 <li>柴米人</li>
               </a>
-              <a href="/blog" className={style.phoneDisplayNone}>
+              <a href="/Blog" className={style.phoneDisplayNone}>
                 <li>柴訊</li>
               </a>
-              <a href="/AskPage" className={style.phoneDisplayNone}>
+              <a href="/Communication" className={style.phoneDisplayNone}>
                 <li>柴社</li>
               </a>
             </div>
@@ -137,81 +88,26 @@ function UnloginNav(props) {
         className={typebar ? `${style.displayblock}` : `${style.displayNone}`}
       >
         <hr />
-        <ul className={ page ? `${style.itemList}` : `${style.displayNone}`}>
-          {!type ? (
-            <a href={`${location.pathname + location.search}&typeID=101`}>
-              <li>NFT</li>
-            </a>
-          ) : (
-            <a
-              href={`${
-                location.pathname +
-                location.search.replace(`&typeID=${type}`, ``)
-              }`}
-            >
-              <li>NFT</li>
-            </a>
-          )}
-          {!type ? (
-            <a href={`${location.pathname + location.search}&typeID=102`}>
-              <li>UI/UX</li>
-            </a>
-          ) : (
-            <a
-              href={`${
-                location.pathname +
-                location.search.replace(`&typeID=${type}`, ``)
-              }`}
-            >
-              <li>UI/UX</li>
-            </a>
-          )}
-          {!type ? (
-            <a href={`${location.pathname + location.search}&typeID=103`}>
-              <li>書籍/翻譯</li>
-            </a>
-          ) : (
-            <a
-              href={`${
-                location.pathname +
-                location.search.replace(`&typeID=${type}`, ``)
-              }`}
-            >
-              <li>書籍/翻譯</li>
-            </a>
-          )}
-          {!type ? (
-            <a href={`${location.pathname + location.search}&typeID=104`}>
-              <li>Logo</li>
-            </a>
-          ) : (
-            <a
-              href={`${
-                location.pathname +
-                location.search.replace(`&typeID=${type}`, ``)
-              }`}
-            >
-              <li>Logo</li>
-            </a>
-          )}
-          {!type ? (
-            <a href={`${location.pathname + location.search}&typeID=105`}>
-              <li>插圖</li>
-            </a>
-          ) : (
-            <a
-              href={`${
-                location.pathname +
-                location.search.replace(`&typeID=${type}`, ``)
-              }`}
-            >
-              <li>插圖</li>
-            </a>
-          )}
+        <ul className={style.itemList}>
+          <a href="">
+            <li>UI/UX</li>
+          </a>
+          <a href="">
+            <li>品牌宣傳</li>
+          </a>
+          <a href="">
+            <li>插圖</li>
+          </a>
+          <a href="">
+            <li>網頁設計</li>
+          </a>
+          <a href="">
+            <li>攝影</li>
+          </a>
         </ul>
         <hr />
       </div>
     </header>
-  )
+  );
 }
-export default UnloginNav
+export default UnloginNav;

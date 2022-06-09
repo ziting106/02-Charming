@@ -1,27 +1,26 @@
-import React from 'react'
-import Style from './LoginHome.module.css'
+import React from "react";
+import Style from "./LoginHome.module.css";
 // component
-import LoginNav from '../../Components/LoginNav/LoginNav'
-import AsideProductLIst from '../../Components/AsideProductLIst/AsideProductLIst'
-import Product from '../../Components/Product/Product'
+import LoginNav from "../../Components/LoginNav/LoginNav";
+import Card from "../../Components/Card/Card";
+import AsideProductLIst from "../../Components/AsideProductLIst/AsideProductLIst";
+import Product from "../../Components/Product/Product";
+import Slider from "../../Components/Slider/Slider";
+import SliderSection from "../../Components/SliderSection/SliderSection";
+import Pagination from "../../Components/Pagination/Pagination";
 
 // react icon
-import { AiTwotoneSound } from 'react-icons/ai'
-import { useLocation } from 'react-router-dom'
-import UnloginNav from '../../Components/UnloginNav/UnloginNav'
+import { AiTwotoneSound } from "react-icons/ai";
+
+// data
+
+import { ImOpt } from "react-icons/im";
+// const connection = require('../../../../../backend/modules/mysql_config');
 
 function LoginHome() {
-  // 取得當前網址資訊
-  const location = useLocation()
-
-  // 判斷網址內是否包含sort欄位
-  const searchParams = new URLSearchParams(location.search)
-  let nowID = searchParams.get('id')
-
   return (
     <header>
-      {nowID ? <LoginNav /> : <UnloginNav />}
-
+      <LoginNav />
       <hgroup>
         <p className={Style.carousel}>
           <AiTwotoneSound className={Style.icon} />
@@ -36,8 +35,9 @@ function LoginHome() {
         <AsideProductLIst className={Style.displayNone} />
         <Product />
       </section>
+        <Pagination totalPages={5}/>
     </header>
-  )
+  );
 }
 
-export default LoginHome
+export default LoginHome;

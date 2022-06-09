@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import Style from './Pagination.module.css'
+import './Pagination.css'
 function Pagination(props) {
   // 當前頁數 & 總頁數
   const { totalPages } = props
@@ -21,13 +21,15 @@ function Pagination(props) {
   ) {
     // 最少1頁，最多到頁面總數
     if ((i >= 1) & (i <= parseInt(totalPages))) {
-      const pageStyle = Style['page']
-      const pageStyle2 = Style['active']
       list.push(
         <li key={i}>
           <Link
             to={`${location.pathname}?id=${userId}&page=${i}`}
-            className={[` ${pageStyle} , i === parseInt(currentPages) ? '${pageStyle2}' : ''`].join('')}>
+            className={[
+              'page',
+              i === parseInt(currentPages) ? ' active' : '',
+            ].join('')}
+          >
             {i}
           </Link>
         </li>
@@ -37,12 +39,12 @@ function Pagination(props) {
 
   return (
     <>
-      <ul className={Style.pagination}>
+      <ul className="pagination">
         {/* 到最初頁*/}
-        <li className={parseInt(currentPages) === 1 ? `${Style.disabled}`: ''}>
+        <li className={parseInt(currentPages) === 1 ? 'disabled' : ''}>
           <Link to={`${location.pathname}?id=${userId}&page=1`}>
-            <i className={`${Style.arrow} ${Style.left}`}></i>
-            <i className={`${Style.arrow} ${Style.left}`}></i>
+            <i className="arrow left"></i>
+            <i className="arrow left"></i>
           </Link>
         </li>
         {/* 到上頁 */}
@@ -52,7 +54,7 @@ function Pagination(props) {
               parseInt(currentPages) - 1 > 0 ? parseInt(currentPages) - 1 : 1
             }`}
           >
-            <i className={`${Style.arrow} ${Style.left}`}></i>
+            <i className="arrow left"></i>
           </Link>
         </li>
         {/* 當前頁面 */}
@@ -66,14 +68,14 @@ function Pagination(props) {
                 : parseInt(currentPages) + 1
             }`}
           >
-            <i className={`${Style.arrow} ${Style.right}`}></i>
+            <i className="arrow right"></i>
           </Link>
         </li>
         {/* 到最末頁 */}
-        <li className={parseInt(currentPages) === totalPages ? `${Style.disabled}` : ''}>
+        <li className={parseInt(currentPages) === totalPages ? 'disabled' : ''}>
           <Link to={`${location.pathname}?id=${userId}&page=${totalPages}`}>
-            <i className={`${Style.arrow} ${Style.right}`}></i>
-            <i className={`${Style.arrow} ${Style.right}`}></i>
+            <i className="arrow right"></i>
+            <i className="arrow right"></i>
           </Link>
         </li>
       </ul>
