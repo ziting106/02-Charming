@@ -21,11 +21,13 @@ function Pagination(props) {
   ) {
     // 最少1頁，最多到頁面總數
     if ((i >= 1) & (i <= parseInt(totalPages))) {
+      const pageStyle = Style['page']
+      const pageStyle2 = Style['active']
       list.push(
         <li key={i}>
           <Link
             to={`${location.pathname}?id=${userId}&page=${i}`}
-            className={[` ${Style.page} , i === parseInt(currentPages) ? ${Style.active} : ''`].join('')}>
+            className={[` ${pageStyle} , i === parseInt(currentPages) ? '${pageStyle2}' : ''`].join('')}>
             {i}
           </Link>
         </li>

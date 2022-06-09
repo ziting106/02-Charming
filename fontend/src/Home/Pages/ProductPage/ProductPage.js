@@ -49,18 +49,18 @@ function ProductPage() {
   const a = products.pic_path.split(' ')
 
   // 小圖
-  let p = []
+  let picture = []
   for (let i = 0; i < a.length; i++) {
     const s = style['bigImg' + i]
-    p.push(
-      <button className={style.smallImg}>
+    picture.push(
+      <button className={style.ProductImg}>
         <img
           className={`${s} ${style.bigImg}`}
           alt="圖片顯示失敗"
           src={`http://localhost:3000/Home/ProductImg/${a[i]}`}
         />
         <img
-          className={style.smallImg2}
+          className={style.smallImg}
           alt="圖片顯示失敗"
           src={`http://localhost:3000/Home/ProductImg/${a[i]}`}
         />
@@ -98,10 +98,12 @@ function ProductPage() {
       {UserId ? <LoginNav /> : <UnloginNav />}
       {/* 商品名稱 */}
       <section className={style.ProductPage}>
-        {/* 圖片放置區 */}
-
         <div className={style.displayFlex}>
-          <div>{p}</div>
+
+          {/*———————————————圖片放置區————————————————  */}
+          <div>{picture}</div>
+          {/* ——————————————————————————————————————— */}
+
           {/* 價格，數量，加入購物車按鈕，收藏按鈕 */}
           <div className={style.priceDiv}>
             <h3>
