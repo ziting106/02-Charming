@@ -205,7 +205,7 @@ function AddProduct() {
                 theme="snow"
                 value={state.value}
                 onChange={handleChange}
-                placeholder={"Write something awesome..."}
+                placeholder={"請輸入商品內容..."}
                 modules={modules}
                 formats={formats}
               />

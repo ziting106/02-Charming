@@ -233,6 +233,21 @@
   .itemList a:hover{
     background-color: var(--allHoverColor);
   }
+  /* 歡迎句 */
+  .hello{
+    display: flex;
+    font-size: var(--heading5);
+    font-weight: bold;
+  }
+  .hello :first-child{
+    color: var(--green1);
+    font-weight:200;
+    padding-right: 10px;
+  }
+  .hello :last-child{
+    color: var(--green1);
+    font-weight: bold;
+  }
 /* ——————————————————————————————————————— */
 
  /* —————————————————RWD——————————————————— */
@@ -297,7 +312,4 @@
     font-size: var(--heading4);
     margin-top: 15px;
   }
-
-  
-  
 }
