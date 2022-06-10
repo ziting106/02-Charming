@@ -147,7 +147,7 @@ function LoginNav(props) {
                 <a href="/account"><p>{localStorage.getItem("name")}</p></a>
               </div>
               <a href="/Product?page=1" className={style.phoneDisplayNone}>
-                <li>探索Charming</li>
+                <li>探索</li>
               </a>
               <a href="/Portfolio" className={style.phoneDisplayNone}>
                 <li>柴米人</li>

@@ -3,6 +3,7 @@ import style from './UnloginHome.module.css'
 // 匯入component
 import UnloginNav from '../../Components/UnloginNav/UnloginNav'
 import PhoneFooter from '../../Components/PhoneFooter/PhoneFooter'
+import LoginNav from '../../Components/LoginNav/LoginNav'
 // 匯入icon
 import { ImSearch } from 'react-icons/im'
 // 匯入動畫效果
@@ -23,10 +24,12 @@ function UnloginHome() {
       setScroll(false)
     }
   }
+  let now = localStorage.getItem('auth')
+
   window.addEventListener('scroll', displayItemType)
   return (
     <header>
-      <UnloginNav />
+    {now == 'true' ? <LoginNav /> : <UnloginNav />}
       {/* search header */}
       <div className={style.backgroundImg}>
         <div className={style.headerSlogan}>
