@@ -1,11 +1,11 @@
 import React from 'react'
 import style from './MyCollectionButton.module.css'
 
-function ProductBtobButton() {
+function ProductBtobButton(props) {
   return (
     <aside className={style.ProductBtobButton}>
-      <a href="">商品收藏</a>
-      <a href="">文章收藏</a>
+      <a onClick={props.onRenderProduct}>商品收藏</a>
+      <a onClick={props.onRenderArticle}>文章收藏</a>
     </aside>
   )
 }

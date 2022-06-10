@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import style from "./User.module.css";
-import LoginNav from '../../../Home/Components/LoginNav/LoginNav'
-import BreadCrumb from '../../Components/BreadCrumb/BreadCrumb'
-import Footer from '../../Components/Footer/Footer'
+import LoginNav from "../../../Home/Components/LoginNav/LoginNav";
+import BreadCrumb from "../../Components/BreadCrumb/BreadCrumb";
+import Footer from "../../Components/Footer/Footer";
+import OrderList from "../../../Sales/Pages/Order/OrderList";
 
 function MyShoppingList() {
   return (
@@ -14,10 +15,10 @@ function MyShoppingList() {
         <Link to="/account" className={style.unactive}>
           會員中心 <hr />
         </Link>
-        <Link to="/shoppinglist" className={style.active}>
+        <Link to="/shoppinglist?page=1" className={style.active}>
           購買清單 <hr />
         </Link>
-        <Link to="/collection" className={style.unactive}>
+        <Link to="/collection?page=1" className={style.unactive}>
           我的收藏 <hr />
         </Link>
       </nav>
@@ -25,11 +26,10 @@ function MyShoppingList() {
       {/* 右側內文 */}
 
       <main className={style.main}>
-        <h1 className={style.h1}>購買清單</h1>
+        <OrderList />
       </main>
-
     </>
-  )
+  );
 }
 
-export default MyShoppingList
+export default MyShoppingList;

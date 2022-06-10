@@ -52,11 +52,11 @@ function App() {
         {/* 商品總覽頁 */}
         {/* http://localhost:3000/Product?page=1&order=sell_count&sort=desc */}
         <Route path="/Product" element={<LoginHome />} />
-        {/* http://localhost:3000/Product/1/13 */}
+        {/* http://localhost:3000/Product/13 */}
         <Route path="/Product/:ProductID" element={<ProductPage />} />
         {/* http://localhost:3000/MyProduct?page=1 */}
         <Route path="/MyProduct" element={<MyProduct />} />
-        {/* http://localhost:3000/MyProduct/1/19 */}
+        {/* http://localhost:3000/MyProduct/19 */}
         <Route
           path="/MyProduct/:ProductID"
           element={<ProductPageEditButton />}
@@ -74,8 +74,6 @@ function App() {
         <Route path="Sales/Cart4" element={<Cart4 />} />
 
         <Route path="BtocPage/MySale" element={<MySale />} />
-        <Route path="BtobPage/Order/:id" element={<Order />} />
-        <Route path="BtobPage/Order" element={<OrderList />} />
 
         {/* --------註冊及登入----- */}
         {/* 忘記密碼 */}
@@ -86,7 +84,11 @@ function App() {
         {/* 登入 */}
         <Route path="/signin" element={<SignIn />} />
         {/* -------user 登入後頁面------- */}
+        {/* http://localhost:3000/shoppinglist?page=1 */}
         <Route path="/shoppinglist" element={<MyShoppingList />} />
+        {/*購買詳細 http://localhost:3000/shoppinglist/10 */}
+        <Route path="/shoppinglist/:id" element={<Order />} />
+        {/* http://localhost:3000/collection?page=1 */}
         <Route path="/collection" element={<MyCollection />} />
         <Route path="/account" element={<MyAccount />} />
         <Route path="/collection/MyLikeProduct" element={<MyLikeProduct />} />
