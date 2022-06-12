@@ -171,6 +171,16 @@ const PersonalInfo = (props) => {
           )}
         </div>
       </div>
+      <div className={classes.designer}>
+        <img src={image.preview} alt="user logo" />
+        <div>
+          <p>{localStorage.getItem('name')}</p>
+          <div className={classes.displayFlex}>
+            <p>位置</p>
+            <p>加入時間</p>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
