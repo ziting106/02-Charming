@@ -2,12 +2,12 @@ import React from 'react'
 import Style from './LoginHome.module.css'
 // component
 import LoginNav from '../../Components/LoginNav/LoginNav'
+import UnloginNav from '../../Components/UnloginNav/UnloginNav'
 import AsideProductLIst from '../../Components/AsideProductLIst/AsideProductLIst'
 import Product from '../../Components/Product/Product'
 
 // react icon
 import { AiTwotoneSound } from 'react-icons/ai'
-import UnloginNav from '../../Components/UnloginNav/UnloginNav'
 
 function LoginHome() {
   let now = localStorage.getItem('auth')
