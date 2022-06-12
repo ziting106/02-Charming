@@ -113,7 +113,8 @@ const PersonalInfo = (props) => {
   }
 
   return (
-    <div className={classes['personal-info']}>
+    <section className={classes['personal-info']}>
+      {/* 大頭照 */}
       <div className={classes['personal-info--image']}>
         {image.preview ? (
           <img src={image.preview} alt="user logo" />
@@ -170,7 +171,7 @@ const PersonalInfo = (props) => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
