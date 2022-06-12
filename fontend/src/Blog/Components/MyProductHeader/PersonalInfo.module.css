@@ -2,7 +2,6 @@
 .personal-info {
   width:100%;
   display: flex;
-  justify-content: center;
   transition: 0.5s;
   margin-top: 3rem;
   margin-bottom: 5rem;
@@ -43,9 +42,6 @@
   color: var(--brown1);
 }
 /* hover賣場頭像出現換圖片樣式 */
-.personal-info--upload-logo {
-  
-}
 .personal-info--upload-logo label{
   display: flex;
   justify-content: center;
