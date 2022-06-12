@@ -5,6 +5,7 @@ import PillBtn from '../UI/PillBtn'
 import DefalutImage from './charmingDefalut.png'
 import swal from 'sweetalert'
 import MyProductBtn from '../UI/MyProductBtn'
+import { RiImageEditFill } from 'react-icons/ri'
 
 const Banner = (props) => {
   const [userBanner, setUserBanner] = useState([])
@@ -76,7 +77,7 @@ const Banner = (props) => {
           <img
             src={image.preview}
             width="100%"
-            height="500"
+            height="400"
             alt="user_upload"
           />
         ) : (
@@ -97,6 +98,7 @@ const Banner = (props) => {
                 htmlFor="banner"
                 className={`${classes['custom-file-upload']}`}
               >
+                <RiImageEditFill className={classes.icon}/>
                 編輯封面照片
               </label>
             ) : (
