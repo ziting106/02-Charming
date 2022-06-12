@@ -43,7 +43,6 @@ import Article from './Blog/Page/Article'
 import Search from './Blog/Page/Search'
 import MyProductHeader from './Blog/Page/MyProduct'
 
-
 function App() {
   document.title = `Charming`
   return (

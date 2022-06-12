@@ -170,15 +170,13 @@ function LoginNav(props) {
               </a>
 
               <li className={style.showList}>
-                <a href="/account">
-                  <img src={logo} alt="logo" />
-                </a>
+                <img src={logo} alt="logo" />
                 {/*--hover頭像時出現時才出現的會員表單 --*/}
                 <div className={style.navList}>
-                  <Link to={`/blog/myproduct`}>賣家中心</Link>
-                  <Link to={`../MyProduct?page=1`}>我的商品</Link>
-                  <Link to={`/collection`}>我的收藏</Link>
-                  <Link to={`../BtobPage/Order?page=1`}>購買清單</Link>
+                  <Link to={`/account`}>會員中心</Link>
+                  <Link to={`/blog/myproduct?page=1`}>賣家中心</Link>
+                  <Link to={`/collection?page=1`}>我的收藏</Link>
+                  <Link to={`/shoppinglist?page=1`}>購買清單</Link>
                   <button onClick={logOut}>登出</button>
                 </div>
                 {/* ——————————————————————————————————————— */}
