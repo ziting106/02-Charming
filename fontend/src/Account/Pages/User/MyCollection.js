@@ -36,16 +36,21 @@ function MyCollection() {
   return (
     <>
       <LoginNav />
-      <BreadCrumb />
       {/* 上方選單 */}
       <nav className={style.navLeft}>
-        <Link to="/account" className={style.unactive}>
+        <Link to="/account" className={`${style.unactive} ${style.link}`}>
           會員中心 <hr />
         </Link>
-        <Link to="/shoppinglist?page=1" className={style.unactive}>
+        <Link
+          to="/shoppinglist?page=1"
+          className={`${style.unactive} ${style.link}`}
+        >
           購買清單 <hr />
         </Link>
-        <Link to="/collection?page=1" className={style.active}>
+        <Link
+          to="/collection?page=1"
+          className={`${style.active} ${style.link}`}
+        >
           我的收藏 <hr />
           {/* user 追蹤的文章 */}
         </Link>
@@ -56,22 +61,24 @@ function MyCollection() {
           onRenderProduct={renderProductHandler}
           onRenderArticle={renderArticleHandler}
         />
-        <main className={style.main}>
-          {renderProduct ? (
-            <MyLikeProduct />
-          ) : (
-            allFavArticle.map((aritcle) => {
-              return (
-                <Link
-                  to={`../blog/article/${aritcle.article_id}`}
-                  key={aritcle.article_id}
-                >
-                  <Trending article={aritcle} key={aritcle.fav_id} />
-                </Link>
-              )
-            })
-          )}
-        </main>
+        <div className={style.myAccount}>
+          <main className={style.main}>
+            {renderProduct ? (
+              <MyLikeProduct />
+            ) : (
+              allFavArticle.map((aritcle) => {
+                return (
+                  <Link
+                    to={`../blog/article/${aritcle.article_id}`}
+                    key={aritcle.article_id}
+                  >
+                    <Trending article={aritcle} key={aritcle.fav_id} />
+                  </Link>
+                )
+              })
+            )}
+          </main>
+        </div>
       </section>
     </>
   )

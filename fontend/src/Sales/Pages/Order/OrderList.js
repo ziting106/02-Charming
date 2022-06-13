@@ -3,7 +3,6 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import Style from './Order.module.css'
-import Pagination from '../../Components/Pagination/Pagination'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function OrderList() {
@@ -89,7 +88,6 @@ function OrderList() {
           </tbody>
         </table>
       </section>
-      <Pagination totalPages={totalPage} />
     </>
   )
 }

@@ -149,8 +149,9 @@
   }
   /* ---------------- */
   /* -------cart2.js--------- */
+  /* ------表格------ */
   .shoppingListS{
-    width: 95%;
+    width: 40%;
     display: flex;  
     flex-direction: column;
     margin: 0 auto;
@@ -158,17 +159,19 @@
     text-align: center;
     color: var(--brown1);
   }
-  /* ------表格------ */
-  .listItem{
-    margin-top: 60px;
-    margin-bottom: 80px;
+  .shoppingListSS{
+    width: 100%;
+    display: flex;  
+    flex-direction: column;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: var(--brown1);
   }
-  .listItem:last-child{
-    border: none;
+  .turnBack{
+    margin-bottom: 100px;
   }
-  .phoneCart{
-  padding: 0px 10px;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
+  .displayNone{
+    display: none;
+  }
 }

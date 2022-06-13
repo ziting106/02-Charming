@@ -70,7 +70,7 @@ function Order() {
         {/* 上方資訊部分 */}
         {conponent}
         {/* 商品資訊部分 */}
-        <table className={Style.shoppingListS}>
+        <table className={Style.shoppingListSS}>
           <thead className={Style.listTitle}>
             <tr>
               <th scope="col" className={Style.blockSizeL}>
@@ -79,7 +79,10 @@ function Order() {
               <th scope="col" className={Style.blockSizeL}>
                 商品圖
               </th>
-              <th scope="col" className={Style.blockSizeL}>
+              <th
+                scope="col"
+                className={`${Style.blockSizeL} ${Style.displayNone}`}
+              >
                 作者
               </th>
               <th scope="col" className={Style.blockSizeL}>
@@ -110,7 +113,9 @@ function Order() {
                         src={`http://localhost:3000/Home/ProductImg/${pic_path}`}
                       />
                     </td>
-                    <td className={Style.blockSizeL}>{author_name}</td>
+                    <td className={`${Style.blockSizeL} ${Style.displayNone}`}>
+                      {author_name}
+                    </td>
                     <td className={Style.blockSizeL}>{product_name}</td>
                     <td className={`${Style.blockSizeL} ${Style.price}`}>
                       {price}
