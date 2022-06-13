@@ -79,11 +79,7 @@
     color: var(--brown2);
 }
 /* 影片大小限制文字 */
-.warnText{
-    margin-left: 100px;
-    color: var(--gray3);
-    font-size: var(--heading4);
-}
+
 .productPrice{
     display: flex;
     justify-content: space-between;
