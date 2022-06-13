@@ -8,6 +8,9 @@
 .cardFlex::-webkit-scrollbar {
     display: none; /* Chrome Safari */
   }
+  .cardFlex > div{
+    width: 250px;
+  }
 @media screen and (max-width:1024px){
     .cardFlex > div{
         width:25%;
