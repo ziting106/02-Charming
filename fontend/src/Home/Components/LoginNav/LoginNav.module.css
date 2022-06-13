@@ -299,9 +299,6 @@
       top: 13px;
   }
   /* -------------- */
-  .showList{
-    /* display: none; */
-  }
   .phoneDisplayNone{
     display: none;
   }
@@ -312,5 +309,8 @@
   .phoneIcon{
     font-size: var(--heading4);
     margin-top: 15px;
+  }
+  .hello{
+    display: none;
   }
 }
