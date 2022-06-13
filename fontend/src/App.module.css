@@ -53,13 +53,20 @@ hr{
   border: 1px solid var(--brown3);
 }
 
-body {
+html, body {
   /* 黑體字 */
   font-family: -apple-system, BlinkMacSystemFont;
   /* 內文細黑體 */
   -webkit-font-smoothing: antialiased;
   /* -moz-osx-font-smoothing: grayscale; */
 }
+/* footer至於最底層 */
+.content{
+  min-height: calc(100vh - 205px);
+}
+
+
+
 nav, hgroup, section{
   margin: 0px var(--holdpadding);
 }
