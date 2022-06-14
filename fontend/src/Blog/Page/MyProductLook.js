@@ -1,6 +1,6 @@
 // component
-import Banner from '../Components/MyProductHeader/Banner'
-import PersonalInfo from '../Components/MyProductHeader/PersonalInfo'
+import BannerLook from '../Components/MyProductHeader/BannerLook'
+import PersonalInfoLook from '../Components/MyProductHeader/PersonalInfoLook'
 import LoginNav from '../../Home/Components/LoginNav/LoginNav'
 import MyProductLook from '../../Home/Pages/MyProduct/MyProductLook'
 
@@ -9,8 +9,8 @@ const MyProductHeader = () => {
   return (
     <>
       <LoginNav />
-      <Banner />
-      <PersonalInfo />
+      <BannerLook />
+      <PersonalInfoLook />
       <MyProductLook />
     </>
   )
