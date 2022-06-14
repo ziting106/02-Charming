@@ -5,7 +5,7 @@ import Style from './MyProduct.module.css'
 import LoginNav from '../../Components/LoginNav/LoginNav'
 
 import ProductBtobButton from '../../Components/ProductBtobButton/ProductBtobButton'
-import EditProduct from '../../Components/EditProduct/EditProduct'
+import MyproductPeopleLook from '../../Components/MyproductPeopleLook/MyproductPeopleLook'
 
 function MyProduct() {
   return (
@@ -18,8 +18,8 @@ function MyProduct() {
           </a>
         </div> */}
         <div className={Style.arrangement}>
-          <ProductBtobButton />
-          <EditProduct />
+          {/* <ProductBtobButton /> */}
+          <MyproductPeopleLook />
         </div>
       </section>
     </>
