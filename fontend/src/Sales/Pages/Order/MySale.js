@@ -23,7 +23,9 @@ function MySale() {
 
   const fetchProducts = async () => {
     const response = await fetch(
-      `http://localhost:3001/Sales/api/orderShop?id=${localStorage.getItem('id')}&page=${currentpage}`
+      `http://localhost:3001/Sales/api/orderShop?id=${localStorage.getItem(
+        'id'
+      )}&page=${currentpage}`
     )
     const data = await response.json()
 
@@ -51,7 +53,7 @@ function MySale() {
           {products == '' ? (
             <NoSale />
           ) : (
-            <table className={Style.shoppingListS}>
+            <table className={Style.shoppingListSS}>
               <thead className={Style.listTitle}>
                 <tr>
                   <th scope="col" className={Style.blockSizeM}>

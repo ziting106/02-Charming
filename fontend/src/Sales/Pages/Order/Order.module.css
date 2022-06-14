@@ -60,6 +60,9 @@
 .flex{
   display: flex;
 }
+.saleProduct{
+  justify-content: center;
+}
 /* ——
 /* —————————————表格———————————————— */
 .shoppingListS{
@@ -252,5 +255,8 @@
   }
   .navLeft a hr{
     left: 0px;
+  }
+  .flex{
+    display: block;
   }
 }
