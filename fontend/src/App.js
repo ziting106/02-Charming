@@ -44,6 +44,7 @@ import Blog from './Blog/Page/Blog'
 import Article from './Blog/Page/Article'
 import Search from './Blog/Page/Search'
 import MyProductHeader from './Blog/Page/MyProduct'
+import MyproductLook from './Blog/Page/MyProductLook'
 import Author from './Blog/Page/Author'
 import ArticleSearch from './Blog/Components/ArticleSearch/ArticleSearch'
 
@@ -109,6 +110,7 @@ function App() {
           {/* 首頁，商品總覽 */}
           {/* http://localhost:3000/shopcenter/myproduct?page=1 */}
           <Route path="/shopcenter/myproduct" element={<MyProductHeader />} />
+          <Route path="/shopcenter/myproductLook" element={<MyproductLook />} />
           {/* 商品詳細頁 */}
           {/* http://localhost:3000/shopcenter/19 */}
           <Route
