@@ -49,7 +49,7 @@ function MySale() {
       <PersonalInfo />
       <section className={Style.flex}>
         <ProductBtobButton />
-        <div>
+        <section>
           {products == '' ? (
             <NoSale />
           ) : (
@@ -91,7 +91,7 @@ function MySale() {
               </tbody>
             </table>
           )}
-        </div>
+        </section>
       </section>
       <Pagination totalPages={totalPage} />
     </>
