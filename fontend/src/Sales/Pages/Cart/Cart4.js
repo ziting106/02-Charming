@@ -22,7 +22,7 @@ function Cart4() {
             storage.removeItem('addID')
             // 回首頁
             window.scrollTo(0, 0)
-            Navigate('/')
+            Navigate('/membercenter/shoppinglist?page=1')
           }}
         >
           完成

@@ -142,7 +142,10 @@ function ProductPage() {
 
             {/* 關於設計師 */}
             <div className={style.ProductTitle}>關於設計師</div>
-            <div className={style.displaySpaceAround}>
+            <a
+              href="/shopcenter/myproductLook?page=1"
+              className={style.displaySpaceAround}
+            >
               <img
                 className={style.designerPicture}
                 alt=""
@@ -161,7 +164,7 @@ function ProductPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
