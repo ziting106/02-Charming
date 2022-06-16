@@ -21,6 +21,13 @@
 .productType{
     display: flex;
 }
+.mainpic{
+    max-width: 60%;
+    margin: 70px auto;
+    display: flex;
+    justify-content: center;
+    /* height: 400px; */
+}
 @media screen and (max-width:1024px){
     .icon{
         position: absolute;

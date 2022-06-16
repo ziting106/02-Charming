@@ -424,4 +424,10 @@
   .ttttt{
     margin-bottom: 100px;
   }
+  .blockText{
+    margin-top: 20px;
+  }
+  .infoInput label{
+    width: 50px;
+  }
 }
