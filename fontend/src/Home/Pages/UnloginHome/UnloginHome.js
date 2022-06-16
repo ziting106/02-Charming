@@ -119,11 +119,11 @@ function UnloginHome() {
         </div>
         <a href="/Product?page=1">
           <button className={`${style.joinButton} ${style.heading4}`}>
-           查看所有商品
+            查看所有商品
           </button>
         </a>
         {/* 柴米人頁面介紹 */}
-        {/* <div className={style.portfolio}>
+        <div className={style.portfolio}>
           <hgroup className={style.pageMargin}>
             <p className={style.heading3}>柴米武林招開中</p>
             <p className={style.heading3}>快來加入成為柴米榜榜主吧！</p>
@@ -134,7 +134,7 @@ function UnloginHome() {
           <a href="portfolio">
             <img src={introduce1} alt="introduce" />
           </a>
-        </div> */}
+        </div>
         {/* 柴訊介紹 */}
         <div className={style.blog}>
           <hgroup className={style.phoneDisplay}>

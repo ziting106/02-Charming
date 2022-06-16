@@ -42,4 +42,8 @@
     .middleText {
         font-size: var(--heading6);
     }
+    .mainpic{
+        max-width: 100%;
+        margin: 20px auto;
+    }
 }
